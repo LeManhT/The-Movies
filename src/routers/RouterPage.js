@@ -1,9 +1,28 @@
-import React from 'react'
+import React from "react";
+import { useRoutes } from "react-router-dom";
+import HomePage from "../pages/HomePage";
+import LoginPage from "../pages/LoginPage";
+import Layout from "../components/layouts/layout/Layout";
 
 const RouterPage = () => {
-    return (
-        <div>RouterPage</div>
-    )
-}
+  let Routes = useRoutes([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <HomePage />,
+        },
+      ],
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+  ]);
 
-export default RouterPage
+  return Routes;
+};
+
+export default RouterPage;
