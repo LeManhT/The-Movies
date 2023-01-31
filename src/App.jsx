@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
-
 import RouterPage from "./config/RouterPage";
 import Loading from "./components/ui/loading/Loading";
 import tmdbApi from "./api/tmdbApi";
@@ -15,6 +14,7 @@ function App() {
 
     getMovie();
   }, []);
+  
   return (
     <>
       <RouterPage />
