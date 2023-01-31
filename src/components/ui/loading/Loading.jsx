@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { loading } from "../../../features/selector";
-import "./Loading.scss";
+import "./loading.scss";
 
 export default function Loading() {
   const loadingSelector = useSelector(loading);
