@@ -1,12 +1,12 @@
 import React from 'react'
 import './toolTip.scss'
-const ToolTip = () => {
+const ToolTip = ({ children }) => {
     return (
         <li className="tooltip">
-            <a href="">
-                <i class="fa-solid fa-list"></i>
-            </a>
-        </li>
+            <span>
+                {children}
+            </span>
+        </li >
     )
 }
 

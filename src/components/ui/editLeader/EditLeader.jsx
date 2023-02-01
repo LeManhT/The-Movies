@@ -1,18 +1,18 @@
 import React from 'react'
 import './editLeader.scss'
 
-const EditLeader = () => {
+const EditLeader = ({ editCount, editName, imgSrc }) => {
     return (
         <div className="editLeader">
             <div className="editLeader__avatar">
                 <a href="">
-                    <img src="https://www.themoviedb.org/t/p/w45_and_h45_face/yYG7Rhn9HfFpssIMeNiDynvxC14.jpg" alt="" />
+                    <img src={imgSrc} alt="" />
                 </a>
             </div>
             <div className="editLeader__info">
-                <p className="editCount">93
+                <p className="editCount">{editCount}
                     <br />
-                    <a href="">razer123</a>
+                    <span>{editName}</span>
                 </p>
             </div>
         </div>

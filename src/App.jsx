@@ -4,7 +4,7 @@ import RouterPage from "./config/RouterPage";
 import Loading from "./components/ui/loading/Loading";
 import tmdbApi from "./api/tmdbApi";
 import "./App.scss";
-
+import Description from "./components/ui/description/Description";
 function App() {
   useEffect(() => {
     const getMovie = async () => {
@@ -14,12 +14,13 @@ function App() {
 
     getMovie();
   }, []);
-  
+
   return (
     <>
       <RouterPage />
       <ToastContainer />
       <Loading />
+      <Description />
     </>
   );
 }

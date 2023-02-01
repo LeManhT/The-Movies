@@ -1,10 +1,10 @@
 import React from 'react'
-import './Tag.scss'
+import './tag.scss'
 
-const Tag = () => {
+const Tag = ({ tagContent, color }) => {
     return (
         <li className="tag">
-            <a href="">evil doll</a>
+            <span style={{ color: { color } }}>{tagContent}</span>
         </li>
     )
 }

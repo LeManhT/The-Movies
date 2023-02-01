@@ -1,13 +1,17 @@
 import React from 'react'
 import './dropDown.scss'
 
-const DropDown = (props) => {
+const DropDown = ({ children }) => {
     return (
-        <ul className="dropDown">
-            {props.children.map((item) => {
-                return <li>{item}</li>
-            })}
-        </ul>
+        <>
+            {children ? <div className="dropDownContainer">
+                <ul className="dropDown">
+                    {children.map((item) => {
+                        return <li>{item}</li>
+                    })}
+                </ul>
+            </div> : null}
+        </>
     )
 }
 

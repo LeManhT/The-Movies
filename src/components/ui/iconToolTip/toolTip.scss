@@ -1,13 +1,11 @@
-:root {
-    --tmdbDarkBlue: 3, 37, 65;
-}
+@use '../../../scss/' as *;
 
 .tooltip {
     list-style-type: none;
     margin-right: 20px;
     padding: 3px 0;
 
-    a {
+    span {
         box-sizing: border-box;
         background: rgba(var(--tmdbDarkBlue), 1);
         border-radius: 50%;
