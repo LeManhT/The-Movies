@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import RouterPage from "./config/RouterPage";
 import Loading from "./components/ui/loading/Loading";
-import tmdbApi from "./api/tmdbApi";
 import Card from "./components/ui/card/Card";
 import DropDown from "./components/ui/dropDown/DropDown";
+import tmdbApi from "./api/tmdbApi";
+import useFetch from "./hooks/useFetch";
 import "./App.scss";
-import useFetch from "./useFetch";
 
 function App() {
   // const {data: trendingData, error: trendingError, isLoading, fetch: getMovie} = useFetch(tmdbApi.getTrending, { time_window: "week" }, true)
@@ -40,6 +40,7 @@ function App() {
             />
           );
         })}
+
       <DropDown>{["Popular", "Now Playing", "Upcoming"]}</DropDown>
     </>
   );

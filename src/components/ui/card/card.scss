@@ -48,9 +48,11 @@
   cursor: default;
   
   .content__consensus {
+    height: 38px;
+    width: 38px;
     position: absolute;
-    top: -27px;
-    left: 0;
+    top: -22px;
+    left: 10px;
   }
 
   h2 {
