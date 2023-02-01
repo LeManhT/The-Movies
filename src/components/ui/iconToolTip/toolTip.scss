@@ -1,0 +1,26 @@
+:root {
+    --tmdbDarkBlue: 3, 37, 65;
+}
+
+.tooltip {
+    list-style-type: none;
+    margin-right: 20px;
+    padding: 3px 0;
+
+    a {
+        box-sizing: border-box;
+        background: rgba(var(--tmdbDarkBlue), 1);
+        border-radius: 50%;
+        width: 46px;
+        height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #fff;
+
+        i {
+            font-size: 0.75em;
+        }
+    }
+}
