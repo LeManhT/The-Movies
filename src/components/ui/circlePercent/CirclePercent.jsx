@@ -1,13 +1,13 @@
 import React from 'react'
 import './circlePercent.scss'
 
-const CirclePercent = () => {
+const CirclePercent = ({number, colorPrimary, colorSecondary}) => {
     return (
         <div class="progress-circle over50 p100">
-            <span>100%</span>
+            <span>{number}<sup>%</sup></span>
             <div class="left-half-clipper">
-                <div class="first50-bar"></div>
-                <div class="value-bar"></div>
+                <div class="first50-bar" style={{backgroundColor: `${colorPrimary}`}} />
+                <div class="value-bar" style={{border: `0.45rem solid ${colorSecondary}`}} />
             </div>
         </div>
     )
