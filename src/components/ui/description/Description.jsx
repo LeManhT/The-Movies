@@ -1,9 +1,6 @@
 import React from 'react'
-import DropDown from '../dropDown/DropDown'
-import Meter from '../meter/Meter'
-import Selectors from '../selectors/Selectors'
 
-const description = () => {
+const Description = () => {
 
     return (
         <div className="description">
@@ -11,11 +8,8 @@ const description = () => {
                 Status
             </strong>
             <p>Released</p>
-            <DropDown>{['Popular', 'Now Playing', 'Upcoming']}</DropDown>
-            <Selectors />
-            <Meter meterCount={2758000} />
         </div>
     )
 }
 
-export default description
+export default Description
