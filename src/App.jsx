@@ -14,6 +14,8 @@ function App() {
 
     getMovie();
   }, []);
+
+  console.log(1233)
   
   return (
     <>
