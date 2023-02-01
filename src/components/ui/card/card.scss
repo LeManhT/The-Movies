@@ -1,95 +1,68 @@
-:root {
-    --imageBorderRadius: 8px;
-}
-
-
 .card {
-    width: 150px;
-    min-width: 150px;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+  .card__image {
+    position: relative;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border-radius: 8px;
+    width: 100%;
+    background: #dbdbdb;
+    overflow: hidden;
 
-    .card__image {
-        position: relative;
-        box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
-        border-radius: var(--imageBorderRadius);
+    .image__wrapper {
+      &:hover {
+        cursor: pointer;
+      }
+      img {
         width: 100%;
-        min-height: calc(150px * 1.5);
-        height: calc(150px * 1.5);
-        background: #dbdbdb;
-        overflow: hidden;
-
-        .image__wrapper {
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .image__options {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            color: white;
-            z-index: 4;
-            opacity: 0.6;
-            min-width: 1em;
-            min-height: 1em;
-            width: 1em;
-            height: 1em;
-            line-height: inherit;
-        }
+        height: 100%;
+        object-fit: cover;
+      }
     }
+
+    .image__options {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      color: white;
+      opacity: 0.6;
+      max-width: 1em;
+      max-height: 1em;
+      font-size: 20px;
+      transition: all linear 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.4;
+      }
+    }
+  }
 }
 
 .card__content {
-    width: 100%;
-    padding: 26px 10px 12px 10px;
-    position: relative;
-    white-space: normal;
-    display: flex;
-    align-content: flex-start;
-    flex-wrap: wrap;
+  padding: 24px 10px 12px 10px;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  cursor: default;
+  
+  .content__consensus {
+    position: absolute;
+    top: -27px;
+    left: 0;
+  }
 
-    .content__consensus {
-        position: absolute;
-        top: -19px;
-        left: 10px;
+  h2 {
+    font-size: 1em;
+    overflow-wrap: break-word;
 
-        .outer__ring {
-            display: inline-block;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            padding: 4px;
-            background-color: #ccc;
-
-            .percent {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 0.6em;
-                text-align: center;
-            }
-        }
+    &:hover {
+      cursor: pointer;
+      color: rgba(var(--tmdbLightBlue), 1);
     }
+  }
 
-    h2 {
-        font-size: 1em;
-        overflow-wrap: break-word;
-
-        a {
-            text-decoration: none;
-            color: #000;
-        }
-    }
-
-    p {
-        font-style: 1em;
-        color: rgba(0, 0, 0, 0.6);
-    }
+  p {
+    color: rgba(0, 0, 0, 0.6);
+  }
 }
