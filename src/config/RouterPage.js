@@ -6,6 +6,7 @@ import LoginPage from "../pages/LoginPage";
 import MovieDetailPage from "../pages/MovieDetailPage";
 import NotfoundPage from "../pages/NotfoundPage"
 import PersonDetailPage from "../pages/PersonDetailPage";
+import SearchPage from "../pages/SearchPage";
 
 const RouterPage = () => {
   let Routes = useRoutes([
@@ -13,6 +14,10 @@ const RouterPage = () => {
       path: "/",
       element: <Layout />,
       children: [
+        {
+          path: "/search/:category/:info",
+          element: <SearchPage />,
+        },
         {
           path: "/movie/:info",
           element: <MovieDetailPage />,
