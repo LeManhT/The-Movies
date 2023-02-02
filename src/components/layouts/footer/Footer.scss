@@ -1,0 +1,47 @@
+@use '../../../scss/' as *;
+
+.footer_single_column{
+    background-color: $primary-color;
+    // background-image: radial-gradient(at 30% top, #031d33 0%, rgba(var(--tmdbDarkBlue), 1) 70%);
+    color: #ffff;
+    // position:absolute;
+    // bottom:0;
+    width: 100%;
+    .nav{
+        display: flex;
+        width: 52%;
+        margin: 0 24%;
+        padding: 66px 0;
+        font-size: .9em;
+        .join{
+            width: 20%;
+            .wrapper{
+                margin-top: 30px;
+            }
+        }
+        .item{
+            width: 20%;
+            padding-top: 13px;
+            h3{
+                font-weight: bold;
+                font-size: 1.4em;
+                line-height: 1.4em;
+                text-transform: uppercase;
+                color: #fff;
+            }
+            ul{
+                li{
+                    p{
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+    .section{
+        text-align: center;
+        color: #ffff;
+        opacity: 0.1;
+        font-size: 0.7em;
+    }
+}
