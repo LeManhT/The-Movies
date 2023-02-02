@@ -2,12 +2,16 @@
 $body-color: #ffffff;
 $text-color: #000000;
 $primary-color: #032541;
-$allTime-edit-color: linear-gradient(to right,
-    rgba(var(--tmdbLighterGreen), 1) 0%,
-    rgba(var(--tmdbLightGreen), 1) 100%);
-$thisWeek-edit-color: linear-gradient(to right,
-    rgba(var(--tmdbLogoOrange), 1) 0%,
-    rgba(var(--tmdbLogoRed), 1) 100%);
+$allTime-edit-color: linear-gradient(
+  to right,
+  rgba(var(--tmdbLighterGreen), 1) 0%,
+  rgba(var(--tmdbLightGreen), 1) 100%
+);
+$thisWeek-edit-color: linear-gradient(
+  to right,
+  rgba(var(--tmdbLogoOrange), 1) 0%,
+  rgba(var(--tmdbLogoRed), 1) 100%
+);
 
 // Responsive
 $mobile-width: 600px;

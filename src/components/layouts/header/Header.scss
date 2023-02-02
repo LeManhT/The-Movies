@@ -1,0 +1,49 @@
+@use "../../../scss/" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  background-color: $primary-color;
+  padding: 0 115px;
+
+  .header__left,
+  .header__right {
+    display: flex;
+    align-items: center;
+
+    .item {
+      margin: 0 16px;
+      cursor: pointer;
+      color: #ffff;
+      font-weight: 600;
+    }
+  }
+
+  .header__right {
+    .item {
+      .plus-icon {
+        color: $body-color;
+        font-weight: 900;
+        font-size: 18px;
+      }
+
+      .translate {
+        border: solid 1px $body-color;
+        border-radius: 3px;
+        padding: 0 6px;
+        
+        &:hover {
+          background-color: $body-color;
+          color: $text-color;
+        }
+      }
+
+      .search-icon {
+        font-size: 20px;
+        color: rgb(1, 180, 228);
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use "../../../scss/" as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $body-color;
+  background-color: $primary-color;
+
+  .footer__info {
+    display: flex;
+    padding: 86px 0 100px 0;
+    font-size: 0.9em;
+
+    .item {
+      position: relative;
+      margin: 0 30px;
+
+      img {
+        display: block;
+        position: absolute;
+        top: -40px;
+        right: 0;
+      }
+
+      .item__button {
+        margin-top: 110px;
+      }
+
+      h3 {
+        font-weight: bold;
+        font-size: 1.4em;
+        line-height: 1.4em;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+    }
+  }
+  
+  .footer__section {
+    color: $body-color;
+    opacity: 0.2;
+    font-size: 0.8em;
+  }
+}
