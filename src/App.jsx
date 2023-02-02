@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import RouterPage from "./config/RouterPage";
 import Loading from "./components/ui/loading/Loading";
 import Card from "./components/ui/card/Card";
+import DropDown from "./components/ui/dropDown/DropDown";
 import tmdbApi from "./api/tmdbApi";
 import useFetch from "./hooks/useFetch";
 import "./App.scss";
