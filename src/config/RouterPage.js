@@ -3,8 +3,9 @@ import { useRoutes } from "react-router-dom";
 import Layout from "../components/layouts/Layout";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
-import CategoryPage from "../pages/CategoryPage";
-import NotfoundPage from "../pages/NotfoundPage"
+import MovieDetailPage from "../pages/MovieDetailPage";
+import PersonDetailPage from "../pages/PersonDetailPage";
+import NotfoundPage from "../pages/NotfoundPage";
 
 const RouterPage = () => {
   let Routes = useRoutes([
@@ -13,8 +14,12 @@ const RouterPage = () => {
       element: <Layout />,
       children: [
         {
-          path: "/:category/:type",
-          element: <CategoryPage />,
+          path: "/movie/:info",
+          element: <MovieDetailPage />,
+        },
+        {
+          path: "/person/:info",
+          element: <PersonDetailPage />,
         },
         {
           path: "/login",

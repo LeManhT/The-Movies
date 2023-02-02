@@ -2,24 +2,45 @@ import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import RouterPage from "./config/RouterPage";
 import Loading from "./components/ui/loading/Loading";
+import Card from "./components/ui/card/Card";
 import tmdbApi from "./api/tmdbApi";
+import useFetch from "./hooks/useFetch";
 import "./App.scss";
 
 function App() {
-  useEffect(() => {
-    const getMovie = async () => {
-      const res = await tmdbApi.getVideos("movie", { movie_id: 3 });
-      console.log(res);
-    };
+  // const {data: trendingData, error: trendingError, isLoading, fetch: getMovie} = useFetch(tmdbApi.getTrending, { time_window: "week" }, true)
+  // const {
+  //   data: trendingData,
+  //   error: trendingError,
+  //   isLoading,
+  //   fetch: getMovie,
+  // } = useFetch(tmdbApi.getTVSearch);
 
-    getMovie();
-  }, []);
+  // useEffect(() => {
+  //   getMovie({ query: "harry" });
+  // }, []);
   
+  // console.log(trendingData);
+
   return (
     <>
       <RouterPage />
       <ToastContainer />
       <Loading />
+      {/* {!!trendingData &&
+        trendingData.results.map((e) => {
+          return (
+            <Card
+              width={150}
+              height={225}
+              image={`https://www.themoviedb.org/t/p/w220_and_h330_face${e.poster_path}`}
+              name={e.name || e.title}
+              releaseDate="Jan 15, 2023"
+              displayIcon
+              // actor={"Park Ji Sung"}
+            />
+          );
+        })} */}
     </>
   );
 }
