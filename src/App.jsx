@@ -6,7 +6,9 @@ import Card from "./components/ui/card/Card";
 import tmdbApi from "./api/tmdbApi";
 import useFetch from "./hooks/useFetch";
 import "./App.scss";
-import Discussion from "./components/ui/discussion/Discussion";
+import SearchItemResult from "./components/ui/searchItemResult/SearchItemResult";
+import Menu from "./components/ui/menu/Menu";
+import Collection from "./components/ui/collection/Collection";
 
 function App() {
   // const {data: trendingData, error: trendingError, isLoading, fetch: getMovie} = useFetch(tmdbApi.getTrending, { time_window: "week" }, true)
@@ -14,14 +16,14 @@ function App() {
     data: trendingData,
     error: trendingError,
     isLoading,
-    fetch: getMovie,
-  } = useFetch(tmdbApi.getTrending);
+    fetch: getPerson,
+  } = useFetch(tmdbApi.getPersonDetail);
 
   useEffect(() => {
-    getMovie({ time_window: "week" });
+    getPerson({ person_id: 4 });
   }, []);
 
-  console.log(trendingError);
+  console.log(trendingData, isLoading);
 
   return (
     <>
@@ -42,20 +44,23 @@ function App() {
             />
           );
         })} */}
-      {/* <Discussion
-        img="https://www.themoviedb.org/t/p/w45_and_h45_face/qpuUNplRt3TrrEratMUFZiofNWD.jpg"
-        link="Bill made a pretty dumb mistake for being a survivalist"
-        status="Open"
-        count="0"
-        date="Feb 01, 2023 at 1:07 AM"
-      />
-      <Discussion
-        img="https://www.themoviedb.org/t/p/w45_and_h45_face/qpuUNplRt3TrrEratMUFZiofNWD.jpg"
-        link="So far following the game pretty faithfully"
-        status="Open"
-        count="2"
-        date="Jan 17, 2023 at 6:04 AM"
-      /> */}
+
+      {/* <DropDown>{["Popular", "Now Playing", "Upcoming"]}</DropDown> */}
+      {/* <Menu menuContent={[{ content: 'Movies', quantity: 50 }, { content: 'TV Shows', quantity: 50 }, { content: 'People', quantity: 50 }]} /> */}
+      <Collection
+        collection={{
+          title: "THAT'S AWRAP 2022",
+          desc: "The best (and worst) from 2022",
+          style: {
+            fontSizeTitle: "40px",
+            fontSizeDesc: "20px",
+            backgroundImage:
+              "https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/5GISMqlRXMEyBrgEqyvhaMMuQmJ.jpg",
+          },
+        }}
+      >
+        <button>Check it out</button>
+      </Collection>
     </>
   );
 }

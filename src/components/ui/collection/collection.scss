@@ -1,20 +1,20 @@
 .collection__wrapper {
-    min-height: 300px;
-    height: calc(100vh / 2.5);
-    max-height: 360px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: aqua;
-    color: #fff;
-    background-image: linear-gradient(to right, rgba(var(--tmdbDarkBlue), 0.8) 0%, rgba(var(--tmdbDarkBlue), 0) 100%),
-        url('');
+  min-height: 300px;
+  height: calc(100vh / 2.5);
+  max-height: 360px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: aqua;
+  color: #fff;
+  // background-image: linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%),
+  // url('https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/5GISMqlRXMEyBrgEqyvhaMMuQmJ.jpg');
 
-    .collection__content {
-        padding: 30px 40px;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-    }
+  .collection__content {
+    padding: 30px 40px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }

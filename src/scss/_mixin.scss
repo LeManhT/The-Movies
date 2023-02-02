@@ -1,5 +1,5 @@
-@mixin flex($align-item, $justify-content) {
-  display: flex;
+@mixin flex($display, $align-item, $justify-content) {
+  display: $display;
   align-items: $align-item;
   justify-content: $justify-content;
 }
@@ -16,17 +16,17 @@
 @mixin centerAbsolute($direction: "both") {
   position: absolute;
 
-  @if ($direction == "left") {
+  @if ($direction =="left") {
     left: 50%;
     transform: translateX(-50%);
   }
 
-  @if ($direction == "right") {
+  @if ($direction =="right") {
     right: 50%;
     transform: translateY(-50%);
   }
 
-  @if ($direction == "both") {
+  @if ($direction =="both") {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
