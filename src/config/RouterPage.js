@@ -3,7 +3,8 @@ import { useRoutes } from "react-router-dom";
 import Layout from "../components/layouts/Layout";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
-import CategoryPage from "../pages/CategoryPage";
+import MovieDetailPage from "../pages/MovieDetailPage";
+import PersonPage from "../pages/PersonPage";
 import NotfoundPage from "../pages/NotfoundPage"
 
 const RouterPage = () => {
@@ -13,8 +14,12 @@ const RouterPage = () => {
       element: <Layout />,
       children: [
         {
-          path: "/:category/:type",
-          element: <CategoryPage />,
+          path: "/movie/:info",
+          element: <MovieDetailPage />,
+        },
+        {
+          path: "/person/:info",
+          element: <PersonPage />,
         },
         {
           path: "/login",

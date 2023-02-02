@@ -38,22 +38,28 @@ const tmdbApi = {
     }&${queryString.stringify(params)}`;
     return axiosClient.get(url);
   },
-//   search: (cate, params) => {
-//     const url = "search/" + category[cate];
-//     return axiosClient.get(url, params);
-//   },
-//   detail: (cate, id, params) => {
-//     const url = category[cate] + "/" + id;
-//     return axiosClient.get(url, params);
-//   },
-//   credits: (cate, id) => {
-//     const url = category[cate] + "/" + id + "/credits";
-//     return axiosClient.get(url, { params: {} });
-//   },
-//   similar: (cate, id) => {
-//     const url = category[cate] + "/" + id + "/similar";
-//     return axiosClient.get(url, { params: {} });
-//   },
+
+  getTrending: (params) => {
+    const url = `trending/all/${params.time_window}?api_key=${apiConfig.apiKey}`;
+    return axiosClient.get(url);
+
+  },
+  //   search: (cate, params) => {
+  //     const url = "search/" + category[cate];
+  //     return axiosClient.get(url, params);
+  //   },
+  //   detail: (cate, id, params) => {
+  //     const url = category[cate] + "/" + id;
+  //     return axiosClient.get(url, params);
+  //   },
+  //   credits: (cate, id) => {
+  //     const url = category[cate] + "/" + id + "/credits";
+  //     return axiosClient.get(url, { params: {} });
+  //   },
+  //   similar: (cate, id) => {
+  //     const url = category[cate] + "/" + id + "/similar";
+  //     return axiosClient.get(url, { params: {} });
+  //   },
 };
 
 export default tmdbApi;

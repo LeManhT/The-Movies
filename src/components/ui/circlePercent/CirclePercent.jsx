@@ -1,16 +1,26 @@
-import React from 'react'
-import './circlePercent.scss'
+import React from "react";
+import {
+  buildStyles,
+  CircularProgressbarWithChildren,
+} from "react-circular-progressbar";
 
-const CirclePercent = ({number, colorPrimary, colorSecondary}) => {
-    return (
-        <div class="progress-circle over50 p100">
-            <span>{number}<sup>%</sup></span>
-            <div class="left-half-clipper">
-                <div class="first50-bar" style={{backgroundColor: `${colorPrimary}`}} />
-                <div class="value-bar" style={{border: `0.45rem solid ${colorSecondary}`}} />
-            </div>
+const CirclePercent = ({ number, colorPrimary, colorSecondary }) => {
+  return (
+      <CircularProgressbarWithChildren
+        value={number}
+        background
+        backgroundPadding={6}
+        styles={buildStyles({
+          backgroundColor: "#081c22",
+          pathColor: colorPrimary,
+          trailColor: colorSecondary,
+        })}
+      >
+        <div style={{ fontSize: "13px", color: "white", fontWeight: "600" }}>
+          {number}<sup style={{ fontSize: "6px" }}>%</sup>
         </div>
-    )
-}
+      </CircularProgressbarWithChildren>
+  );
+};
 
-export default CirclePercent
+export default CirclePercent;
