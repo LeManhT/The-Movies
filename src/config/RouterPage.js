@@ -4,8 +4,8 @@ import Layout from "../components/layouts/Layout";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import MovieDetailPage from "../pages/MovieDetailPage";
+import NotfoundPage from "../pages/NotfoundPage"
 import PersonDetailPage from "../pages/PersonDetailPage";
-import NotfoundPage from "../pages/NotfoundPage";
 
 const RouterPage = () => {
   let Routes = useRoutes([

@@ -2,25 +2,23 @@ import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import RouterPage from "./config/RouterPage";
 import Loading from "./components/ui/loading/Loading";
-import Card from "./components/ui/card/Card";
 import tmdbApi from "./api/tmdbApi";
 import useFetch from "./hooks/useFetch";
 import "./App.scss";
 
 function App() {
-  // const {data: trendingData, error: trendingError, isLoading, fetch: getMovie} = useFetch(tmdbApi.getTrending, { time_window: "week" }, true)
   // const {
   //   data: trendingData,
   //   error: trendingError,
   //   isLoading,
-  //   fetch: getMovie,
-  // } = useFetch(tmdbApi.getTVSearch);
+  //   fetch: getPerson,
+  // } = useFetch(tmdbApi.getPersonDetail);
 
   // useEffect(() => {
-  //   getMovie({ query: "harry" });
+  //   getPerson({ person_id: 4 });
   // }, []);
-  
-  // console.log(trendingData);
+
+  // console.log(trendingData, isLoading);
 
   return (
     <>

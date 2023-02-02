@@ -1,0 +1,65 @@
+@use "../../../scss/" as *;
+
+.searchItem__result {
+  display: flex;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  border: 1px solid rgba(var(--lightGrey), 1);
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+
+  .searchItem__image {
+    min-width: 94px;
+    width: 94px;
+    height: 141px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  .searchItem__details {
+    width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-content: center;
+    @include flex(flex, center, initial);
+
+    .details__title {
+      h2 {
+        font-size: 1.2em;
+        line-height: 1.2em;
+        margin-bottom: 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .details__release_date {
+        span {
+          white-space: nowrap;
+          color: #999;
+        }
+      }
+    }
+
+    .details__overview {
+      margin-top: 20px;
+      height: auto;
+
+      p {
+        font-size: 1em;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin: 0;
+      }
+    }
+  }
+}
