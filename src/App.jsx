@@ -17,13 +17,12 @@ function App() {
     data: trendingData,
     error: trendingError,
     isLoading,
-    fetch: getMovie,
-  } = useFetch(tmdbApi.getTrending);
+    fetch: getPerson,
+  } = useFetch(tmdbApi.getPersonDetail);
 
   useEffect(() => {
-    getMovie({ time_window: "week" });
+    getPerson({ person_id: 4 });
   }, []);
-
 
   console.log(trendingData, isLoading);
 
@@ -49,7 +48,18 @@ function App() {
 
       {/* <DropDown>{["Popular", "Now Playing", "Upcoming"]}</DropDown> */}
       {/* <Menu menuContent={[{ content: 'Movies', quantity: 50 }, { content: 'TV Shows', quantity: 50 }, { content: 'People', quantity: 50 }]} /> */}
-      <Collection collection={{ title: "THAT'S AWRAP 2022", desc: "The best (and worst) from 2022", style: { fontSizeTitle: '40px', fontSizeDesc: '20px', backgroundImage: "https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/5GISMqlRXMEyBrgEqyvhaMMuQmJ.jpg" } }}>
+      <Collection
+        collection={{
+          title: "THAT'S AWRAP 2022",
+          desc: "The best (and worst) from 2022",
+          style: {
+            fontSizeTitle: "40px",
+            fontSizeDesc: "20px",
+            backgroundImage:
+              "https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/5GISMqlRXMEyBrgEqyvhaMMuQmJ.jpg",
+          },
+        }}
+      >
         <button>Check it out</button>
       </Collection>
     </>

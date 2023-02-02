@@ -4,8 +4,8 @@ import Layout from "../components/layouts/Layout";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import MovieDetailPage from "../pages/MovieDetailPage";
-import PersonPage from "../pages/PersonPage";
 import NotfoundPage from "../pages/NotfoundPage"
+import PersonDetailPage from "../pages/PersonDetailPage";
 
 const RouterPage = () => {
   let Routes = useRoutes([
@@ -19,7 +19,7 @@ const RouterPage = () => {
         },
         {
           path: "/person/:info",
-          element: <PersonPage />,
+          element: <PersonDetailPage />,
         },
         {
           path: "/login",
