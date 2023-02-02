@@ -14,8 +14,6 @@ const Footer = () => {
               width="130"
               height="94"
             />
-            {/* <a class="rounded logged_in" href="/u/hongnt?language=vi">Hi hongnt!</a> */}
-            {/* <div typeof="button">Hi!hongnt</div> */}
             <div className="wrapper">
               <Button
                 // width={120}
