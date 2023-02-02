@@ -6,6 +6,7 @@ import Card from "./components/ui/card/Card";
 import tmdbApi from "./api/tmdbApi";
 import useFetch from "./hooks/useFetch";
 import "./App.scss";
+import Discussion from "./components/ui/discussion/Discussion";
 
 function App() {
   // const {data: trendingData, error: trendingError, isLoading, fetch: getMovie} = useFetch(tmdbApi.getTrending, { time_window: "week" }, true)
@@ -27,7 +28,7 @@ function App() {
       <RouterPage />
       <ToastContainer />
       <Loading />
-      {!!trendingData &&
+      {/* {!!trendingData &&
         trendingData.results.map((e) => {
           return (
             <Card
@@ -40,7 +41,21 @@ function App() {
               // actor={"Park Ji Sung"}
             />
           );
-        })}
+        })} */}
+      {/* <Discussion
+        img="https://www.themoviedb.org/t/p/w45_and_h45_face/qpuUNplRt3TrrEratMUFZiofNWD.jpg"
+        link="Bill made a pretty dumb mistake for being a survivalist"
+        status="Open"
+        count="0"
+        date="Feb 01, 2023 at 1:07 AM"
+      />
+      <Discussion
+        img="https://www.themoviedb.org/t/p/w45_and_h45_face/qpuUNplRt3TrrEratMUFZiofNWD.jpg"
+        link="So far following the game pretty faithfully"
+        status="Open"
+        count="2"
+        date="Jan 17, 2023 at 6:04 AM"
+      /> */}
     </>
   );
 }
