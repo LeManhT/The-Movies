@@ -2,6 +2,7 @@ import React from "react";
 import "./dropDown.scss";
 
 const DropDown = ({ children }) => {
+  console.log(children)
   return (
     <>
       {children ? (

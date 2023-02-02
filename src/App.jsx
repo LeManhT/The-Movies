@@ -5,7 +5,6 @@ import Loading from "./components/ui/loading/Loading";
 import tmdbApi from "./api/tmdbApi";
 import useFetch from "./hooks/useFetch";
 import "./App.scss";
-import ReadMore from "./components/ui/readmore/ReadMore";
 
 function App() {
   // const {
@@ -40,7 +39,6 @@ function App() {
             />
           );
         })} */}
-      <ReadMore >Letitia Michelle Wright (born 31 October 1993) is a Guyanese-British actress. Beginning her professional career in 2011, she has played roles in several British TV series, including Top Boy (2011), Coming Up (2013), Chasing Shadows (2014), Humans (2016), the Doctor Who episode "Face the Raven" (2015) and the Black Mirror episode "Black Museum" (2017); for the latter, she received a Primetime Emmy Award nomination for Outstanding Supporting Actress in a Limited Series or Movie.</ReadMore>
     </>
   );
 }

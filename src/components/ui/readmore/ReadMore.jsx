@@ -30,10 +30,4 @@ const ReadMore = ({ children, countLetter = 300 }) => {
     );
 };
 
-// const Content = () => {
-//     return (
-
-//     );
-// }
-
 export default ReadMore

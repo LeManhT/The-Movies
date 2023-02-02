@@ -1,48 +1,45 @@
-@use '../../../scss/' as *;
+@use "../../../scss/" as *;
 
 .readMore__content_container {
+  .readMore__text {
+    width: 100%;
+    position: relative;
 
-    .readMore__text {
-        width: 100%;
-        position: relative;
-
-        &.shouldFade::after {
-            content: '';
-            width: 100%;
-            height: 22px;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 85%);
-            pointer-events: none;
-        }
-
-
-
-        .read-or-hide {
-            color: rgba(var(--tmdbLightBlue), 1);
-            cursor: pointer;
-            position: absolute;
-            z-index: 1000;
-
-            .showFull,
-            .showLess {
-                @include flex(flex, center, center);
-                padding-left: 4px;
-                position: relative;
-
-                span {
-                    margin-right: 3px;
-                }
-
-
-                &:hover {
-                    color: rgba(var(--tmdbLightGreen), 1);
-                }
-
-            }
-        }
+    &.shouldFade::after {
+      content: "";
+      width: 100%;
+      height: 22px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        #fff 85%
+      );
+      pointer-events: none;
     }
 
+    .read-or-hide {
+      color: rgba(var(--tmdbLightBlue), 1);
+      cursor: pointer;
+      position: absolute;
+      z-index: 1000;
 
+      .showFull,
+      .showLess {
+        @include flex(flex, center, center);
+        padding-left: 4px;
+        position: relative;
+
+        span {
+          margin-right: 3px;
+        }
+
+        &:hover {
+          color: rgba(var(--tmdbLightGreen), 1);
+        }
+      }
+    }
+  }
 }

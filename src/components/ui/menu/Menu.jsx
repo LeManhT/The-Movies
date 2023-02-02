@@ -7,7 +7,7 @@ const Menu = ({ menuContent }) => {
         <h3>Search Results</h3>
       </div>
       <div className="menu__scroll">
-        {menuContent.map((item) => {
+        {menuContent && menuContent.map((item) => {
           return (
             <li>
               <p>{item.content} </p>

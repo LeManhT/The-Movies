@@ -29,17 +29,6 @@
         font-size: 18px;
       }
 
-      .translate {
-        border: solid 1px $body-color;
-        border-radius: 3px;
-        padding: 0 6px;
-        
-        &:hover {
-          background-color: $body-color;
-          color: $text-color;
-        }
-      }
-
       .search-icon {
         font-size: 20px;
         color: rgb(1, 180, 228);
