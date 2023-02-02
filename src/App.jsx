@@ -9,25 +9,25 @@ import "./App.scss";
 
 function App() {
   // const {data: trendingData, error: trendingError, isLoading, fetch: getMovie} = useFetch(tmdbApi.getTrending, { time_window: "week" }, true)
-  const {
-    data: trendingData,
-    error: trendingError,
-    isLoading,
-    fetch: getMovie,
-  } = useFetch(tmdbApi.getTrending);
+  // const {
+  //   data: trendingData,
+  //   error: trendingError,
+  //   isLoading,
+  //   fetch: getMovie,
+  // } = useFetch(tmdbApi.getTVSearch);
 
-  useEffect(() => {
-    getMovie({ time_window: "week" });
-  }, []);
-
-  console.log(trendingError);
+  // useEffect(() => {
+  //   getMovie({ query: "harry" });
+  // }, []);
+  
+  // console.log(trendingData);
 
   return (
     <>
       <RouterPage />
       <ToastContainer />
       <Loading />
-      {!!trendingData &&
+      {/* {!!trendingData &&
         trendingData.results.map((e) => {
           return (
             <Card
@@ -40,7 +40,7 @@ function App() {
               // actor={"Park Ji Sung"}
             />
           );
-        })}
+        })} */}
     </>
   );
 }
