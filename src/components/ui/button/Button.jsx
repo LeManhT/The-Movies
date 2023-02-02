@@ -5,14 +5,13 @@ const Button = ({
   width,
   height,
   background,
-  // hoverBackground,
   color,
   border,
   borderRadius,
   padding,
-  children,
   fontSize,
-  fontWeight
+  fontWeight,
+  children,
 }) => {
   return (
     <button
@@ -21,13 +20,12 @@ const Button = ({
         width: `${width}px`,
         height: `${height}px`,
         background: background,
-        // hoverBackground:  hoverBackground,
         color: color,
         border: border,
         borderRadius: borderRadius,
         padding: padding,
         fontSize: fontSize,
-        fontWeight: fontWeight
+        fontWeight: fontWeight,
       }}
     >
       {children}

@@ -8,8 +8,9 @@ const Header = () => {
         <div className="item">
           <img
             src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
-            width="154"
-            height="20"
+            width={154}
+            height={20}
+            alt=""
           />
         </div>
         <div className="item">
@@ -27,14 +28,10 @@ const Header = () => {
       </div>
       <div className="header__right">
         <div className="item">
-          <div className="iconadd">
-            <i class="fa-solid fa-plus"></i>
-          </div>
+          <i class="fa-solid fa-plus plus-icon"></i>
         </div>
         <div className="item">
-          <div className="translate">
-            <p>VI</p>
-          </div>
+          <p className="translate">VI</p>
         </div>
         <div className="item">
           <p>Đăng nhập</p>
@@ -43,9 +40,7 @@ const Header = () => {
           <p>Tham gia TMDB</p>
         </div>
         <div className="item">
-          <div className="iconsearch">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
         </div>
       </div>
     </div>
