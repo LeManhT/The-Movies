@@ -38,9 +38,10 @@
 }
 
 .card__content {
-  padding: 24px 10px 12px 10px;
+  padding: 10px 10px 12px 10px;
   position: relative;
   white-space: normal;
+  line-height: 1.3;
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
@@ -63,6 +64,11 @@
       cursor: pointer;
       color: rgba(var(--tmdbLightBlue), 1);
     }
+  }
+
+  h3 {
+    font-size: 0.9em;
+    font-weight: 400;
   }
 
   p {
