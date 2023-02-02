@@ -1,57 +1,56 @@
-@use '../../../scss/' as *;
+@use "../../../scss/" as *;
 
 .menu__wrapper {
-    border: 1px solid rgba(227, 227, 227, 1);
-    border-radius: 8px;
-    width: 20%;
-    border: 1px solid rgba(var(--lightGrey), 1);
-    border-radius: var(--imageBorderRadius);
+  border: 1px solid rgba(227, 227, 227, 1);
+  border-radius: 8px;
+  width: 20%;
+  border: 1px solid rgba(var(--lightGrey), 1);
+  border-radius: var(--imageBorderRadius);
 
-    .menu__title {
-        @include flex(flex, center, space-between);
-        margin: 0;
+  .menu__title {
+    @include flex(flex, center, space-between);
+    margin: 0;
+    font-weight: 600;
+    padding: 20px;
+    color: #fff;
+    background-color: rgba(1, 180, 228, 1);
+    border-radius: var(--imageBorderRadius) var(--imageBorderRadius) 0 0;
+  }
+
+  .menu__scroll {
+    list-style-type: none;
+    padding: 8px 0;
+
+    li {
+      @include flex(flex, center, space-between);
+      width: 100%;
+      padding: 10px 20px;
+      font-size: 1em;
+      line-height: 1.4em;
+      margin: 0;
+
+      p {
         font-weight: 600;
-        padding: 20px;
-        color: #fff;
-        background-color: rgba(1, 180, 228, 1);
-        border-radius: var(--imageBorderRadius) var(--imageBorderRadius) 0 0;
-    }
+      }
 
+      span {
+        @include flex(inline-flex, center, initial);
+        font-size: 0.8em;
+        font-weight: 300;
+        font-family: "Roboto Mono", monospace;
+        background-color: rgba(0, 0, 0, 0.08);
+        padding: 0px 10px;
+        border-radius: 8px;
+      }
 
-    .menu__scroll {
-        list-style-type: none;
-        padding: 8px 0;
+      &:hover {
+        background: rgba(0, 0, 0, 0.08);
+        cursor: pointer;
 
-        li {
-            @include flex(flex, center, space-between);
-            width: 100%;
-            padding: 10px 20px;
-            font-size: 1em;
-            line-height: 1.4em;
-            margin: 0;
-
-            p {
-                font-weight: 600;
-            }
-
-            span {
-                @include flex(inline-flex, center, initial);
-                font-size: 0.8em;
-                font-weight: 300;
-                font-family: 'Roboto Mono', monospace;
-                background-color: rgba(0, 0, 0, 0.08);
-                padding: 0px 10px;
-                border-radius: 8px;
-            }
-
-            &:hover {
-                background: rgba(0, 0, 0, 0.08);
-                cursor: pointer;
-
-                span {
-                    background-color: #fff;
-                }
-            }
+        span {
+          background-color: #fff;
         }
+      }
     }
+  }
 }

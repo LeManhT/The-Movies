@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Discussion = () => {
-    return (
-        <div className="discussion">
-            <div className="discussion__avatar">
+  return (
+    <div className="discussion">
+      <div className="discussion__avatar"></div>
+    </div>
+  );
+};
 
-            </div>
-        </div>
-    )
-}
-
-export default Discussion
+export default Discussion;

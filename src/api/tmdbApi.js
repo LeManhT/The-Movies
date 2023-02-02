@@ -27,11 +27,6 @@ const tmdbApi = {
     const url = `person/${params.person_id}?api_key=${apiConfig.apiKey}`;
     return axiosClient.get(url);
   },
-  
-  // getMoviesSearch: (params) => {
-  //   const url = `search/movie?api_key=${apiConfig.apiKey}`;
-  //   return axiosClient.get(url);
-  // }
 };
 
 export default tmdbApi;

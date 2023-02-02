@@ -1,11 +1,7 @@
-import React from 'react'
-import './selectors.scss'
+import React from "react";
+import "./selectors.scss";
 const Selectors = () => {
-    return (
-        <>
+  return <></>;
+};
 
-        </>
-    )
-}
-
-export default Selectors
+export default Selectors;
