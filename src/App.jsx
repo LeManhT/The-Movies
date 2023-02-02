@@ -13,14 +13,14 @@ function App() {
     data: trendingData,
     error: trendingError,
     isLoading,
-    fetch: getMovie,
-  } = useFetch(tmdbApi.getTrending);
+    fetch: getPerson,
+  } = useFetch(tmdbApi.getPersonDetail);
 
   useEffect(() => {
-    getMovie({ time_window: "week" });
+    getPerson({person_id: 4});
   }, []);
 
-  console.log(trendingError);
+  console.log(trendingData);
 
   return (
     <>
