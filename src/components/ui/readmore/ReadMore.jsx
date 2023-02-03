@@ -16,12 +16,12 @@ const ReadMore = ({ children, countLetter = 300 }) => {
                     {isReadMore ? <div className="showFull">
                         <span>Read more</span>
                         <div className="showIcon">
-                            <i class="fa-sharp fa-solid fa-chevron-right"></i>
+                            <i className="fa-sharp fa-solid fa-chevron-right"></i>
                         </div>
                     </div> : <div className="showLess">
                         <span>Show less</span>
                         <div className="showIcon">
-                            <i class="fa-solid fa-chevron-left"></i>
+                            <i className="fa-solid fa-chevron-left"></i>
                         </div>
                     </div>}
                 </span>

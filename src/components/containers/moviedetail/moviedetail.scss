@@ -12,74 +12,168 @@
     .movieDetail__content--large {
         background-image: linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 31.5, 0.84) 30%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
         padding: 30px 40px;
-    }
 
-    .movieDetail__content {
-        display: flex;
-        justify-content: space-between;
+        .movieDetail__content {
+            display: flex;
+            justify-content: space-between;
 
-        .movieDetail__poster__wrapper {
-            width: 30%;
-        }
+            .movieDetail__poster__wrapper {
+                width: 25%;
 
-        .movieDetail__intro__wrapper {
-            width: 70%;
+                .movieDetail__poster {
+                    height: 450px;
+                    max-width: fit-content;
+                    overflow: hidden;
+                    border-radius: var(--imageBorderRadius);
 
-            .movieDetail__auto__action {
-                @include flex(flex, center, initial);
-
-                .chart {
-                    @include flex(inline-flex, center, center);
-
-                    .text {
-                        font-weight: 700;
-                        margin-left: 6px;
-                        white-space: pre-line;
-                    }
-                }
-
-                .preview__video {
-                    @include flex(flex, center, initial);
-
-                    i {
-                        margin-right: 4px;
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                        display: block;
                     }
                 }
             }
 
-            .consensus__detail {
-                width: 60px;
-                height: 60px;
-            }
+            .movieDetail__intro__wrapper {
+                width: 75%;
 
-            .movieDetail__intro__content {
-                .tagline {
-                    padding: 10px 0;
-                    margin-bottom: 0;
-                    font-size: 1.1em;
-                    font-weight: 400;
-                    font-style: italic;
-                    opacity: 0.7;
-                }
+                .movieDetail__intro {
+                    margin-bottom: 10px;
 
-                .listAuthor {
-                    @include flex(flex, center, initial);
-                    flex-wrap: wrap;
-                    margin-top: 20px;
+                    .movieDetail__title {
+                        h2 {
+                            width: 100%;
+                            margin: 0;
+                            padding: 0;
+                            font-size: 2.2rem;
+                        }
 
-                    .description {
-                        .description__title {
-                            &:hover {
-                                cursor: pointer;
-                                color: rgba(255, 255, 255, 0.7);
+                        &:hover {
+                            color: rgba(255, 255, 255, 0.7);
+                            cursor: pointer;
+                        }
+                    }
+
+                    .movieDetail__facts {
+                        display: flex;
+
+                        .certifications {
+                            border: 1px solid #ccc;
+                            padding: 1px 3px;
+                            color: #ccc;
+                            opacity: 0.8;
+                            margin-right: 8px;
+                        }
+
+                        .genres {
+                            span {
+                                &:hover {
+                                    cursor: pointer;
+                                    color: rgba(255, 255, 255, 0.7);
+                                    transition: all 0.2s linear 0.1s
+                                }
                             }
                         }
 
-                        width: 30%;
-                        margin-top: 20px;
+                        .runtime {
+                            position: relative;
+                            margin-left: 15px;
+
+                            &::before {
+                                font-size: 1.1em;
+                                line-height: 1;
+                                content: '\2022';
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                top: -3px;
+                                left: -10px;
+                                display: inline-flex;
+                                align-content: center;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+
+
+                .movieDetail__auto__action {
+                    @include flex(flex, center, initial);
+
+                    li {
+
+                        // margin-right: 20px
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .chart {
+                        @include flex(inline-flex, center, center);
+                        margin-right: 20px;
+
+                        .consensus__detail {
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                        .text {
+                            font-weight: 700;
+                            margin-left: 6px;
+                            white-space: pre-line;
+                        }
+                    }
+
+                    .preview__video {
+                        @include flex(flex, center, initial);
+
+                        &:hover {
+                            color: rgba(255, 255, 255, 0.7);
+
+                        }
+
+                        i {
+                            margin-right: 4px;
+                        }
+                    }
+                }
+
+                .consensus__detail {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .movieDetail__intro__content {
+                    .tagline {
+                        padding: 10px 0;
+                        margin-bottom: 0;
+                        font-size: 1.1em;
+                        font-weight: 400;
+                        font-style: italic;
+                        opacity: 0.7;
+                    }
+
+                    .listAuthor {
+                        @include flex(flex, center, initial);
+                        flex-wrap: wrap;
+
+                        .description {
+                            .description__title {
+                                &:hover {
+                                    cursor: pointer;
+                                    color: rgba(255, 255, 255, 0.7);
+                                }
+                            }
+
+                            width: 30%;
+                            margin-top: 20px;
+                        }
                     }
                 }
             }
         }
     }
+
+
 }
