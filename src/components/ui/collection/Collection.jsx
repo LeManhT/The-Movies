@@ -18,7 +18,7 @@ const Collection = ({ collection = {}, styleCss = {}, children }) => {
             fontWeight: styleCss.fontWeightTitle,
           }}
         >
-          <h2>{collection.title}</h2>
+          <p>{collection.title}</p>
         </div>
         <div
           className="collection__desc"
@@ -27,7 +27,7 @@ const Collection = ({ collection = {}, styleCss = {}, children }) => {
             fontWeight: styleCss.fontWeightDesc,
           }}
         >
-          <h3>{collection.desc}</h3>
+          <p>{collection.desc}</p>
         </div>
         {collection.hr ? <hr></hr> : null}
         <div className="collection__other">{children}</div>
