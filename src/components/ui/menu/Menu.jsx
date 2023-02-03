@@ -1,7 +1,6 @@
 import React from "react";
 import "./menu.scss";
 const Menu = ({ menuContent }) => {
-  console.log(menuContent);
   return (
     <div className="menu__wrapper" style={{ width: "260px" }}>
       <div className="menu__title">
@@ -11,8 +10,8 @@ const Menu = ({ menuContent }) => {
         {menuContent &&
           menuContent.map((item) => {
             return (
-              <li>
-                <p>{item.content} </p>
+              <li key={item.content}>
+                <p>{item.content}</p>
                 <span>{item.quantity}</span>
               </li>
             );

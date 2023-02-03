@@ -1,12 +1,93 @@
 @use "../../../scss/" as *;
 .search{
     width: 100%;
+    margin-bottom: 50px;
     &__input{
-        width: 100%;
+        @include size(100%, auto);
+        border-bottom: 1px solid rgba(var(--lightGrey), 1);
+        .wrapper-input{
+            width: 85%;
+            @include flex(flex, center, space-between);
+            margin: 0 auto;
+            input{
+                border: none;
+                width: 95%;
+                padding: 12px 0;
+                font-family: Arial, sans-serif;
+                font-style: italic;
+                font-size: 100%;
+                color: #acacac;
+            }
+        }
     }
     &__container{
-        @include flex(flex, center, space-between);
+        display: flex;
         width: 85%;
         margin: 0 auto;
+        padding-top: 30px;
+        .container_results{
+            width: 260px;
+            .search-tip{
+                margin-top: 20px;
+                color: #666;
+                .icon{
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    @include size(18px, 18px);
+                    font-size: 1.4em;
+                    margin-right: 3px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    color: #ffff;
+                    i{
+                        margin-left: 6px;
+                        font-size: 12px;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+        .container_list{
+            width: 100%;
+            padding-left: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            margin-left: 4px;
+            margin-right: 4px;
+            .item+.item{
+                margin-top: 20px;
+            }
+            .pagination{
+                margin-top: 30px;
+                @include flex(flex, center, center);
+                .previous{
+                    @include flex(flex, center, center);
+                    cursor: pointer;
+                    i{
+                        font-size: 11px;
+                        margin: 0 5px;
+                    }
+                }
+                    
+                }
+                .number{
+                    display: flex;
+                    p{
+                        padding: 0 5px;
+                        border-radius: 2px;
+                        margin: 0 2px;
+                        cursor: pointer;
+                    }
+                }
+                .next{
+                    @include flex(flex, center, center);
+                    cursor: pointer;
+                    i{
+                        font-size: 11px;
+                        margin: 0 5px;
+                    }
+                }
+        }
     }
 }

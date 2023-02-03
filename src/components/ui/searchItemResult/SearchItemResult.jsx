@@ -1,15 +1,29 @@
 import React from "react";
 import "./searchItemResult.scss";
 
-const SearchItemResult = ({ imgSrc, title, releaseDate, overview }) => {
+const SearchItemResult = ({
+  imgSrc,
+  title,
+  releaseDate,
+  overview,
+  isPeople,
+}) => {
   return (
     <>
       {imgSrc || title || releaseDate || overview ? (
         <div className="searchItem__result searchResult__wrapper">
-          <div className="searchItem__image">
-            <img src={imgSrc} alt="" />
+          <div
+            className="searchItem__image"
+            style={!isPeople ? { height: "141px" } : { height: "auto" }}
+          >
+            <img
+              src={imgSrc}
+              style={
+                isPeople ? { borderRadius: "8px" } : { borderRadius: "0px" }
+              }
+              alt=""
+            />
           </div>
-
           <div className="searchItem__details ">
             <div className="details__title">
               <h2>{title}</h2>
