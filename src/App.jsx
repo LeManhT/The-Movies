@@ -25,9 +25,9 @@ function App() {
   return (
     <>
       <RouterPage />
-
       <ToastContainer />
       <Loading />
+      {/* <SearchItemResult imgSrc={"https://www.themoviedb.org/t/p/w90_and_h90_face/qPZeVZqH1z7n5LVKVdzwXbAHe6s.jpg"} title={"They Call Me Trinity"} overview={"Acting • Vương Triều Cuối Cùng, The Last King, Polaroid"} ></SearchItemResult> */}
       {/* {!!trendingData &&
         trendingData.results.map((e) => {
           return (
