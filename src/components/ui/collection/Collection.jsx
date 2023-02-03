@@ -1,42 +1,60 @@
 import React from "react";
 import "./collection.scss";
 
-const Collection = ({ collection, children }) => {
+const Collection = ({
+  collection = {},
+  styleCss = {},
+  divideBar,
+  children,
+}) => {
   return (
-    <>
-      {collection || children ? (
+    <div
+      className="collection__wrapper"
+      style={{
+        backgroundImage: `linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%),
+                url("${styleCss.backgroundImage}")`,
+      }}
+    >
+      <div className="collection__content">
         <div
-          className="collection__wrapper"
+          className="collection__title"
           style={{
-            backgroundImage: `linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%),
-                url("${collection.style.backgroundImage}")`,
+            width: styleCss.widthTitle,
+            fontSize: styleCss.fontSizeTitle,
+            fontWeight: styleCss.fontWeightTitle,
+            lineHeight: styleCss.lineHeightTitle,
           }}
         >
-          <div className="collection__content">
-            <div
-              className="collection__title"
-              style={{
-                fontSize: collection.style.fontSizeTitle,
-                fontWeight: collection.style.fontWeightTitle,
-              }}
-            >
-              <h2>{collection.title}</h2>
-            </div>
-            <div
-              className="collection__desc"
-              style={{
-                fontSize: collection.style.fontSizeDesc,
-                fontWeight: collection.style.fontWeightDesc,
-              }}
-            >
-              <h3>{collection.desc}</h3>
-            </div>
-            {collection.hr ? <hr></hr> : null}
-            <div className="collection__other">{children}</div>
-          </div>
+          <p>{collection.title}</p>
         </div>
-      ) : null}
-    </>
+        {divideBar ? (
+          <hr
+            style={{
+              width: styleCss.widthDivideBar,
+              margin: styleCss.marginDivideBar,
+            }}
+          ></hr>
+        ) : null}
+        <div
+          className="collection__desc"
+          style={{
+            fontSize: styleCss.fontSizeDesc,
+            fontWeight: styleCss.fontWeightDesc,
+          }}
+        >
+          <p>{collection.desc}</p>
+        </div>
+        <div
+          className="collection__other"
+          style={{
+            width: styleCss.widthOther,
+            marginTop: styleCss.marginTopOther,
+          }}
+        >
+          {children}
+        </div>
+      </div>
+    </div>
   );
 };
 

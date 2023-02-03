@@ -23,7 +23,7 @@ const tmdbApi = {
   },
 
   getMovieDetail: (params) => {
-    const url = `movie/${params.movie_id}?api_key=${apiConfig.apiKey}`;
+    const url = `movie/${params.movie_id}?api_key=${apiConfig.apiKey}&append_to_response=${params.category}`;
     return axiosClient.get(url);
   },
 

@@ -1,0 +1,11 @@
+@use "../../../scss/" as *;
+
+.homepage {
+  @include layoutCenter;
+
+  .icon-arrow {
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 6px;
+  }
+}
