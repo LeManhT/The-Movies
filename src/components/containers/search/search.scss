@@ -1,0 +1,12 @@
+@use "../../../scss/" as *;
+.search{
+    width: 100%;
+    &__input{
+        width: 100%;
+    }
+    &__container{
+        @include flex(flex, center, space-between);
+        width: 85%;
+        margin: 0 auto;
+    }
+}

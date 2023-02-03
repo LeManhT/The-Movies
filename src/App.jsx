@@ -5,6 +5,9 @@ import Loading from "./components/ui/loading/Loading";
 import tmdbApi from "./api/tmdbApi";
 import useFetch from "./hooks/useFetch";
 import "./App.scss";
+import SearchItemResult from "./components/ui/searchItemResult/SearchItemResult";
+import Menu from "./components/ui/menu/Menu";
+import Search from "./components/containers/search/Search";
 
 function App() {
   // const {
@@ -22,6 +25,8 @@ function App() {
 
   return (
     <>
+      <Search />
+
       <RouterPage />
       <ToastContainer />
       <Loading />
@@ -39,6 +44,7 @@ function App() {
             />
           );
         })} */}
+      {/* <SearchItemResult  imgSrc="sd" title="sdfsdf" releaseDate="qq" overview="sd"/> */}
     </>
   );
 }
