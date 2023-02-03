@@ -23,7 +23,7 @@ const tmdbApi = {
   },
 
   getMovieDetail: (params) => {
-    const url = `movie/${params.movie_id}?api_key=${apiConfig.apiKey}&append_to_response=${params.category}`;
+    const url = `movie/${params.movie_id}?api_key=${apiConfig.apiKey}&append_to_response=videos`;
     return axiosClient.get(url);
   },
 
@@ -46,8 +46,8 @@ const tmdbApi = {
     return axiosClient.get(url);
   },
 
-  getCredits: (params) => {
-    const url = `movie/${params.movie_id}?api_key=${apiConfig.apiKey}`;
+  getMovieCredits: (params) => {
+    const url = `movie/${params.movie_id}/credits?api_key=${apiConfig.apiKey}`;
     return axiosClient.get(url);
   },
 };

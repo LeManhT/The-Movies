@@ -26,7 +26,7 @@ const Card = ({
 
       <div
         className="card__content"
-        style={displayIcon && { padding: "24px 10px 12px 10px" }}
+        style={displayIcon && { padding: "24px 10px 0px 10px" }}
       >
         {displayIcon && (
           <div className="content__consensus">
