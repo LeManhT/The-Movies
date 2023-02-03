@@ -1,0 +1,44 @@
+@use "../../../scss/" as *;
+
+.input__block {
+  @include flex(inline-flex, center, center);
+  width: 100%;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  //   height: 46px;
+  //   border-radius: 30px;
+
+  .input__content {
+    width: 100%;
+    height: 100%;
+    border: none;
+    // color: rgba(0, 0, 0, 0.5);
+    // font-size: 16px;
+    // padding: 0 20px;
+  }
+
+  .input__btn-block {
+    height: 100%;
+    background: #fff;
+
+    .input__btn {
+      @include flex(flex, center, center);
+      height: 100%;
+      padding: 0px 26px;
+      color: $body-color;
+      font-weight: 700;
+      border-radius: 30px;
+      background: linear-gradient(
+        to right,
+        rgba(var(--tmdbLightGreen), 1) 0%,
+        rgba(var(--tmdbLightBlue), 1) 100%
+      );
+      transition: all linear 0.2s;
+
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+  }
+}
