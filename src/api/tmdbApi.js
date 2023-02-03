@@ -33,8 +33,8 @@ const tmdbApi = {
     return axiosClient.get(url);
   }, 
 
-  getTVSearch: (params) => {
-    const url = `search/tv?api_key=${apiConfig.apiKey}&${queryString.stringify(params)}`;
+  getPeopleSearch: (params) => {
+    const url = `search/person?api_key=${apiConfig.apiKey}&${queryString.stringify(params)}`;
     return axiosClient.get(url);
   }
 };

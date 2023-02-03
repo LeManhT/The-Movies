@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="item__button">
             <Button
               styleCss={{
-                backgroundColor: "#ccc",
+                backgroundColor: "#fff",
                 color: "#01B4E4",
                 borderRadius: "4px",
                 padding: "10px 20px",
