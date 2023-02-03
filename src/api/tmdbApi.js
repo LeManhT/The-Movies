@@ -9,12 +9,16 @@ const tmdbApi = {
   },
 
   getPopularTV: (params) => {
-    const url = `tv/popular?api_key=${apiConfig.apiKey}&${queryString.stringify(params)}`;
+    const url = `tv/popular?api_key=${apiConfig.apiKey}&${queryString.stringify(
+      params
+    )}`;
     return axiosClient.get(url);
   },
 
   getPopularMovie: (params) => {
-    const url = `movie/popular?api_key=${apiConfig.apiKey}&${queryString.stringify(params)}`;
+    const url = `movie/popular?api_key=${
+      apiConfig.apiKey
+    }&${queryString.stringify(params)}`;
     return axiosClient.get(url);
   },
 
@@ -27,16 +31,25 @@ const tmdbApi = {
     const url = `person/${params.person_id}?api_key=${apiConfig.apiKey}`;
     return axiosClient.get(url);
   },
-  
+
   getMoviesSearch: (params) => {
-    const url = `search/movie?api_key=${apiConfig.apiKey}&${queryString.stringify(params)}`;
+    const url = `search/movie?api_key=${
+      apiConfig.apiKey
+    }&${queryString.stringify(params)}`;
     return axiosClient.get(url);
-  }, 
+  },
 
   getPeopleSearch: (params) => {
-    const url = `search/person?api_key=${apiConfig.apiKey}&${queryString.stringify(params)}`;
+    const url = `search/person?api_key=${
+      apiConfig.apiKey
+    }&${queryString.stringify(params)}`;
     return axiosClient.get(url);
-  }
+  },
+
+  getCredits: (params) => {
+    const url = `movie/${params.movie_id}?api_key=${apiConfig.apiKey}`;
+    return axiosClient.get(url);
+  },
 };
 
 export default tmdbApi;
