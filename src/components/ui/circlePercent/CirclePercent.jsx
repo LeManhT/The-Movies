@@ -4,7 +4,7 @@ import {
   CircularProgressbarWithChildren,
 } from "react-circular-progressbar";
 
-const CirclePercent = ({ number }) => {
+const CirclePercent = ({ number = 40 }) => {
   return (
     <CircularProgressbarWithChildren
       value={number}

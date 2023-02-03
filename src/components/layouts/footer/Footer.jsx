@@ -15,12 +15,14 @@ const Footer = () => {
           />
           <div className="item__button">
             <Button
-              background="#ffff"
-              color="#01B4E4"
-              borderRadius="4px"
-              padding="10px 20px"
-              fontSize="16px"
-              fontWeight="bold"
+              styleCss={{
+                backgroundColor: "#ccc",
+                color: "#01B4E4",
+                borderRadius: "4px",
+                padding: "10px 20px",
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
             >
               JOIN THE COMMUNITY
             </Button>

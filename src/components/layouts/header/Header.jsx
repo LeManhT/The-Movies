@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../ui/button/Button";
 import "./header.scss";
 
 const Header = () => {
@@ -31,7 +32,19 @@ const Header = () => {
           <i class="fa-solid fa-plus plus-icon"></i>
         </div>
         <div className="item">
-          <p className="translate">VI</p>
+          <Button
+            styleCss={{
+              backgroundColor: "transparent",
+              color: "#fff",
+              border: "solid 1px #fff",
+              borderRadius: "3px",
+              padding: "4px 6px",
+              fontSize: "12px",
+              fontWeight: "600",
+            }}
+          >
+            VI
+          </Button>
         </div>
         <div className="item">
           <p>Đăng nhập</p>
