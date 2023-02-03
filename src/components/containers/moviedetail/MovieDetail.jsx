@@ -22,13 +22,9 @@ const MovieDetail = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClose = () => {
-    setIsOpen(!isOpen)
-  }
-
 
   useEffect(() => {
-    fetch({ movie_id: info });
+    fetch({ movie_id: info, category: 'videos' });
   }, [])
   console.log(movieDetailData);
 
@@ -91,7 +87,7 @@ const MovieDetail = () => {
 
               <li className="preview__video">
                 <i className="fa-solid fa-play"></i>
-                <ModalPreview isOpen={isOpen} handleClose={handleClose} keyVideo={movieDetailData?.imdb_id} >
+                <ModalPreview isOpen={isOpen} onClose={() => setIsOpen(false)} keyVideo={movieDetailData?.videos.results[0].key} >
                   <span className="btn-primary" style={{ "fontWeight": "500" }} onClick={() => { setIsOpen(true) }}>Play Trailer</span>
                 </ModalPreview>
               </li>
