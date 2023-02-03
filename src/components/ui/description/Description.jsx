@@ -1,11 +1,15 @@
 import React from "react";
 
-const Description = () => {
+const Description = ({ title, desc }) => {
   return (
-    <div className="description">
-      <strong className="description__title">Status</strong>
-      <p>Released</p>
-    </div>
+    <>
+      {
+        title || desc ? <div className="description">
+          <strong className="description__title">{title}</strong>
+          <p>{desc}</p>
+        </div> : null
+      }
+    </>
   );
 };
 

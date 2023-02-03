@@ -1,3 +1,5 @@
+@use '../../../scss/' as *;
+
 .movieDetail__wrapper {
     margin: 30px 0;
     border-bottom: 1px solid var(--primaryColor);
@@ -5,9 +7,79 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg");
+    color: #fff;
 
     .movieDetail__content--large {
         background-image: linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 31.5, 0.84) 30%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
         padding: 30px 40px;
+    }
+
+    .movieDetail__content {
+        display: flex;
+        justify-content: space-between;
+
+        .movieDetail__poster__wrapper {
+            width: 30%;
+        }
+
+        .movieDetail__intro__wrapper {
+            width: 70%;
+
+            .movieDetail__auto__action {
+                @include flex(flex, center, initial);
+
+                .chart {
+                    @include flex(inline-flex, center, center);
+
+                    .text {
+                        font-weight: 700;
+                        margin-left: 6px;
+                        white-space: pre-line;
+                    }
+                }
+
+                .preview__video {
+                    @include flex(flex, center, initial);
+
+                    i {
+                        margin-right: 4px;
+                    }
+                }
+            }
+
+            .consensus__detail {
+                width: 60px;
+                height: 60px;
+            }
+
+            .movieDetail__intro__content {
+                .tagline {
+                    padding: 10px 0;
+                    margin-bottom: 0;
+                    font-size: 1.1em;
+                    font-weight: 400;
+                    font-style: italic;
+                    opacity: 0.7;
+                }
+
+                .listAuthor {
+                    @include flex(flex, center, initial);
+                    flex-wrap: wrap;
+                    margin-top: 20px;
+
+                    .description {
+                        .description__title {
+                            &:hover {
+                                cursor: pointer;
+                                color: rgba(255, 255, 255, 0.7);
+                            }
+                        }
+
+                        width: 30%;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
     }
 }
