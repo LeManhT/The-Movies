@@ -9,6 +9,7 @@ const Card = ({
   name,
   releaseDate,
   displayIcon,
+  vote,
   actor,
 }) => {
   return (
@@ -30,7 +31,7 @@ const Card = ({
       >
         {displayIcon && (
           <div className="content__consensus">
-            <CirclePercent number={80} />
+            <CirclePercent number={vote} />
           </div>
         )}
         <h2>{name}</h2>

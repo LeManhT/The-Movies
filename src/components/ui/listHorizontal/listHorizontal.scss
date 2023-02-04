@@ -24,26 +24,22 @@
       font-size: 16px;
       font-weight: 600;
 
-      .period__first,
-      .period__second {
+      .period {
         background-color: transparent;
 
         p {
           padding: 3px 20px;
-        }
-      }
-
-      .period__first {
-        p {
-          background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
-          border-radius: 20px;
-          color: rgba(var(--tmdbDarkBlue), 1);
-        }
-      }
-
-      .period__second {
-        p {
           color: $text-color;
+
+          &.active {
+            background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+            border-radius: 20px;
+            color: rgba(var(--tmdbDarkBlue), 1);
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }

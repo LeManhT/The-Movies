@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import tmdbApi from "../../../api/tmdbApi";
+import { listTimeTrending } from "../../../constants/constants";
+import useFetch from "../../../hooks/useFetch";
 import Button from "../../ui/button/Button";
 import Collection from "../../ui/collection/Collection";
 import Input from "../../ui/input/Input";
@@ -6,6 +9,26 @@ import ListHorizontal from "../../ui/listHorizontal/ListHorizontal";
 import "./home.scss";
 
 const Home = () => {
+  const [timeTrending, setTimeTrending] = useState(listTimeTrending[0]);
+
+  const {
+    data: trendingData,
+    error: trendingError,
+    isLoading,
+    fetch: getTrending,
+  } = useFetch(tmdbApi.getTrending);
+
+  useEffect(() => {
+    if (timeTrending === "Today") {
+      getTrending({ time_window: "day" });
+    }
+    if (timeTrending === "This Week") {
+      getTrending({ time_window: "week" });
+    }
+  }, [timeTrending]);
+  
+  // console.log(1)
+
   return (
     <div className="homepage">
       {/* Background 1 */}
@@ -80,7 +103,12 @@ const Home = () => {
       </Collection>
 
       {/* Trending */}
-      <ListHorizontal />
+      <ListHorizontal
+        listItemTab={listTimeTrending}
+        itemTabActive={timeTrending}
+        onClickTab={(time) => setTimeTrending(time)}
+        listData = {trendingData}
+      />
     </div>
   );
 };
