@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../ui/button/Button";
 import Collection from "../../ui/collection/Collection";
 import Input from "../../ui/input/Input";
+import ListHorizontal from "../../ui/listHorizontal/ListHorizontal";
 import "./home.scss";
 
 const Home = () => {
@@ -79,7 +80,7 @@ const Home = () => {
       </Collection>
 
       {/* Trending */}
-
+      <ListHorizontal />
     </div>
   );
 };
