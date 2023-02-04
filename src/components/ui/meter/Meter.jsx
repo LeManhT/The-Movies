@@ -1,5 +1,6 @@
 import React from "react";
 import "./meter.scss";
+import PropTypes from 'prop-types';
 
 const Meter = ({ meterCount }) => {
   return (
@@ -9,5 +10,9 @@ const Meter = ({ meterCount }) => {
     </div>
   );
 };
+
+Meter.propTypes = {
+  meterCount: PropTypes.number
+}
 
 export default Meter;

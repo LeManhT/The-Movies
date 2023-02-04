@@ -1,9 +1,9 @@
 import React from 'react'
 import ModalVideo from 'react-modal-video'
 import './modalVideo.scss'
+import PropTypes from 'prop-types';
 
 const ModalPreview = ({ keyVideo, isOpen = false, children, onClose }) => {
-    console.log(keyVideo);
     return (
         <>
             <div className="modalVideo">
@@ -12,6 +12,13 @@ const ModalPreview = ({ keyVideo, isOpen = false, children, onClose }) => {
             </div>
         </>
     )
+}
+
+ModalPreview.propTypes = {
+    keyVideo: PropTypes.string,
+    isOpen: PropTypes.bool,
+    children: PropTypes.node,
+    onClose: PropTypes.func
 }
 
 export default ModalPreview

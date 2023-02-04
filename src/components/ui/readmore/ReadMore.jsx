@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import './readMore.scss'
+import PropTypes from 'prop-types';
 
 const ReadMore = ({ children, countLetter = 300 }) => {
     const text = children;
@@ -29,5 +30,10 @@ const ReadMore = ({ children, countLetter = 300 }) => {
         </div>
     );
 };
+
+ReadMore.propTypes = {
+    children: PropTypes.node,
+    countLetter: PropTypes.number
+}
 
 export default ReadMore

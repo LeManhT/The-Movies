@@ -3,6 +3,7 @@ import {
   buildStyles,
   CircularProgressbarWithChildren,
 } from "react-circular-progressbar";
+import PropTypes from 'prop-types';
 
 const CirclePercent = ({ number = 40 }) => {
   return (
@@ -25,5 +26,9 @@ const CirclePercent = ({ number = 40 }) => {
     </CircularProgressbarWithChildren>
   );
 };
+
+CirclePercent.propTypes = {
+  number: PropTypes.number
+}
 
 export default CirclePercent;

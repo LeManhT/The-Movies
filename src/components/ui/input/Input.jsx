@@ -1,5 +1,6 @@
 import React from "react";
 import "./input.scss";
+import PropTypes from 'prop-types';
 
 const Input = ({
   type,
@@ -41,5 +42,13 @@ const Input = ({
     </div>
   );
 };
+
+Input.propTypes = {
+  type: PropTypes.string,
+  placeholder: PropTypes.string,
+  styleCss: PropTypes.object,
+  nameBtnInput: PropTypes.string,
+  onChange: PropTypes.func
+}
 
 export default Input;

@@ -1,5 +1,7 @@
 import React from "react";
 import "./discussion.scss";
+import PropTypes from 'prop-types';
+
 const Discussion = ({ img, link, status, count, date }) => {
   return (
     <div className="discussion">
@@ -21,5 +23,12 @@ const Discussion = ({ img, link, status, count, date }) => {
     </div>
   );
 };
+
+Discussion.propTypes = {
+  img: PropTypes.string,
+  status: PropTypes.string,
+  count: PropTypes.number,
+  date: PropTypes.date
+}
 
 export default Discussion;
