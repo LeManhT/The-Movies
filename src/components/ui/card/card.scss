@@ -43,13 +43,10 @@
 }
 
 .card__content {
-  padding: 10px 10px 12px 10px;
   position: relative;
   white-space: normal;
   line-height: 1.3;
   display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
   flex-direction: column;
   cursor: default;
 
@@ -63,22 +60,16 @@
 
   h2 {
     width: 100%;
-    font-size: 1em;
     overflow-wrap: break-word;
+    transition: all linear 0.18s;
 
     &:hover {
       cursor: pointer;
-      color: rgba(var(--tmdbLightBlue), 1);
-      transition: all linear 0.18s;
+      opacity: 0.6;
     }
   }
 
-  h3 {
-    font-size: 0.9em;
-    font-weight: 400;
-  }
-
   p {
-    color: rgba(0, 0, 0, 0.6);
+    cursor: text;
   }
 }

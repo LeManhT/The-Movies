@@ -7,11 +7,11 @@ const Card = ({
   heightImage,
   image,
   name,
-  releaseDate,
+  description,
   displayIcon,
   vote,
+  styleCss = {},
   onClickCard,
-  actor,
 }) => {
   return (
     <div className="card" style={{ width: `${width}px` }}>
@@ -28,16 +28,35 @@ const Card = ({
 
       <div
         className="card__content"
-        style={displayIcon && { padding: "24px 10px 0px 10px" }}
+        style={{
+          padding: "24px 10px 0px 10px",
+          textAlign: styleCss.textAlign,
+        }}
       >
         {displayIcon && (
           <div className="content__consensus">
             <CirclePercent number={vote} />
           </div>
         )}
-        <h2 onClick={onClickCard}>{name}</h2>
-        {!displayIcon && <h3>{actor}</h3>}
-        <p>{releaseDate}</p>
+        <h2
+          onClick={onClickCard}
+          style={{
+            fontSize: styleCss.fontSizeName,
+            fontWeight: styleCss.fontWeightName,
+            color: styleCss.textColorName,
+          }}
+        >
+          {name}
+        </h2>
+        <p
+          style={{
+            fontSize: styleCss.fontSizeDesc,
+            fontWeight: styleCss.fontWeightDesc,
+            color: styleCss.textColorDesc,
+          }}
+        >
+          {description}
+        </p>
       </div>
     </div>
   );

@@ -13,6 +13,11 @@ const tmdbApi = {
     return axiosClient.get(url);
   },
 
+  getTopRated: (params) => {
+    const url = `${params.category}/top_rated?api_key=${apiConfig.apiKey}&page=${params.page}`;
+    return axiosClient.get(url);
+  },
+
   getMovieDetail: (params) => {
     const url = `movie/${params.movie_id}?api_key=${apiConfig.apiKey}&append_to_response=videos`;
     return axiosClient.get(url);

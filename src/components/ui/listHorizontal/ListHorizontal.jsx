@@ -7,6 +7,9 @@ const ListHorizontal = ({
   itemTabActive,
   onClickTab,
   styleCssTabPrimary = {
+    backgroundImage: "",
+    backgroundSize: "",
+    backgroundPosition: "",
     colorTitle: "$text-color",
     borderMain: "1px solid yellow",
     textColor: "blue",
@@ -18,7 +21,11 @@ const ListHorizontal = ({
   children,
 }) => {
   return (
-    <div className="list-horizontal">
+    <div className="list-horizontal" style={{
+      backgroundImage: `url("${styleCssTabPrimary.backgroundImage}")`,
+      backgroundSize: styleCssTabPrimary.backgroundSize,
+      backgroundPosition: styleCssTabPrimary.backgroundPosition
+    }}>
       <div className="list-horizontal__header">
         <p
           className="list-horizontal__title"
