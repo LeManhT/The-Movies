@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import tmdbApi from "../../../api/tmdbApi";
-import { listTimeTrending } from "../../../constants/constants";
+import { TRENDING } from "../../../constants/constants";
 import useFetch from "../../../hooks/useFetch";
 import Button from "../../ui/button/Button";
 import Collection from "../../ui/collection/Collection";
 import Input from "../../ui/input/Input";
+import Card from "../../ui/card/Card";
 import ListHorizontal from "../../ui/listHorizontal/ListHorizontal";
+import { ToastError } from "../../../utils/toast";
 import "./home.scss";
 
 const Home = () => {
-  const [timeTrending, setTimeTrending] = useState(listTimeTrending[0]);
-
+  const navigate = useNavigate();
+  const [timeTrending, setTimeTrending] = useState(
+    TRENDING.listTimeTrending[0]
+  );
   const {
     data: trendingData,
     error: trendingError,
@@ -26,8 +31,14 @@ const Home = () => {
       getTrending({ time_window: "week" });
     }
   }, [timeTrending]);
-  
-  // console.log(1)
+
+  const handleClickCardPoster = (item) => {
+    if (item.media_type === "movie") {
+      navigate(`/movie/${item.id}`);
+    } else {
+      ToastError("Khong code page TV Detail !!!");
+    }
+  };
 
   return (
     <div className="homepage">
@@ -104,11 +115,40 @@ const Home = () => {
 
       {/* Trending */}
       <ListHorizontal
-        listItemTab={listTimeTrending}
+        titleTab={TRENDING.title}
+        listItemTab={TRENDING.listTimeTrending}
         itemTabActive={timeTrending}
         onClickTab={(time) => setTimeTrending(time)}
-        listData = {trendingData}
-      />
+        styleCssTabPrimary={{
+          colorTitle: "$text-color",
+          borderMain: "1px solid rgba(var(--tmdbDarkBlue), 1)",
+          textColor: "rgba(var(--tmdbDarkBlue), 1)",
+          backgroundColor: "transparent",
+          textColorActive: "#a6efc4",
+          backgroundColorActive: "#032541",
+        }}
+      >
+        {trendingData ? (
+          trendingData.results.map((item) => {
+            return (
+              <div className="item-trending" key={item.id}>
+                <Card
+                  width={150}
+                  heightImage={225}
+                  image={`https://www.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`}
+                  name={item.name || item.title}
+                  releaseDate={item.release_date}
+                  displayIcon
+                  vote={Math.round(item.vote_average * 10)}
+                  onClickCard={() => handleClickCardPoster(item)}
+                />
+              </div>
+            );
+          })
+        ) : (
+          <div>Chua co du lieu</div>
+        )}
+      </ListHorizontal>
     </div>
   );
 };

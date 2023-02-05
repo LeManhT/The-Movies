@@ -4,19 +4,20 @@ import CirclePercent from "../circlePercent/CirclePercent";
 import "./card.scss";
 const Card = ({
   width,
-  height,
+  heightImage,
   image,
   name,
   releaseDate,
   displayIcon,
   vote,
+  onClickCard,
   actor,
 }) => {
   return (
     <div className="card" style={{ width: `${width}px` }}>
-      <div className="card__image" style={{ height: `${height}px` }}>
-        <div className="image__wrapper">
-          <img src={image} alt="" />
+      <div className="card__image" style={{ height: `${heightImage}px` }}>
+        <div className="image__wrapper" onClick={onClickCard}>
+          <img src={image} alt={name} />
         </div>
         {displayIcon && (
           <div className="image__options">
@@ -34,7 +35,7 @@ const Card = ({
             <CirclePercent number={vote} />
           </div>
         )}
-        <h2>{name}</h2>
+        <h2 onClick={onClickCard}>{name}</h2>
         {!displayIcon && <h3>{actor}</h3>}
         <p>{releaseDate}</p>
       </div>

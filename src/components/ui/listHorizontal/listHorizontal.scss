@@ -13,28 +13,28 @@
     .list-horizontal__title {
       font-size: 24px;
       font-weight: 600;
-      color: $text-color;
+      // color: $text-color;
       margin-right: 20px;
     }
 
-    .list-horizontal__period {
+    .list-horizontal__main {
       @include flex(flex, center, center);
-      border: 1px solid rgba(var(--tmdbLightGreen), 1);
+      // border: 1px solid rgba(var(--tmdbLightGreen), 1);
       border-radius: 20px;
       font-size: 16px;
       font-weight: 600;
 
-      .period {
-        background-color: transparent;
+      .detail {
+        // background-color: transparent;
 
         p {
           padding: 3px 20px;
-          color: $text-color;
+          // color:  rgba(var(--tmdbDarkBlue), 1);
 
           &.active {
-            background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+            // background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
             border-radius: 20px;
-            color: rgba(var(--tmdbDarkBlue), 1);
+            // color: rgba(var(--tmdbDarkBlue), 1);
           }
 
           &:hover {
@@ -61,9 +61,5 @@
     &.scroll::-webkit-scrollbar-thumb:hover {
       background: #a5a5a5;
     }
-  }
-
-  .list-horizontal__item + .list-horizontal__item {
-    margin-left: 20px;
   }
 }

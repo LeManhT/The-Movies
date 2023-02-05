@@ -6,6 +6,11 @@
     width: 100%;
     background: #dbdbdb;
     overflow: hidden;
+    transition: all linear 0.18s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     .image__wrapper {
       &:hover {
@@ -64,6 +69,7 @@
     &:hover {
       cursor: pointer;
       color: rgba(var(--tmdbLightBlue), 1);
+      transition: all linear 0.18s;
     }
   }
 

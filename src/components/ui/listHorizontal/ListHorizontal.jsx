@@ -1,27 +1,58 @@
 import React from "react";
-import Card from "../card/Card";
 import "./listHorizontal.scss";
 
 const ListHorizontal = ({
+  titleTab,
   listItemTab = [],
-  onClickTab,
   itemTabActive,
-  listData,
+  onClickTab,
+  styleCssTabPrimary = {
+    colorTitle: "$text-color",
+    borderMain: "1px solid yellow",
+    textColor: "blue",
+    backgroundColor: "transparent",
+    textColorActive: "red",
+    backgroundColorActive:
+      "linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%)",
+  },
+  children,
 }) => {
   return (
     <div className="list-horizontal">
       <div className="list-horizontal__header">
-        <p className="list-horizontal__title">Trending</p>
-        <div className="list-horizontal__period">
+        <p
+          className="list-horizontal__title"
+          style={{ color: styleCssTabPrimary.colorTitle }}
+        >
+          {titleTab}
+        </p>
+        <div
+          className="list-horizontal__main"
+          style={{ border: styleCssTabPrimary.borderMain }}
+        >
           {listItemTab &&
             listItemTab.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="period"
+                  className="detail"
+                  style={{
+                    backgroundColor: styleCssTabPrimary.backgroundColor,
+                  }}
                   onClick={() => onClickTab(item)}
                 >
-                  <p className={item === itemTabActive ? "active" : ""}>
+                  <p
+                    className={item === itemTabActive ? "active" : ""}
+                    style={{
+                      color:
+                        item === itemTabActive
+                          ? styleCssTabPrimary.textColorActive
+                          : styleCssTabPrimary.textColor,
+                      background:
+                        item === itemTabActive &&
+                        styleCssTabPrimary.backgroundColorActive,
+                    }}
+                  >
                     {item}
                   </p>
                 </div>
@@ -29,27 +60,7 @@ const ListHorizontal = ({
             })}
         </div>
       </div>
-      <div className="list-horizontal__content scroll">
-        {listData ? (
-          listData.results.map((item) => {
-            return (
-              <div className="list-horizontal__item" key={item.id}>
-                <Card
-                  width={150}
-                  height={225}
-                  image={`https://www.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`}
-                  name={item.name || item.title}
-                  releaseDate={item.release_date}
-                  displayIcon
-                  vote={Math.round(item.vote_average * 10)}
-                />
-              </div>
-            );
-          })
-        ) : (
-          <div>Chua co du lieu</div>
-        )}
-      </div>
+      <div className="list-horizontal__content scroll">{children}</div>
     </div>
   );
 };

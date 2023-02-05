@@ -8,17 +8,8 @@ const tmdbApi = {
     return axiosClient.get(url);
   },
 
-  getPopularTV: (params) => {
-    const url = `tv/popular?api_key=${apiConfig.apiKey}&${queryString.stringify(
-      params
-    )}`;
-    return axiosClient.get(url);
-  },
-
-  getPopularMovie: (params) => {
-    const url = `movie/popular?api_key=${
-      apiConfig.apiKey
-    }&${queryString.stringify(params)}`;
+  getPopular: (params) => {
+    const url = `${params.category}/popular?api_key=${apiConfig.apiKey}&page=${params.page}`;
     return axiosClient.get(url);
   },
 

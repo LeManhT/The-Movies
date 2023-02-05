@@ -8,4 +8,8 @@
     display: inline-block;
     margin-left: 6px;
   }
+
+  .item-trending + .item-trending {
+    margin-left: 20px;
+  }
 }
