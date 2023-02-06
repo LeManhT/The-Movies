@@ -28,7 +28,7 @@ Discussion.propTypes = {
   img: PropTypes.string,
   status: PropTypes.string,
   count: PropTypes.number,
-  date: PropTypes.date
+  date: PropTypes.string
 }
 
 export default Discussion;

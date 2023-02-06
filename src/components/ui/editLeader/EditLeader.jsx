@@ -6,9 +6,7 @@ const EditLeader = ({ editCount, editName, imgSrc }) => {
   return (
     <div className="editLeader">
       <div className="editLeader__avatar">
-        <a href="">
-          <img src={imgSrc} alt="" />
-        </a>
+        <img src={imgSrc} alt="" />
       </div>
       <div className="editLeader__info">
         <p className="editCount">
