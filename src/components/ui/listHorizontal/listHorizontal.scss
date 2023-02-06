@@ -1,9 +1,9 @@
 @use "../../../scss/" as *;
 
 .list-horizontal {
-  background-image: url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg");
-  background-position: 50% 200px;
-  background-size: var(--maxPrimaryPageWidth);
+  // background-image: url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg");
+  // background-position: 50% 200px;
+  // background-size: var(--maxPrimaryPageWidth);
   background-repeat: no-repeat;
 
   .list-horizontal__header {
@@ -13,37 +13,33 @@
     .list-horizontal__title {
       font-size: 24px;
       font-weight: 600;
-      color: $text-color;
+      // color: $text-color;
       margin-right: 20px;
     }
 
-    .list-horizontal__period {
+    .list-horizontal__main {
       @include flex(flex, center, center);
-      border: 1px solid rgba(var(--tmdbLightGreen), 1);
+      // border: 1px solid rgba(var(--tmdbLightGreen), 1);
       border-radius: 20px;
       font-size: 16px;
       font-weight: 600;
 
-      .period__first,
-      .period__second {
-        background-color: transparent;
+      .detail {
+        // background-color: transparent;
 
         p {
           padding: 3px 20px;
-        }
-      }
+          // color:  rgba(var(--tmdbDarkBlue), 1);
 
-      .period__first {
-        p {
-          background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
-          border-radius: 20px;
-          color: rgba(var(--tmdbDarkBlue), 1);
-        }
-      }
+          &.active {
+            // background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+            border-radius: 20px;
+            // color: rgba(var(--tmdbDarkBlue), 1);
+          }
 
-      .period__second {
-        p {
-          color: $text-color;
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
@@ -65,9 +61,5 @@
     &.scroll::-webkit-scrollbar-thumb:hover {
       background: #a5a5a5;
     }
-  }
-
-  .list-horizontal__item + .list-horizontal__item {
-    margin-left: 20px;
   }
 }

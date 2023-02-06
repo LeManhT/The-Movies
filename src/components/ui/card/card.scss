@@ -6,15 +6,37 @@
     width: 100%;
     background: #dbdbdb;
     overflow: hidden;
+    transition: all linear 0.18s;
+
+    &:hover {
+      transform: scale(1.05);
+      .image__wrapper {
+        .image__icon-play {
+          transform: scale(1.4) translate(-34%, -34%);
+        }
+      }
+    }
 
     .image__wrapper {
+      position: relative;
       &:hover {
         cursor: pointer;
       }
       img {
+        display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+
+      .image__icon-play {
+        position: absolute;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 46px;
+        transition: all linear 0.18s;
       }
     }
 
@@ -38,13 +60,10 @@
 }
 
 .card__content {
-  padding: 10px 10px 12px 10px;
   position: relative;
   white-space: normal;
   line-height: 1.3;
   display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
   flex-direction: column;
   cursor: default;
 
@@ -58,21 +77,16 @@
 
   h2 {
     width: 100%;
-    font-size: 1em;
     overflow-wrap: break-word;
+    transition: all linear 0.18s;
 
     &:hover {
       cursor: pointer;
-      color: rgba(var(--tmdbLightBlue), 1);
+      opacity: 0.6;
     }
   }
 
-  h3 {
-    font-size: 0.9em;
-    font-weight: 400;
-  }
-
   p {
-    color: rgba(0, 0, 0, 0.6);
+    cursor: text;
   }
 }

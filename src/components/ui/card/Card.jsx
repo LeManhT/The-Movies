@@ -4,38 +4,64 @@ import CirclePercent from "../circlePercent/CirclePercent";
 import "./card.scss";
 const Card = ({
   width,
-  height,
+  heightImage,
   image,
   name,
-  releaseDate,
-  displayIcon,
-  actor,
+  description,
+  displayIconCirclePercent,
+  vote,
+  styleCss = {},
+  displayIconPlay,
+  onClickCard,
 }) => {
   return (
     <div className="card" style={{ width: `${width}px` }}>
-      <div className="card__image" style={{ height: `${height}px` }}>
-        <div className="image__wrapper">
-          <img src={image} alt="" />
+      <div className="card__image" style={{ height: `${heightImage}px` }}>
+        <div className="image__wrapper" onClick={onClickCard}>
+          {displayIconPlay && (
+            <div className="image__icon-play">
+              <i class="fas fa-play"></i>
+            </div>
+          )}
+          <img src={image} alt={name} />
         </div>
-        {displayIcon && (
-          <div className="image__options">
-            <CgMoreO />
-          </div>
-        )}
+
+        <div className="image__options">
+          <CgMoreO />
+        </div>
       </div>
 
       <div
         className="card__content"
-        style={displayIcon && { padding: "24px 10px 0px 10px" }}
+        style={{
+          padding: "24px 10px 0px 10px",
+          textAlign: styleCss.textAlign,
+        }}
       >
-        {displayIcon && (
+        {displayIconCirclePercent && (
           <div className="content__consensus">
-            <CirclePercent number={80} />
+            <CirclePercent number={vote} />
           </div>
         )}
-        <h2>{name}</h2>
-        {!displayIcon && <h3>{actor}</h3>}
-        <p>{releaseDate}</p>
+        <h2
+          onClick={onClickCard}
+          style={{
+            fontSize: styleCss.fontSizeName,
+            fontWeight: styleCss.fontWeightName,
+            color: styleCss.textColorName,
+          }}
+        >
+          {name}
+        </h2>
+        <p
+          style={{
+            fontSize: styleCss.fontSizeDesc,
+            fontWeight: styleCss.fontWeightDesc,
+            color: styleCss.textColorDesc,
+          }}
+        >
+          {description}
+        </p>
       </div>
     </div>
   );
