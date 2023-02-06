@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import tmdbApi from "../../../api/tmdbApi";
-import { LASTEST_TRAILERS, TRENDING } from "../../../constants/constants";
+import {
+  LASTEST_TRAILERS,
+  TRENDING,
+  POPULAR,
+} from "../../../constants/constants";
 import useFetch from "../../../hooks/useFetch";
 import Button from "../../ui/button/Button";
 import Collection from "../../ui/collection/Collection";
@@ -10,6 +14,7 @@ import Card from "../../ui/card/Card";
 import ListHorizontal from "../../ui/listHorizontal/ListHorizontal";
 import { ToastError } from "../../../utils/toast";
 import "./home.scss";
+import EditLeader from "../../ui/editLeader/EditLeader";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -19,6 +24,10 @@ const Home = () => {
   const [categoryTrailers, setCategoryTrailers] = useState(
     LASTEST_TRAILERS.listCategory[0]
   );
+  const [categoryPopular, setCategoryPopular] = useState(
+    POPULAR.listCategory[0]
+  );
+
   const {
     data: trendingData,
     error: trendingError,
@@ -33,6 +42,16 @@ const Home = () => {
     fetch: getTopRated,
   } = useFetch(tmdbApi.getTopRated);
 
+  const {
+    data: popularData,
+    error: popularError,
+    isLoadingPopular,
+    fetch: getPopular,
+  } = useFetch(tmdbApi.getPopular);
+
+  // console.log(popularData);
+
+  // get trending
   useEffect(() => {
     if (timeTrending === "Today") {
       getTrending({ time_window: "day" });
@@ -42,21 +61,38 @@ const Home = () => {
     }
   }, [timeTrending]);
 
+  // get trailers
   useEffect(() => {
     if (categoryTrailers === "On TV") {
-      getTopRated({ category: "movie", page: 1 });
+      getTopRated({ category: "tv", page: 1 });
     }
     if (categoryTrailers === "In Theaters") {
-      getTopRated({ category: "tv", page: 1 });
+      getTopRated({ category: "movie", page: 1 });
     }
   }, [categoryTrailers]);
 
-  const handleClickCardPoster = (item) => {
+  // get popular
+  useEffect(() => {
+    if (categoryPopular === "On TV") {
+      getPopular({ category: "tv", page: 1 });
+    }
+    if (categoryPopular === "In Theaters") {
+      getPopular({ category: "movie", page: 1 });
+    }
+  }, [categoryPopular]);
+
+  const handleClickCardTrending = (item) => {
     if (item.media_type === "movie") {
       navigate(`/movie/${item.id}`);
     } else {
       ToastError("Khong code page TV Detail !!!");
     }
+  };
+
+  const handleClickCardPopular = (item) => {
+    item.release_date
+      ? navigate(`/movie/${item.id}`)
+      : ToastError("Khong code page TV Detail !!!");
   };
 
   return (
@@ -160,11 +196,12 @@ const Home = () => {
                   heightImage={225}
                   image={`https://www.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`}
                   name={item.name || item.title}
-                  description={item.release_date}
+                  description={item.release_date || item.first_air_date}
                   displayIcon
                   vote={Math.round(item.vote_average * 10)}
                   styleCss={{
                     textAlign: "left",
+                    paddingContent: "24px 10px 0px 10px",
                     fontSizeName: "16px",
                     fontWeightName: "700",
                     textColorName: "#000",
@@ -173,7 +210,7 @@ const Home = () => {
                     textColorDesc: "rgba(0,0,0,0.6)",
                   }}
                   displayIconCirclePercent
-                  onClickCard={() => handleClickCardPoster(item)}
+                  onClickCard={() => handleClickCardTrending(item)}
                 />
               </div>
             );
@@ -183,6 +220,7 @@ const Home = () => {
         )}
       </ListHorizontal>
 
+      {/* Latest Trailers */}
       <ListHorizontal
         titleTab={LASTEST_TRAILERS.title}
         listItemTab={LASTEST_TRAILERS.listCategory}
@@ -214,6 +252,7 @@ const Home = () => {
                   description="Official Trailer"
                   styleCss={{
                     textAlign: "center",
+                    paddingContent: "24px 10px 0px 10px",
                     fontSizeName: "20px",
                     fontWeightName: "600",
                     textColorName: "#fff",
@@ -231,6 +270,56 @@ const Home = () => {
           <div>Chua co du lieu</div>
         )}
       </ListHorizontal>
+
+      {/* What's Popular */}
+      <ListHorizontal
+        titleTab={POPULAR.title}
+        listItemTab={POPULAR.listCategory}
+        itemTabActive={categoryPopular}
+        onClickTab={(category) => setCategoryPopular(category)}
+        styleCssTabPrimary={{
+          colorTitle: "#000",
+          borderMain: "1px solid rgba(var(--tmdbDarkBlue), 1)",
+          textColor: "rgba(var(--tmdbDarkBlue), 1)",
+          backgroundColor: "transparent",
+          textColorActive: "#a6efc4",
+          backgroundColorActive: "rgba(var(--tmdbDarkBlue), 1)",
+        }}
+      >
+        {popularData ? (
+          popularData.results.map((item) => {
+            return (
+              <div className="item-trending" key={item.id}>
+                <Card
+                  width={150}
+                  heightImage={225}
+                  image={`https://www.themoviedb.org/t/p/w220_and_h330_face${item.poster_path}`}
+                  name={item.name || item.title}
+                  description={item.release_date || item.first_air_date}
+                  displayIcon
+                  vote={Math.round(item.vote_average * 10)}
+                  styleCss={{
+                    textAlign: "left",
+                    paddingContent: "24px 10px 0px 10px",
+                    fontSizeName: "16px",
+                    fontWeightName: "700",
+                    textColorName: "#000",
+                    fontSizeDesc: "16px",
+                    fontWeightDesc: "400",
+                    textColorDesc: "rgba(0,0,0,0.6)",
+                  }}
+                  displayIconCirclePercent
+                  onClickCard={() => handleClickCardPopular(item)}
+                />
+              </div>
+            );
+          })
+        ) : (
+          <div>Chua co du lieu</div>
+        )}
+      </ListHorizontal>
+
+      <EditLeader title="Tung" imgAvatar={"https://www.gravatar.com/avatar/3af6511cf44a709e6ae5b612903c846c.jpg?s=64"}/>
     </div>
   );
 };

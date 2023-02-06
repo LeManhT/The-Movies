@@ -26,15 +26,17 @@ const Card = ({
           <img src={image} alt={name} />
         </div>
 
-        <div className="image__options">
-          <CgMoreO />
-        </div>
+        {(!displayIconCirclePercent || !displayIconPlay) && (
+          <div className="image__options">
+            <CgMoreO />
+          </div>
+        )}
       </div>
 
       <div
         className="card__content"
         style={{
-          padding: "24px 10px 0px 10px",
+          padding: styleCss.paddingContent,
           textAlign: styleCss.textAlign,
         }}
       >

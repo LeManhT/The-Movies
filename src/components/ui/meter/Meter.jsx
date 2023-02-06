@@ -1,11 +1,17 @@
 import React from "react";
 import "./meter.scss";
 
-const Meter = ({ meterCount }) => {
+const Meter = ({ meterCount, styleCss = {} }) => {
   return (
     <div className="meter">
-      <div className="gauge"></div>
-      <h4 className="meterCount">{meterCount}</h4>
+      <div
+        className="gauge"
+        style={{
+          width: styleCss.widthGauge,
+          backgroundColor: styleCss.backgroundGauge,
+        }}
+      />
+      <p className="meterCount">{meterCount}</p>
     </div>
   );
 };

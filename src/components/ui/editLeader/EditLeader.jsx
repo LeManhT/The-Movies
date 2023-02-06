@@ -1,20 +1,27 @@
 import React from "react";
+import Meter from "../meter/Meter";
 import "./editLeader.scss";
 
-const EditLeader = ({ editCount, editName, imgSrc }) => {
+const EditLeader = ({ title, imgAvatar }) => {
   return (
     <div className="editLeader">
       <div className="editLeader__avatar">
-        <a href="">
-          <img src={imgSrc} alt="" />
-        </a>
+        <img src={imgAvatar} alt={title} />
       </div>
       <div className="editLeader__info">
-        <p className="editCount">
-          {editCount}
-          <br />
-          <span>{editName}</span>
-        </p>
+        <div className="editLeader__title">RuiZafon</div>
+        <div className="edit__desc">
+         
+            <Meter
+              meterCount={273293}
+              styleCss={{ widthGauge: "200px", backgroundGauge: "red" }}
+            />
+            <Meter
+              meterCount={27323}
+              styleCss={{ widthGauge: "300px", backgroundGauge: "blue" }}
+            />
+          
+        </div>
       </div>
     </div>
   );

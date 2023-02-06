@@ -1,27 +1,25 @@
 .editLeader {
   display: flex;
   align-items: center;
-  width: 260px;
-  min-width: 260px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  height: 45px;
+
+  .editLeader__avatar {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+
+    img {
+      display: block;
+      border-radius: 50%;
+    }
+  }
 
   .editLeader__info {
-    padding-left: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    p {
+    .editLeader__title {
+      font-size: 20px;
       font-weight: 600;
-      margin: 0;
-
-      span {
-        text-decoration: none;
-        color: #000;
-        font-weight: 300;
-      }
     }
   }
 }

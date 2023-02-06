@@ -1,6 +1,5 @@
 import axiosClient from "./axiosClient";
 import apiConfig from "./apiConfig";
-import queryString from "query-string";
 
 const tmdbApi = {
   getTrending: (params) => {
@@ -28,17 +27,10 @@ const tmdbApi = {
     return axiosClient.get(url);
   },
 
-  getMoviesSearch: (params) => {
-    const url = `search/movie?api_key=${
+  getSearch: (params) => {
+    const url = `search/${params.category}?api_key=${
       apiConfig.apiKey
-    }&${queryString.stringify(params)}`;
-    return axiosClient.get(url);
-  },
-
-  getPeopleSearch: (params) => {
-    const url = `search/person?api_key=${
-      apiConfig.apiKey
-    }&${queryString.stringify(params)}`;
+    }&page=${params.page}`;
     return axiosClient.get(url);
   },
 
