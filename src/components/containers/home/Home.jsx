@@ -172,6 +172,7 @@ const Home = () => {
                     fontWeightDesc: "400",
                     textColorDesc: "rgba(0,0,0,0.6)",
                   }}
+                  displayIconCirclePercent
                   onClickCard={() => handleClickCardPoster(item)}
                 />
               </div>
@@ -220,6 +221,7 @@ const Home = () => {
                     fontWeightDesc: "400",
                     textColorDesc: "#fff",
                   }}
+                  displayIconPlay
                   // onClickCard={() => handleClickCardPoster(item)}
                 />
               </div>

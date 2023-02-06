@@ -8,22 +8,27 @@ const Card = ({
   image,
   name,
   description,
-  displayIcon,
+  displayIconCirclePercent,
   vote,
   styleCss = {},
+  displayIconPlay,
   onClickCard,
 }) => {
   return (
     <div className="card" style={{ width: `${width}px` }}>
       <div className="card__image" style={{ height: `${heightImage}px` }}>
         <div className="image__wrapper" onClick={onClickCard}>
+          {displayIconPlay && (
+            <div className="image__icon-play">
+              <i class="fas fa-play"></i>
+            </div>
+          )}
           <img src={image} alt={name} />
         </div>
-        {displayIcon && (
-          <div className="image__options">
-            <CgMoreO />
-          </div>
-        )}
+
+        <div className="image__options">
+          <CgMoreO />
+        </div>
       </div>
 
       <div
@@ -33,7 +38,7 @@ const Card = ({
           textAlign: styleCss.textAlign,
         }}
       >
-        {displayIcon && (
+        {displayIconCirclePercent && (
           <div className="content__consensus">
             <CirclePercent number={vote} />
           </div>
