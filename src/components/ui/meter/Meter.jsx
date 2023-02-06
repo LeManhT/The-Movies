@@ -8,7 +8,7 @@ const Meter = ({ meterCount, styleCss = {} }) => {
         className="gauge"
         style={{
           width: styleCss.widthGauge,
-          backgroundColor: styleCss.backgroundGauge,
+          background: styleCss.backgroundGauge,
         }}
       />
       <p className="meterCount">{meterCount}</p>

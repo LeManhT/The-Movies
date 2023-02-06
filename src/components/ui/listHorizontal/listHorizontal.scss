@@ -5,6 +5,7 @@
   // background-position: 50% 200px;
   // background-size: var(--maxPrimaryPageWidth);
   background-repeat: no-repeat;
+  transition: all linear 0.8s;
 
   .list-horizontal__header {
     @include flex(flex, center, flex-start);

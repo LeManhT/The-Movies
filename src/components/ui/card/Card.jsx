@@ -13,11 +13,12 @@ const Card = ({
   styleCss = {},
   displayIconPlay,
   onClickCard,
+  onHoverCard
 }) => {
   return (
     <div className="card" style={{ width: `${width}px` }}>
       <div className="card__image" style={{ height: `${heightImage}px` }}>
-        <div className="image__wrapper" onClick={onClickCard}>
+        <div className="image__wrapper" onClick={onClickCard} onMouseOver={onHoverCard}>
           {displayIconPlay && (
             <div className="image__icon-play">
               <i class="fas fa-play"></i>
