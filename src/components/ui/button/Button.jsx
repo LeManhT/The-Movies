@@ -2,7 +2,6 @@ import React from "react";
 import "./button.scss";
 import PropTypes from 'prop-types';
 
-
 const Button = ({
   styleCss = {
     backgroundColor: "#000",

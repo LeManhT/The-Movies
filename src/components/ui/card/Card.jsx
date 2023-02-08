@@ -17,7 +17,6 @@ const Card = ({
   onHoverCard,
   isRecommendation,
   vote_average
-
 }) => {
 
   return (
