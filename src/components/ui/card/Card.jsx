@@ -14,10 +14,9 @@ const Card = ({
   styleCss = {},
   displayIconPlay,
   onClickCard,
-  onHoverCard
+  onHoverCard,
   isRecommendation,
   vote_average
-
 }) => {
 
   return (
