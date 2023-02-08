@@ -31,6 +31,7 @@ const tmdbApi = {
     const url = `search/${params.category}?api_key=${
       apiConfig.apiKey
     }&page=${params.page}`;
+
     return axiosClient.get(url);
   },
 
@@ -38,6 +39,14 @@ const tmdbApi = {
     const url = `movie/${params.movie_id}/credits?api_key=${apiConfig.apiKey}`;
     return axiosClient.get(url);
   },
+  getMovieKeywords: (params) => {
+    const url = `movie/${params.movie_id}/keywords?api_key=${apiConfig.apiKey}`;
+    return axiosClient.get(url)
+  },
+  getRecommendations: (params) => {
+    const url = `movie/${params.movie_id}/recommendations?api_key=${apiConfig.apiKey}`;
+    return axiosClient.get(url)
+  }
 };
 
 export default tmdbApi;

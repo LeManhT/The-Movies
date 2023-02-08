@@ -1,5 +1,6 @@
 import React from "react";
 import "./dropDown.scss";
+import PropTypes from 'prop-types';
 
 const DropDown = ({ children }) => {
   console.log(children)
@@ -17,5 +18,10 @@ const DropDown = ({ children }) => {
     </>
   );
 };
+
+DropDown.propTypes = {
+  children: PropTypes.node
+}
+
 
 export default DropDown;

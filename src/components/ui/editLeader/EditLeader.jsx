@@ -1,6 +1,7 @@
 import React from "react";
 import Meter from "../meter/Meter";
 import "./editLeader.scss";
+import PropTypes from 'prop-types';
 
 const EditLeader = ({
   title,
@@ -11,6 +12,7 @@ const EditLeader = ({
 }) => {
   return (
     <div className="editLeader">
+
       <div
         className={
           imgAvatar ? "editLeader__avatarImg" : "editLeader__avatarText"
@@ -21,6 +23,7 @@ const EditLeader = ({
         ) : (
           <span>{title ? title.slice(0, 1).toUpperCase() : "?"}</span>
         )}
+
       </div>
       <div className="editLeader__info">
         <div className="editLeader__title">{title}</div>
@@ -44,5 +47,11 @@ const EditLeader = ({
     </div>
   );
 };
+
+EditLeader.propTypes = {
+  editCount: PropTypes.number,
+  editName: PropTypes.string,
+  imgSrc: PropTypes.string
+}
 
 export default EditLeader;

@@ -1,0 +1,40 @@
+@use '../../../scss/' as *;
+
+.listCard__wrapper {
+    width: 100%;
+    height: auto;
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    .hr {
+        height: 1px;
+        width: 100%;
+        background-color: #ccc;
+    }
+
+    .listCard--large {
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 10px;
+        }
+
+        .listCard {
+            @include flex(flex, initial, initial);
+            -webkit-overflow-scrolling: touch;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            padding-bottom: 20px;
+
+        }
+    }
+}

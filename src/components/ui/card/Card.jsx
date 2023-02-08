@@ -2,6 +2,7 @@ import React from "react";
 import { CgMoreO } from "react-icons/cg";
 import CirclePercent from "../circlePercent/CirclePercent";
 import "./card.scss";
+import PropTypes from 'prop-types';
 const Card = ({
   width,
   heightImage,
@@ -14,7 +15,11 @@ const Card = ({
   displayIconPlay,
   onClickCard,
   onHoverCard
+  isRecommendation,
+  vote_average
+
 }) => {
+
   return (
     <div className="card" style={{ width: `${width}px` }}>
       <div className="card__image" style={{ height: `${heightImage}px` }}>
@@ -26,12 +31,11 @@ const Card = ({
           )}
           <img src={image} alt={name} />
         </div>
-
-        {(!displayIconCirclePercent || !displayIconPlay) && (
-          <div className="image__options">
+        {
+          (displayIconCirclePercent || displayIconPlay) && <div className="image__options">
             <CgMoreO />
           </div>
-        )}
+        }
       </div>
 
       <div
@@ -56,18 +60,43 @@ const Card = ({
         >
           {name}
         </h2>
-        <p
+        {isRecommendation ? <p
           style={{
             fontSize: styleCss.fontSizeDesc,
             fontWeight: styleCss.fontWeightDesc,
-            color: styleCss.textColorDesc,
+            display: "flex",
+            justifyContent: "space-between"
           }}
         >
-          {description}
-        </p>
+          <span style={{
+            width: '70%', 'whiteSpace': 'nowrap', overflow: 'hidden',
+            'textOverflow': 'ellipsis'
+          }}>{description}</span>
+          <span>{vote_average}</span>
+        </p> :
+          <p
+            style={{
+              fontSize: styleCss.fontSizeDesc,
+              fontWeight: styleCss.fontWeightDesc,
+              color: styleCss.textColorDesc,
+            }}
+          >
+            {description}
+          </p>
+        }
+
       </div>
     </div>
   );
 };
 
+Card.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.string.isRequired,
+  releaseDate: PropTypes.string,
+  displayIcon: PropTypes.bool,
+  actor: PropTypes.string
+}
 export default Card;

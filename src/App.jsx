@@ -5,7 +5,7 @@ import Loading from "./components/ui/loading/Loading";
 import tmdbApi from "./api/tmdbApi";
 import useFetch from "./hooks/useFetch";
 import "./App.scss";
-import SearchItemResult from "./components/ui/searchItemResult/SearchItemResult";
+import Selectors from "./components/ui/selectors/Selectors";
 
 function App() {
   return (
@@ -16,5 +16,4 @@ function App() {
     </>
   );
 }
-
 export default App;
