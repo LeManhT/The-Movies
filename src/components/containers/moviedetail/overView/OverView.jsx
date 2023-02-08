@@ -13,7 +13,7 @@ const OverView = ({ movieDetailData, listIcon }) => {
             <div className="movieDetail__content">
                 <div className="movieDetail__poster__wrapper">
                     <div className="movieDetail__poster">
-                        <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/jGmC7aMqoLU0ALRKHkz3pQVV1pg.jpg" alt="" />
+                        <img src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${movieDetailData?.poster_path || movieDetailData?.backdrop_path}`} alt="" />
                         <div class="zoom">
                             <p href="#" class="no_click"><span class="zoom_fullscreen white"></span> Expand</p>
                         </div>

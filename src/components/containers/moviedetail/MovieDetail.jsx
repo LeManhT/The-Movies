@@ -61,7 +61,7 @@ const MovieDetail = () => {
     getKeywords({ movie_id: info });
     getRecommend({ movie_id: info });
   }, [])
-  // console.log(movieDetailData);
+  console.log(movieDetailData);
   // console.log(recommendationsData, 40)
 
 
