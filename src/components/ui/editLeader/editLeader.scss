@@ -1,11 +1,33 @@
+@use "../../../scss/" as *;
+
 .editLeader {
   display: flex;
   align-items: center;
-  width: 260px;
-  min-width: 260px;
+  width: 50%;
+  padding-right: 20px;
   margin-bottom: 20px;
-  box-sizing: border-box;
-  height: 45px;
+
+  .editLeader__avatarImg,
+  .editLeader__avatarText {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+
+    img {
+      display: block;
+      border-radius: 50%;
+    }
+  }
+
+  .editLeader__avatarText {
+    color: $body-color;
+    background: rgba(var(--accountYellow), 1);
+    font-size: 20px;
+    border-radius: 50%;
+  }
 
   .editLeader__avatar {
     img {
@@ -18,20 +40,10 @@
   }
 
   .editLeader__info {
-    padding-left: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    p {
+    flex: 1;
+    .editLeader__title {
+      font-size: 20px;
       font-weight: 600;
-      margin: 0;
-
-      span {
-        text-decoration: none;
-        color: #000;
-        font-weight: 300;
-      }
     }
   }
 }
