@@ -1,0 +1,241 @@
+@use '../../../../scss/' as *;
+
+.card__item {
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border-radius: 8px;
+
+    .card {
+        .card__image {
+            border-radius: 8px 8px 0 0;
+        }
+    }
+}
+
+.top__billed {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    .viewMore {
+        @include flex(flex, center, center);
+        width: 250px;
+
+        p {
+            @include flex(flex, center, center);
+        }
+
+        .icon__view--more {
+            background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-830-arrow-thin-right-5c2f4e65afc985448cd9042f9d64426f1e002fbd3c2546053d190fa27f77600f.svg");
+            position: relative;
+            top: 0;
+            left: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 1em;
+            min-height: 1em;
+            width: 1em;
+            height: 1em;
+            line-height: inherit;
+            background-position: center center;
+            background-repeat: no-repeat;
+            color: inherit;
+            box-sizing: border-box;
+        }
+    }
+
+    .detail__style {
+        &::after {
+            content: '';
+            width: 60px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+            will-change: opacity;
+            pointer-events: none;
+        }
+
+
+    }
+
+    .top__billed__btn {
+        margin-top: 20px;
+
+        &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+    }
+
+}
+
+.social__panel {
+    margin-top: 20px;
+
+    .list-horizontal .list-horizontal__header {
+        padding: 0;
+    }
+
+    .list-horizontal .list-horizontal__content {
+        padding: 20px 0 20px 0;
+    }
+
+    .review__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+        .discussion {
+            margin: 0;
+            width: 100%;
+            border-radius: 8px;
+
+            .avatar {
+                img {
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                }
+            }
+        }
+    }
+
+
+    .discussion__btn {
+        &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+    }
+
+
+
+}
+
+.collection {
+    background: linear-gradient(to bottom right, rgba(31.5, 31.5, 31.5, 1), rgba(31.5, 31.5, 31.5, 0.84));
+    border-radius: 8px;
+    margin: 30px 0;
+
+    .collection__wrapper {
+        border-radius: 8px;
+    }
+
+    .collection__btn {
+        margin-top: 20px;
+
+        .button {
+            &:hover {
+                background-color: #000;
+            }
+
+        }
+
+        span {
+            font-size: 1.1em;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    }
+}
+
+.recommendations {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    .item__recommendation {
+        position: relative;
+
+        &:hover {
+            .meta {
+                visibility: visible;
+                transition: visibility 0.2s ease-in-out 0.1s;
+                cursor: pointer;
+
+            }
+
+            .release_date {
+                opacity: 0.5;
+            }
+        }
+
+        .card .card__image:hover {
+            transform: unset;
+        }
+
+        .meta {
+            visibility: hidden;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            height: 40px;
+            bottom: 35px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .icon {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 1em;
+                min-height: 1em;
+                width: 1em;
+                height: 1em;
+                line-height: inherit;
+                background-position: center center;
+                background-repeat: no-repeat;
+                color: inherit;
+                box-sizing: border-box;
+
+                &:hover {
+                    cursor: pointer;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    .detail__style {
+        &::after {
+            content: '';
+            width: 60px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+            will-change: opacity;
+            pointer-events: none;
+        }
+    }
+
+    .card__image {
+        border-radius: 10px;
+    }
+
+    .image__wrapper {
+        height: 141px;
+    }
+}

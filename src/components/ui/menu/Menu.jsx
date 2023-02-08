@@ -1,5 +1,7 @@
 import React from "react";
 import "./menu.scss";
+import PropTypes from 'prop-types';
+
 const Menu = ({ menuContent }) => {
   return (
     <div className="menu__wrapper" style={{ width: "260px" }}>
@@ -19,5 +21,9 @@ const Menu = ({ menuContent }) => {
     </div>
   );
 };
+
+Menu.propTypes = {
+  menuContent: PropTypes.array
+}
 
 export default Menu;

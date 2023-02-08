@@ -6,11 +6,13 @@ const ListHorizontal = ({
   listItemTab = [],
   itemTabActive,
   onClickTab,
+  isTabBorderBottom,
   styleCssTabPrimary = {
     backgroundImage: "",
     backgroundSize: "",
     backgroundPosition: "",
     colorTitle: "$text-color",
+    borderBottom: "",
     borderMain: "1px solid yellow",
     textColor: "blue",
     backgroundColor: "transparent",
@@ -43,9 +45,16 @@ const ListHorizontal = ({
                 <div
                   key={index}
                   className="detail"
-                  style={{
-                    backgroundColor: styleCssTabPrimary.backgroundColor,
-                  }}
+                  style={
+                    ((item === itemTabActive) && isTabBorderBottom) ?
+                      {
+                        borderBottom:
+                          styleCssTabPrimary.borderBottom,
+                        borderRadius: "unset"
+                      } :
+                      {
+                        backgroundColor: styleCssTabPrimary.backgroundColor
+                      }}
                   onClick={() => onClickTab(item)}
                 >
                   <p

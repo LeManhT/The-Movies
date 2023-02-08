@@ -1,0 +1,26 @@
+@use '../../../scss/' as *;
+
+.shortcut__text {
+    margin: 0;
+    opacity: 0.5;
+    color: #000;
+
+    @include flex(flex, center, initial);
+
+    .shortcut__icon {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.3em;
+        height: 1.3em;
+        line-height: inherit;
+        background-position: center center;
+        background-repeat: no-repeat;
+        color: inherit;
+        box-sizing: border-box;
+        margin-right: 6px;
+    }
+}

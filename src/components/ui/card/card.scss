@@ -1,8 +1,10 @@
+@use '../../../scss/' as *;
+
 .card {
+
   .card__image {
     position: relative;
     box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
-    border-radius: 8px;
     width: 100%;
     background: #dbdbdb;
     overflow: hidden;
@@ -10,6 +12,7 @@
 
     &:hover {
       transform: scale(1.05);
+
       .image__wrapper {
         .image__icon-play {
           transform: scale(1.4) translate(-34%, -34%);
@@ -19,14 +22,17 @@
 
     .image__wrapper {
       position: relative;
+
       &:hover {
         cursor: pointer;
       }
+
       img {
         display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
       }
 
       .image__icon-play {
@@ -87,6 +93,10 @@
   }
 
   p {
+    .description__recommendation {
+      @include flex(flex, center, space-between)
+    }
+
     cursor: text;
   }
 }

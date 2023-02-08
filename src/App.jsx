@@ -5,7 +5,7 @@ import Loading from "./components/ui/loading/Loading";
 import tmdbApi from "./api/tmdbApi";
 import useFetch from "./hooks/useFetch";
 import "./App.scss";
-import SearchItemResult from "./components/ui/searchItemResult/SearchItemResult";
+import Selectors from "./components/ui/selectors/Selectors";
 
 function App() {
   // const {
@@ -26,6 +26,7 @@ function App() {
       <RouterPage />
       <ToastContainer />
       <Loading />
+      <Selectors></Selectors>
       {/* <SearchItemResult imgSrc={"https://www.themoviedb.org/t/p/w90_and_h90_face/qPZeVZqH1z7n5LVKVdzwXbAHe6s.jpg"} title={"They Call Me Trinity"} overview={"Acting • Vương Triều Cuối Cùng, The Last King, Polaroid"} ></SearchItemResult> */}
       {/* {!!trendingData &&
         trendingData.results.map((e) => {
@@ -41,8 +42,8 @@ function App() {
             />
           );
         })} */}
+
     </>
   );
 }
-
 export default App;

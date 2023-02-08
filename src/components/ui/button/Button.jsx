@@ -1,5 +1,7 @@
 import React from "react";
 import "./button.scss";
+import PropTypes from 'prop-types';
+
 
 const Button = ({
   styleCss = {
@@ -43,5 +45,9 @@ const Button = ({
     </button>
   );
 };
+
+Button.propTypes = {
+  styleCss: PropTypes.object
+}
 
 export default Button;

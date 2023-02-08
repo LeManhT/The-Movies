@@ -128,7 +128,7 @@ const Home = () => {
           }}
         >
           Check it out
-          <i class="fa-solid fa-arrow-right icon-arrow"></i>
+          <i className="fa-solid fa-arrow-right icon-arrow"></i>
         </Button>
       </Collection>
 

@@ -29,7 +29,7 @@ const Header = () => {
       </div>
       <div className="header__right">
         <div className="item">
-          <i class="fa-solid fa-plus plus-icon"></i>
+          <i className="fa-solid fa-plus plus-icon"></i>
         </div>
         <div className="item">
           <Button
@@ -53,7 +53,7 @@ const Header = () => {
           <p>Tham gia TMDB</p>
         </div>
         <div className="item">
-          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <i className="fa-solid fa-magnifying-glass search-icon"></i>
         </div>
       </div>
     </div>

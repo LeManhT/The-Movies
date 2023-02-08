@@ -1,0 +1,91 @@
+@use '../../../../scss/' as *;
+
+.body__right__facts {
+    &__social_links {
+        @include flex(flex, center, initial);
+        margin-bottom: 30px;
+
+        .glyphicons_link {
+
+            position: relative;
+            top: 0;
+            margin-right: 20px;
+            left: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2em;
+            min-height: 2em;
+            width: 2em;
+            height: 2em;
+            line-height: inherit;
+            background-position: center center;
+            background-repeat: no-repeat;
+            color: inherit;
+            box-sizing: border-box;
+        }
+    }
+
+    &__cate {
+        .description {
+            margin-bottom: 20px;
+
+            &__title {
+                display: block;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__keywords {
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 30px;
+
+        .keywords__title {
+            margin-bottom: 20px;
+        }
+
+        .keywords__list {
+            @include flex(flex, center, initial);
+            flex-wrap: wrap;
+        }
+    }
+}
+
+
+.body__right__rate {
+
+    .content__score {
+        margin: 30px 0;
+
+        .content__bar--large {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            overflow: visible;
+
+            .content__bar {
+                width: 100%;
+                border-color: $primary-color;
+                background-color: $primary-color;
+                color: #fff;
+                border-radius: var(--imageBorderRadius);
+                padding: 6px 12px;
+            }
+        }
+    }
+
+    .top__contributors {
+        margin-bottom: 20px;
+    }
+
+    .popular__trend__chart {
+        height: 50px;
+    }
+
+    .shortcut__text {
+        margin-top: 20px;
+    }
+
+}
