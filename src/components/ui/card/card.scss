@@ -1,5 +1,6 @@
-.card {
+@use '../../../scss/' as *;
 
+.card {
 
   .card__image {
     position: relative;
@@ -11,6 +12,7 @@
 
     &:hover {
       transform: scale(1.05);
+
       .image__wrapper {
         .image__icon-play {
           transform: scale(1.4) translate(-34%, -34%);
@@ -20,6 +22,7 @@
 
     .image__wrapper {
       position: relative;
+
       &:hover {
         cursor: pointer;
       }
@@ -90,6 +93,10 @@
   }
 
   p {
+    .description__recommendation {
+      @include flex(flex, center, space-between)
+    }
+
     cursor: text;
   }
 }

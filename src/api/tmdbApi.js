@@ -29,16 +29,14 @@ const tmdbApi = {
   },
 
   getMoviesSearch: (params) => {
-    const url = `search/movie?api_key=${
-      apiConfig.apiKey
-    }&${queryString.stringify(params)}`;
+    const url = `search/movie?api_key=${apiConfig.apiKey
+      }&${queryString.stringify(params)}`;
     return axiosClient.get(url);
   },
 
   getPeopleSearch: (params) => {
-    const url = `search/person?api_key=${
-      apiConfig.apiKey
-    }&${queryString.stringify(params)}`;
+    const url = `search/person?api_key=${apiConfig.apiKey
+      }&${queryString.stringify(params)}`;
     return axiosClient.get(url);
   },
 
@@ -46,6 +44,14 @@ const tmdbApi = {
     const url = `movie/${params.movie_id}/credits?api_key=${apiConfig.apiKey}`;
     return axiosClient.get(url);
   },
+  getMovieKeywords: (params) => {
+    const url = `movie/${params.movie_id}/keywords?api_key=${apiConfig.apiKey}`;
+    return axiosClient.get(url)
+  },
+  getRecommendations: (params) => {
+    const url = `movie/${params.movie_id}/recommendations?api_key=${apiConfig.apiKey}`;
+    return axiosClient.get(url)
+  }
 };
 
 export default tmdbApi;

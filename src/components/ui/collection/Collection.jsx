@@ -16,7 +16,7 @@ const Collection = ({
                 url("${styleCss.backgroundImage}")`,
       }}
     >
-      <div className="collection__content">
+      <div className="collection__content" style={{ justifyContent: styleCss.justCenter }}>
         <div
           className="collection__title"
           style={{

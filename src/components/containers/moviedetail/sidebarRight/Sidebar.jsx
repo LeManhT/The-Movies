@@ -1,30 +1,36 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './sidebarRight.scss'
 import Tag from '../../../ui/tag/Tag'
 import EditLeader from '../../../ui/editLeader/EditLeader'
 import Button from '../../../ui/button/Button'
 import ShortcutText from '../../../ui/shortcutText/ShortcutText'
 import Description from '../../../ui/description/Description'
+import { ReactComponent as Chart } from '../../../../assets/imgs/chart.svg';
 
-const Sidebar = ({ listIcon }) => {
+
+
+
+const Sidebar = ({ listImage, keywordsData, movieDetailData }) => {
+
     return (
         <>
             <div className="body__right__facts">
                 <div className="body__right__facts__social_links">
                     {
-                        listIcon.map((item, index) => {
-                            return <i key={index} style={{ fontSize: "20px", margin: "0px 10px" }} className={item}></i>
+                        listImage.map((item, index) => {
+                            return <span key={index} className="glyphicons_link" style={{ backgroundImage: `url(${item})` }}></span>
+                            // <i key={index} style={{ fontSize: "20px", margin: "0px 10px" }} className={item}></i>
                         })
                     }
                 </div>
 
 
                 <div className="body__right__facts__cate">
-                    {
-                        listIcon.map((item, index) => {
-                            return <Description key={index} title={"Original Title"} desc="Avatar: The Way of Water"></Description>
-                        })
-                    }
+                    <Description title={"Original Title"} desc={movieDetailData?.original_title}></Description>
+                    <Description title={"Status"} desc={movieDetailData?.status}></Description>
+                    <Description title={"Original Language"} desc={movieDetailData?.original_language}></Description>
+                    <Description title={"Budget"} desc={`$${movieDetailData?.budget.toLocaleString()}`}></Description>
+                    <Description title={"Revenue"} desc={`$${movieDetailData?.revenue.toLocaleString()}`}></Description>
                 </div>
 
 
@@ -34,8 +40,8 @@ const Sidebar = ({ listIcon }) => {
                     </div>
                     <div className="keywords__list">
                         {
-                            listIcon.map((item, index) => {
-                                return <Tag key={index} tagContent={"loss of loved one"}></Tag>
+                            keywordsData?.keywords.map((keyword, index) => {
+                                return <Tag key={index} tagContent={keyword.name}></Tag>
                             })
                         }
                     </div>
@@ -71,7 +77,7 @@ const Sidebar = ({ listIcon }) => {
                     <div className="popular__trend__title">
                         <h3>Popularity Trend</h3>
                         <div className="popular__trend__chart">
-
+                            <Chart></Chart>
                         </div>
                     </div>
                 </div>

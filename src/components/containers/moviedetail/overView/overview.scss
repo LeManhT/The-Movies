@@ -11,17 +11,73 @@
         .movieDetail__poster__wrapper {
             width: 25%;
 
+
+
             .movieDetail__poster {
                 height: 450px;
                 max-width: fit-content;
                 overflow: hidden;
                 border-radius: var(--imageBorderRadius);
+                position: relative;
+
+                &:hover {
+
+                    .zoom {
+                        visibility: visible;
+                        background-color: rgba(0, 0, 0, 0.7);
+                        backdrop-filter: blur(20px);
+                        cursor: pointer;
+                        transition: linear .2s;
+                    }
+
+                }
 
                 img {
                     width: 100%;
                     object-fit: cover;
                     display: block;
                 }
+            }
+
+            .zoom {
+                visibility: hidden;
+                position: absolute;
+                z-index: 1000;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+
+                p {
+                    @include flex(flex, center, center);
+                    height: 100%;
+                    font-size: 1.2em;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    .zoom_fullscreen {
+                        top: 0;
+                        left: 0;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        min-width: 1em;
+                        min-height: 1em;
+                        width: 1em;
+                        height: 1em;
+                        margin-right: 6px;
+                        line-height: inherit;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        color: inherit;
+                        box-sizing: border-box;
+                        background-image: url('https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-216-fullscreen-white-87524788011715a9bd73de86ef577442070ebc9873a7abb2845a6310a7f6174a.svg');
+                    }
+                }
+
             }
         }
 

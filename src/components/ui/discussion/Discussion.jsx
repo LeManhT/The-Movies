@@ -17,8 +17,8 @@ const Discussion = ({ img, link, status, count, date }) => {
 
       <p>{count}</p>
       <p>
-        <p>{date}</p>
-        <p>by movie_nazi</p>
+        <span>{date}</span>
+        <span>by movie_nazi</span>
       </p>
     </div>
   );

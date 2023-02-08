@@ -1,7 +1,6 @@
 @use '../../../scss/' as *;
 
 .movieDetail__head__wrapper {
-    margin: 30px 0;
     border-bottom: 1px solid var(--primaryColor);
     background-position: left calc((50vw - 170px) - 340px) top;
     background-size: cover;
@@ -26,48 +25,6 @@
     .movieDetail__body__left {
         width: 80%;
         padding-right: 30px;
-
-        .top__billed {
-            .top__billed__btn {
-                margin-top: 20px;
-
-                p {
-                    font-size: 1.1em;
-                    font-weight: 600;
-                }
-            }
-
-        }
-
-        .social__panel {
-            margin-top: 20px;
-
-            .media__panel {
-                width: 100%;
-                padding: 30px 0;
-
-                .review__content {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-
-                    .discussion {
-                        margin: 0;
-                        width: 100%;
-                        border-radius: 8px;
-
-                        .avatar {
-                            img {
-                                width: 30px;
-                                height: 30px;
-                                display: block;
-                            }
-                        }
-                    }
-                }
-
-            }
-        }
     }
 
     .movieDetail__body__right {
