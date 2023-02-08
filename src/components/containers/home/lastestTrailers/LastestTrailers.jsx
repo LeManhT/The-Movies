@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import tmdbApi from "../../../../api/tmdbApi";
 import { LASTEST_TRAILERS } from "../../../../constants/constants";
 import useFetch from "../../../../hooks/useFetch";
 import Card from "../../../ui/card/Card";
 import ListHorizontal from "../../../ui/listHorizontal/ListHorizontal";
+import ModalPreview from "../../../ui/modalVideo/ModalPreview";
 
 const LastestTrailers = () => {
-  //   const navigate = useNavigate();
   const [categoryTrailers, setCategoryTrailers] = useState(
     LASTEST_TRAILERS.listCategory[0]
-    );
-    const [backgroundImgTrailers, setBackgroundImgTrailers] = useState(null);
+  );
+  const [backgroundImgTrailers, setBackgroundImgTrailers] = useState(null);
+  const [isModal, setIsModal] = useState(false);
 
   const {
     data: topRatedData,
@@ -19,6 +19,13 @@ const LastestTrailers = () => {
     isLoadingTopRated,
     fetch: getTopRated,
   } = useFetch(tmdbApi.getTopRated);
+
+  const {
+    data: videosData,
+    error: videosError,
+    isLoadingVideos,
+    fetch: getVideo,
+  } = useFetch(tmdbApi.getVideosMovie);
 
   // get trailers
   useEffect(() => {
@@ -31,8 +38,10 @@ const LastestTrailers = () => {
   }, [categoryTrailers]);
 
   const handleClickCardTrailer = (item) => {
-    console.log(item)
-  }
+    // get videos
+    getVideo({ movie_id: item.id });
+    setIsModal(true);
+  };
 
   const handleHoverCardTrailers = (item) => {
     setBackgroundImgTrailers(item.backdrop_path);
@@ -91,6 +100,11 @@ const LastestTrailers = () => {
           <div>Chua co du lieu</div>
         )}
       </ListHorizontal>
+      <ModalPreview
+        keyVideo={videosData?.results[0]?.key || "3B3OGKB7VNI"}
+        isOpen={isModal}
+        onClose={() => setIsModal(false)}
+      />
     </>
   );
 };
