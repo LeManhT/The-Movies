@@ -18,10 +18,10 @@ const Card = ({
   return (
     <div className="card" style={{ width: `${width}px` }}>
       <div className="card__image" style={{ height: `${heightImage}px` }}>
-        <div className="image__wrapper" onClick={onClickCard} onMouseOver={onHoverCard}>
+        <div className="image__wrapper" onClick={onClickCard} onMouseEnter={onHoverCard}>
           {displayIconPlay && (
             <div className="image__icon-play">
-              <i class="fas fa-play"></i>
+              <i className="fas fa-play"></i>
             </div>
           )}
           <img src={image} alt={name} />

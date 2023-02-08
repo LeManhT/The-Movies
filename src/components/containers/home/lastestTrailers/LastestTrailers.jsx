@@ -30,8 +30,11 @@ const LastestTrailers = () => {
     }
   }, [categoryTrailers]);
 
+  const handleClickCardTrailer = (item) => {
+    console.log(item)
+  }
+
   const handleHoverCardTrailers = (item) => {
-    // console.log(item.backdrop_path)
     setBackgroundImgTrailers(item.backdrop_path);
   };
 
@@ -78,7 +81,7 @@ const LastestTrailers = () => {
                     textColorDesc: "#fff",
                   }}
                   displayIconPlay
-                  // onClickCard={() => handleClickCardPoster(item)}
+                  onClickCard={() => handleClickCardTrailer(item)}
                   onHoverCard={() => handleHoverCardTrailers(item)}
                 />
               </div>

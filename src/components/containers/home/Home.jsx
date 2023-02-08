@@ -2,11 +2,12 @@ import React from "react";
 import Button from "../../ui/button/Button";
 import Collection from "../../ui/collection/Collection";
 import Input from "../../ui/input/Input";
-import EditLeader from "../../ui/editLeader/EditLeader";
 import Trending from "./trending/Trending";
 import LastestTrailers from "./lastestTrailers/LastestTrailers";
 import Popular from "./popular/Popular";
 import "./home.scss";
+import Leaderboard from "./leaderboard/Leaderboard";
+import CollectionJoinToday from "./collectionJoinToday/CollectionJoinToday";
 
 const Home = () => {
   return (
@@ -78,7 +79,7 @@ const Home = () => {
           }}
         >
           Check it out
-          <i class="fa-solid fa-arrow-right icon-arrow"></i>
+          <i className="fa-solid fa-arrow-right icon-arrow"></i>
         </Button>
       </Collection>
 
@@ -91,42 +92,11 @@ const Home = () => {
       {/* What's Popular */}
       <Popular />
 
-      <div className="item_leaderboard">
-        <EditLeader
-          title="Tung"
-          imgAvatar={
-            "https://www.gravatar.com/avatar/3af6511cf44a709e6ae5b612903c846c.jpg?s=64"
-          }
-          styleCss={{
-            widthDescFirst: "200px",
-            backgroundDescFirst:
-              "linear-gradient(to right, rgba(var(--tmdbLighterGreen), 1) 0%, rgba(var(--tmdbLightGreen), 1) 100%)",
-            widthDescSecond: "390px",
-            backgroundDescSecond:
-              "linear-gradient(to right, rgba(var(--tmdbLogoOrange), 1) 0%, rgba(var(--tmdbLogoRed), 1) 100%)",
-          }}
-        />
-        <EditLeader
-          title="Tung"
-          // imgAvatar={
-          //   "https://www.gravatar.com/avatar/3af6511cf44a709e6ae5b612903c846c.jpg?s=64"
-          // }
-          styleCss={{
-            widthDescFirst: "200px",
-            backgroundDescFirst:
-              "linear-gradient(to right, rgba(var(--tmdbLighterGreen), 1) 0%, rgba(var(--tmdbLightGreen), 1) 100%)",
-            widthDescSecond: "390px",
-            backgroundDescSecond:
-              "linear-gradient(to right, rgba(var(--tmdbLogoOrange), 1) 0%, rgba(var(--tmdbLogoRed), 1) 100%)",
-          }}
-        />
-        <EditLeader
-          title="Tung"
-          imgAvatar={
-            "https://www.gravatar.com/avatar/3af6511cf44a709e6ae5b612903c846c.jpg?s=64"
-          }
-        />
-      </div>
+      {/* Background 3 */}
+      <CollectionJoinToday />
+
+      {/* Leaderboard */}
+      <Leaderboard />
     </div>
   );
 };

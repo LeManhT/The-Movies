@@ -21,6 +21,22 @@ const Popular = () => {
     fetch: getPopular,
   } = useFetch(tmdbApi.getPopular);
 
+  // useEffect(() => {
+  //   const getTotalsPagePopular = async () => {
+  //     try {
+  //       const data = await Promise.all([
+  //         tmdbApi.getPopular({ category: "tv"}),
+  //         tmdbApi.getPopular({ category: "movie"}),
+  //       ]);
+  //       const totalPages = await data.map((item) => item.total_pages);
+  //       console.log(totalPages)
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   getTotalsPagePopular();
+  // }, []);
+
   // get popular
   useEffect(() => {
     if (categoryPopular === "On TV") {

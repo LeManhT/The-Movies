@@ -1,0 +1,41 @@
+@use "../../../../scss/" as *;
+
+.leaderboard {
+  padding: 30px 40px;
+  .header__leaderboard {
+    display: flex;
+    align-items: center;
+
+    .title__leaderboard {
+      font-size: 24px;
+      font-weight: 600;
+      margin-right: 20px;
+    }
+
+    .content-title__leaderboard {
+      font-size: 14px;
+      font-weight: 400;
+
+      .desc-title__leaderboard {
+        display: flex;
+        align-items: center;
+
+        span {
+          display: block;
+          width: 8px;
+          height: 8px;
+          background-color: red;
+          margin-right: 8px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .list__leaderboard {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+}

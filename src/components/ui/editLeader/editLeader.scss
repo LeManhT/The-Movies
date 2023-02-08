@@ -4,9 +4,11 @@
   display: flex;
   align-items: center;
   width: 50%;
+  padding-right: 20px;
   margin-bottom: 20px;
 
-  .editLeader__avatarImg, .editLeader__avatarText {
+  .editLeader__avatarImg,
+  .editLeader__avatarText {
     width: 56px;
     height: 56px;
     display: flex;
@@ -28,6 +30,7 @@
   }
 
   .editLeader__info {
+    flex: 1;
     .editLeader__title {
       font-size: 20px;
       font-weight: 600;
