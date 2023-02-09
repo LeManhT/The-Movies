@@ -3,6 +3,7 @@
   position: relative;
   width: 100%;
   opacity: 0.5;
+  border-radius: unset;
 
   .loader-inner {
     .loader-line-wrap {
@@ -86,10 +87,12 @@
 }
 
 @keyframes spin {
+
   0%,
   15% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }

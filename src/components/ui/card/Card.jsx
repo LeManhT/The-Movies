@@ -38,7 +38,7 @@ const Card = ({
           (displayIconCirclePercent && displayIconPlay) && <div className="image__options">
             <CgMoreO />
           </div>
-        )}
+        }
       </div>
 
       <div

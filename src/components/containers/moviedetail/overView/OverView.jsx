@@ -1,24 +1,30 @@
 import React, { useState } from 'react'
 import CirclePercent from '../../../ui/circlePercent/CirclePercent'
 import ToolTip from '../../../ui/iconToolTip/ToolTip'
+import Loading from '../../../ui/loading/Loading'
 import Description from '../../../ui/description/Description'
 import { toHoursAndMinutes } from '../../../../utils/common'
 import ModalPreview from '../../../ui/modalVideo/ModalPreview'
 import './overview.scss'
 import { LIST_ICON } from '../../../../constants/constants'
-const OverView = ({ movieDetailData }) => {
+import SkeletonContainer from '../../../ui/skeleton/SkeletonContainer'
+const OverView = ({ movieDetailData, isLoading }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className="movieDetail__content--large">
             <div className="movieDetail__content">
+
                 <div className="movieDetail__poster__wrapper">
-                    <div className="movieDetail__poster">
-                        <img src={movieDetailData?.poster_path || movieDetailData?.backdrop_path ? `https://www.themoviedb.org/t/p/w300_and_h450_bestv2${movieDetailData?.poster_path || movieDetailData?.backdrop_path}` : "https://tuyendung.edutalk.edu.vn/images/default.jpg"} alt="" />
-                        <div className="zoom">
-                            <p href="#" className="no_click"><span className="zoom_fullscreen white"></span> Expand</p>
-                        </div>
-                    </div>
+                    {isLoading && !movieDetailData?.poster_path ?
+                        <div className="movieDetail__poster">
+                            <img src={movieDetailData?.poster_path || movieDetailData?.backdrop_path ? `https://www.themoviedb.org/t/p/w300_and_h450_bestv2${movieDetailData?.poster_path || movieDetailData?.backdrop_path}` : "https://tuyendung.edutalk.edu.vn/images/default.jpg"} alt="" />
+                            <div className="zoom">
+                                <p href="#" className="no_click"><span className="zoom_fullscreen white"></span> Expand</p>
+                            </div>
+                        </div> : <Loading />
+                    }
+
 
                 </div>
 

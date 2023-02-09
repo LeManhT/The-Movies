@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './sidebarRight.scss'
 import Tag from '../../../ui/tag/Tag'
 import EditLeader from '../../../ui/editLeader/EditLeader'

@@ -9,9 +9,10 @@ import ListHorizontal from '../../../ui/listHorizontal/ListHorizontal'
 import { LIST_IMAGE, LIST_MEDIA, LIST_ICON } from '../../../../constants/constants'
 import ModalPreview from '../../../ui/modalVideo/ModalPreview'
 import { useNavigate } from 'react-router-dom'
+import SkeletonContainer from '../../../ui/skeleton/SkeletonContainer'
 
 
-const DetailContent = ({ movieDetailData, creditsData, recommendationsData }) => {
+const DetailContent = ({ movieDetailData, creditsData, recommendationsData, isLoading }) => {
     // const [scrollTop, setScrollTop] = useState(0)
     const [dataMedia, setDataMedia] = useState([])
     const [activeTab, setActiveTab] = useState("Review");
@@ -27,14 +28,14 @@ const DetailContent = ({ movieDetailData, creditsData, recommendationsData }) =>
         setActiveMedia(item)
     }
     // const handleScroll = (e) => { setScrollTop(Math.floor(e.currentTarget.scrollLeft)) }
-
+    console.log(isLoading)
 
     useEffect(() => {
         if (activeMedia === "Most Popular") {
             setDataMedia([{
                 backdrop: movieDetailData?.backdrop_path, video: movieDetailData?.videos.results[0]?.key, isVideo: false
             }])
-        } else if (activeMedia == "Videos") {
+        } else if (activeMedia === "Videos") {
             setDataMedia([{
                 backdrop: movieDetailData?.backdrop_path, video: movieDetailData?.videos.results[0]?.key, isVideo: true
             }])
