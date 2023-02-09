@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './listCard.scss'
 import PropTypes from 'prop-types'
 const ListCard = ({ title, children, gap, fontWeight = 600, fontSize = "1.1em", isHr, btnContent, handleScroll, scrollTop }) => {
