@@ -34,7 +34,7 @@ const DetailContent = ({ movieDetailData, creditsData, recommendationsData }) =>
             setDataMedia([{
                 backdrop: movieDetailData?.backdrop_path, video: movieDetailData?.videos.results[0]?.key, isVideo: false
             }])
-        } else if (activeMedia == "Videos") {
+        } else if (activeMedia === "Videos") {
             setDataMedia([{
                 backdrop: movieDetailData?.backdrop_path, video: movieDetailData?.videos.results[0]?.key, isVideo: true
             }])

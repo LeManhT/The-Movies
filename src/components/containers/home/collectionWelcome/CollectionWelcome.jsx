@@ -46,7 +46,9 @@ const CollectionWelcome = () => {
         value={textSearch}
         onChange={(e) => setTextSearch(e.target.value)}
         onKeyDown={handleKeyDownInputSearch}
-        onClickBtnSearchInput={() => navigate(`/search?query=${textSearch}`)}
+        onClickBtnSearchInput={() =>
+          navigate(`/search/movie?query=${textSearch}&page=1`)
+        }
       />
     </Collection>
   );
