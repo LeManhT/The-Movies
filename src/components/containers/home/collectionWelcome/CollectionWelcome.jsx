@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Collection from "../../../ui/collection/Collection";
 import Input from "../../../ui/input/Input";
 
 const CollectionWelcome = () => {
+  const navigate = useNavigate();
+  const [textSearch, setTextSearch] = useState("");
+
+  const handleKeyDownInputSearch = (e) => {
+    if (e.key === "Enter") {
+      navigate(`/search/movie?query=${textSearch}&page=1`);
+    }
+  };
+
   return (
     <Collection
       collection={{
@@ -33,6 +43,10 @@ const CollectionWelcome = () => {
         }}
         btnInput
         nameBtnInput="Search"
+        value={textSearch}
+        onChange={(e) => setTextSearch(e.target.value)}
+        onKeyDown={handleKeyDownInputSearch}
+        onClickBtnSearchInput={() => navigate(`/search?query=${textSearch}`)}
       />
     </Collection>
   );

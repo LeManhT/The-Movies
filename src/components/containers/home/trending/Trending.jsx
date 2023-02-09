@@ -6,6 +6,7 @@ import useFetch from "../../../../hooks/useFetch";
 import { ToastError } from "../../../../utils/toast";
 import Card from "../../../ui/card/Card";
 import ListHorizontal from "../../../ui/listHorizontal/ListHorizontal";
+import Loading from "../../../ui/loading/Loading";
 
 const Trending = () => {
   const navigate = useNavigate();
@@ -16,11 +17,10 @@ const Trending = () => {
   const {
     data: trendingData,
     error: trendingError,
-    isLoadingTrending,
+    isLoading: isLoadingTrending,
     fetch: getTrending,
   } = useFetch(tmdbApi.getTrending);
 
-  // get trending
   useEffect(() => {
     if (timeTrending === "Today") {
       getTrending({ time_window: "day" });
@@ -58,7 +58,11 @@ const Trending = () => {
           backgroundColorActive: "rgba(var(--tmdbDarkBlue), 1)",
         }}
       >
-        {trendingData ? (
+        {isLoadingTrending ? (
+          <Loading heightBlock="310px" />
+        ) : trendingError ? (
+          <div className="list-error">{trendingError.status_message}</div>
+        ) : trendingData ? (
           trendingData.results.map((item) => {
             return (
               <div className="item-card" key={item.id}>
@@ -87,7 +91,7 @@ const Trending = () => {
             );
           })
         ) : (
-          <div>Chua co du lieu</div>
+          <div className="list-empty">Chua co du lieu</div>
         )}
       </ListHorizontal>
     </>

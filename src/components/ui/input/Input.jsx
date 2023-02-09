@@ -1,6 +1,6 @@
 import React from "react";
 import "./input.scss";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Input = ({
   type,
@@ -10,6 +10,8 @@ const Input = ({
   nameBtnInput,
   value,
   onChange,
+  onKeyDown,
+  onClickBtnSearchInput,
 }) => {
   return (
     <div
@@ -32,10 +34,11 @@ const Input = ({
         }}
         value={value}
         onChange={onChange}
+        onKeyDown={onKeyDown}
       />
       {/* {msgValidate && <p>{msgValidate}</p>} */}
       {btnInput && (
-        <div className="input__btn-block">
+        <div className="input__btn-block" onClick={onClickBtnSearchInput}>
           <div className="input__btn">{nameBtnInput}</div>
         </div>
       )}
@@ -48,7 +51,7 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   styleCss: PropTypes.object,
   nameBtnInput: PropTypes.string,
-  onChange: PropTypes.func
-}
+  onChange: PropTypes.func,
+};
 
 export default Input;

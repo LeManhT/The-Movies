@@ -4,6 +4,7 @@ import { LASTEST_TRAILERS } from "../../../../constants/constants";
 import useFetch from "../../../../hooks/useFetch";
 import Card from "../../../ui/card/Card";
 import ListHorizontal from "../../../ui/listHorizontal/ListHorizontal";
+import Loading from "../../../ui/loading/Loading";
 import ModalPreview from "../../../ui/modalVideo/ModalPreview";
 
 const LastestTrailers = () => {
@@ -16,14 +17,14 @@ const LastestTrailers = () => {
   const {
     data: topRatedData,
     error: topRatedError,
-    isLoadingTopRated,
+    isLoading: isLoadingTopRated,
     fetch: getTopRated,
   } = useFetch(tmdbApi.getTopRated);
 
   const {
     data: videosData,
-    error: videosError,
-    isLoadingVideos,
+    // error: videosError,
+    // isLoading: isLoadingVideos,
     fetch: getVideo,
   } = useFetch(tmdbApi.getVideosMovie);
 
@@ -69,7 +70,11 @@ const LastestTrailers = () => {
             "linear-gradient(to right, rgba(var(--tmdbLighterGreen), 1) 0%, rgba(var(--tmdbLightGreen), 1) 100%)",
         }}
       >
-        {topRatedData ? (
+        {isLoadingTopRated ? (
+          <Loading heightBlock="270px" />
+        ) : topRatedError ? (
+          <div className="list-error">{topRatedError.status_message}</div>
+        ) : topRatedData ? (
           topRatedData.results.map((item) => {
             return (
               <div className="item-card" key={item.id}>
@@ -97,7 +102,7 @@ const LastestTrailers = () => {
             );
           })
         ) : (
-          <div>Chua co du lieu</div>
+          <div className="list-empty">Chua co du lieu</div>
         )}
       </ListHorizontal>
       <ModalPreview

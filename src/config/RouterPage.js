@@ -15,7 +15,7 @@ const RouterPage = () => {
       element: <Layout />,
       children: [
         {
-          path: "/search/:category/:info",
+          path: "/search/:category",
           element: <SearchPage />,
         },
         {
