@@ -7,6 +7,7 @@ const SearchItemResult = ({
   releaseDate,
   overview,
   isPeople,
+  // onClick,
 }) => {
   return (
     <>
