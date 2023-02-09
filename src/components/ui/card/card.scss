@@ -1,12 +1,13 @@
-@use '../../../scss/' as *;
+@use "../../../scss/" as *;
 
 .card {
-
   .card__image {
     position: relative;
     box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
     width: 100%;
     background: #dbdbdb;
+    border-radius: 8px;
+
     overflow: hidden;
     transition: all linear 0.18s;
 
@@ -94,7 +95,7 @@
 
   p {
     .description__recommendation {
-      @include flex(flex, center, space-between)
+      @include flex(flex, center, space-between);
     }
 
     cursor: text;
