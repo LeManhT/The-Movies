@@ -6,6 +6,7 @@ import useFetch from "../../../../hooks/useFetch";
 import { ToastError } from "../../../../utils/toast";
 import Card from "../../../ui/card/Card";
 import ListHorizontal from "../../../ui/listHorizontal/ListHorizontal";
+import Loading from "../../../ui/loading/Loading";
 
 const Popular = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Popular = () => {
   const {
     data: popularData,
     error: popularError,
-    isLoadingPopular,
+    isLoading: isLoadingPopular,
     fetch: getPopular,
   } = useFetch(tmdbApi.getPopular);
 
@@ -69,7 +70,11 @@ const Popular = () => {
           backgroundColorActive: "rgba(var(--tmdbDarkBlue), 1)",
         }}
       >
-        {popularData ? (
+        {isLoadingPopular ? (
+          <Loading heightBlock="310px" />
+        ) : popularError ? (
+          <div className="list-error">{popularError.status_message}</div>
+        ) : popularData ? (
           popularData.results.map((item) => {
             return (
               <div className="item-card" key={item.id}>
@@ -98,7 +103,7 @@ const Popular = () => {
             );
           })
         ) : (
-          <div>Chua co du lieu</div>
+          <div className="list-error">Chua co du lieu</div>
         )}
       </ListHorizontal>
     </>
