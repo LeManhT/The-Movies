@@ -30,8 +30,4 @@ const Menu = ({ menuContent, onClick, itemSearchActive, totalResults }) => {
   );
 };
 
-Menu.propTypes = {
-  menuContent: PropTypes.array
-}
-
 export default Menu;

@@ -13,6 +13,10 @@ export const POPULAR = {
     listCategory: ["On TV", "In Theaters"],
 };
 
+export const MENU_SEARCH = [
+    "Movies", "TV Shows", "People", "Networks", "Companies", "Keywords", "Collections"
+]
+
 export const dataLeaderboard = [{
         id: 1,
         title: "RuiZafon",
