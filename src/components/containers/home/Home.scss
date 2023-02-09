@@ -8,4 +8,19 @@
     display: inline-block;
     margin-left: 6px;
   }
+
+  .item-card {
+    margin-right: 20px;
+  }
+
+  .list-error, .list-empty {
+    width: 100%;
+    height: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 600;
+    color: #ff1e1e;
+  }
 }

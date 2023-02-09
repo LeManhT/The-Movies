@@ -1,0 +1,66 @@
+@use "../../../scss/" as *;
+
+.list-horizontal {
+  // background-image: url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg");
+  // background-position: 50% 200px;
+  // background-size: var(--maxPrimaryPageWidth);
+  background-repeat: no-repeat;
+  transition: all linear 0.8s;
+
+  .list-horizontal__header {
+    @include flex(flex, center, flex-start);
+    padding: 30px 40px 0 40px;
+
+    .list-horizontal__title {
+      font-size: 24px;
+      font-weight: 600;
+      // color: $text-color;
+      margin-right: 20px;
+    }
+
+    .list-horizontal__main {
+      @include flex(flex, center, center);
+      // border: 1px solid rgba(var(--tmdbLightGreen), 1);
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: 600;
+
+      .detail {
+        // background-color: transparent;
+
+        p {
+          padding: 3px 20px;
+          // color:  rgba(var(--tmdbDarkBlue), 1);
+
+          &.active {
+            // background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+            border-radius: 20px;
+            // color: rgba(var(--tmdbDarkBlue), 1);
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .list-horizontal__content {
+    display: flex;
+    padding: 20px 0 20px 40px;
+    overflow-x: scroll;
+
+    // scroll
+    &.scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+    &.scroll::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #bfbfbf;
+    }
+    &.scroll::-webkit-scrollbar-thumb:hover {
+      background: #a5a5a5;
+    }
+  }
+}

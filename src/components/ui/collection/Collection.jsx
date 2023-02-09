@@ -1,5 +1,6 @@
 import React from "react";
 import "./collection.scss";
+import PropTypes from 'prop-types';
 
 const Collection = ({
   collection = {},
@@ -15,7 +16,7 @@ const Collection = ({
                 url("${styleCss.backgroundImage}")`,
       }}
     >
-      <div className="collection__content">
+      <div className="collection__content" style={{ justifyContent: styleCss.justCenter }}>
         <div
           className="collection__title"
           style={{
@@ -57,5 +58,12 @@ const Collection = ({
     </div>
   );
 };
+
+Collection.propTypes = {
+  collection: PropTypes.object,
+  styleCss: PropTypes.object,
+  divideBar: PropTypes.bool,
+  children: PropTypes.node
+}
 
 export default Collection;

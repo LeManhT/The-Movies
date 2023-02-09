@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import './readMore.scss'
+import PropTypes from 'prop-types';
 
 const ReadMore = ({ children, countLetter = 300 }) => {
     const text = children;
@@ -16,12 +17,12 @@ const ReadMore = ({ children, countLetter = 300 }) => {
                     {isReadMore ? <div className="showFull">
                         <span>Read more</span>
                         <div className="showIcon">
-                            <i class="fa-sharp fa-solid fa-chevron-right"></i>
+                            <i className="fa-sharp fa-solid fa-chevron-right"></i>
                         </div>
                     </div> : <div className="showLess">
                         <span>Show less</span>
                         <div className="showIcon">
-                            <i class="fa-solid fa-chevron-left"></i>
+                            <i className="fa-solid fa-chevron-left"></i>
                         </div>
                     </div>}
                 </span>
@@ -29,5 +30,10 @@ const ReadMore = ({ children, countLetter = 300 }) => {
         </div>
     );
 };
+
+ReadMore.propTypes = {
+    children: PropTypes.node,
+    countLetter: PropTypes.number
+}
 
 export default ReadMore

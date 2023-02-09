@@ -3,6 +3,7 @@ import {
   buildStyles,
   CircularProgressbarWithChildren,
 } from "react-circular-progressbar";
+import PropTypes from 'prop-types';
 
 const CirclePercent = ({ number = 40 }) => {
   return (
@@ -13,9 +14,9 @@ const CirclePercent = ({ number = 40 }) => {
       styles={buildStyles({
         backgroundColor: "#081c22",
         pathColor:
-          number > 60 ? "#1fb96e" : number > 30 ? "#cdd030" : "#c8225a",
+          number > 70 ? "#1fb96e" : number > 40 ? "#cdd030" : "#c8225a",
         trailColor:
-          number > 60 ? "#1d4028" : number > 30 ? "#3e3b10" : "#4e1533",
+          number > 70 ? "#1d4028" : number > 40 ? "#3e3b10" : "#4e1533",
       })}
     >
       <div style={{ fontSize: "13px", color: "white", fontWeight: "600" }}>
@@ -25,5 +26,9 @@ const CirclePercent = ({ number = 40 }) => {
     </CircularProgressbarWithChildren>
   );
 };
+
+CirclePercent.propTypes = {
+  number: PropTypes.number
+}
 
 export default CirclePercent;

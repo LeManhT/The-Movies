@@ -1,5 +1,6 @@
 import React from "react";
 import "./searchItemResult.scss";
+import PropTypes from 'prop-types';
 
 const SearchItemResult = ({
   imgSrc,
@@ -42,5 +43,13 @@ const SearchItemResult = ({
     </>
   );
 };
+
+SearchItemResult.propTypes = {
+  imgSrc: PropTypes.string,
+  title: PropTypes.string,
+  releaseDate: PropTypes.string,
+  overview: PropTypes.string,
+  isPeople: PropTypes.bool
+}
 
 export default SearchItemResult;
