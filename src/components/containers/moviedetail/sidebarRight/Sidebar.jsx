@@ -6,18 +6,18 @@ import Button from '../../../ui/button/Button'
 import ShortcutText from '../../../ui/shortcutText/ShortcutText'
 import Description from '../../../ui/description/Description'
 import { ReactComponent as Chart } from '../../../../assets/imgs/chart.svg';
+import { LIST_IMAGE } from '../../../../constants/constants'
 
 
 
-
-const Sidebar = ({ listImage, keywordsData, movieDetailData }) => {
+const Sidebar = ({ keywordsData, movieDetailData }) => {
 
     return (
         <>
             <div className="body__right__facts">
                 <div className="body__right__facts__social_links">
                     {
-                        listImage.map((item, index) => {
+                        LIST_IMAGE.map((item, index) => {
                             return <span key={index} className="glyphicons_link" style={{ backgroundImage: `url(${item})` }}></span>
                             // <i key={index} style={{ fontSize: "20px", margin: "0px 10px" }} className={item}></i>
                         })
@@ -63,10 +63,10 @@ const Sidebar = ({ listImage, keywordsData, movieDetailData }) => {
                     <div className="top__contributors__title">
                         <h3>Top Contributors</h3>
                     </div>
-                    <EditLeader editCount={80} editName="Sheigunt" imgSrc={"https://www.themoviedb.org/t/p/w45_and_h45_face/5BvxGhRE7yjtbHCXgrTxPk9hBXp.jpg"} />
-                    <EditLeader editCount={80} editName="Sheigunt" imgSrc={"https://www.themoviedb.org/t/p/w45_and_h45_face/5BvxGhRE7yjtbHCXgrTxPk9hBXp.jpg"} />
-                    <EditLeader editCount={80} editName="Sheigunt" imgSrc={"https://www.themoviedb.org/t/p/w45_and_h45_face/5BvxGhRE7yjtbHCXgrTxPk9hBXp.jpg"} />
-                    <EditLeader editCount={80} editName="Sheigunt" imgSrc={"https://www.themoviedb.org/t/p/w45_and_h45_face/5BvxGhRE7yjtbHCXgrTxPk9hBXp.jpg"} />
+                    <EditLeader title={'80'} editName="Sheigunt" imgSrc={"https://www.themoviedb.org/t/p/w45_and_h45_face/5BvxGhRE7yjtbHCXgrTxPk9hBXp.jpg"} />
+                    <EditLeader title={'80'} editName="Sheigunt" imgSrc={"https://www.themoviedb.org/t/p/w45_and_h45_face/5BvxGhRE7yjtbHCXgrTxPk9hBXp.jpg"} />
+                    <EditLeader title={'80'} editName="Sheigunt" imgSrc={"https://www.themoviedb.org/t/p/w45_and_h45_face/5BvxGhRE7yjtbHCXgrTxPk9hBXp.jpg"} />
+                    <EditLeader title={'80'} editName="Sheigunt" imgSrc={"https://www.themoviedb.org/t/p/w45_and_h45_face/5BvxGhRE7yjtbHCXgrTxPk9hBXp.jpg"} />
 
                     <div className="view__edit">
                         <p>View edit history</p>
