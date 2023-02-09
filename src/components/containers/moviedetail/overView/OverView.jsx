@@ -5,7 +5,8 @@ import Description from '../../../ui/description/Description'
 import { toHoursAndMinutes } from '../../../../utils/common'
 import ModalPreview from '../../../ui/modalVideo/ModalPreview'
 import './overview.scss'
-const OverView = ({ movieDetailData, listIcon }) => {
+import { LIST_ICON } from '../../../../constants/constants'
+const OverView = ({ movieDetailData }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -13,9 +14,9 @@ const OverView = ({ movieDetailData, listIcon }) => {
             <div className="movieDetail__content">
                 <div className="movieDetail__poster__wrapper">
                     <div className="movieDetail__poster">
-                        <img src={`https://www.themoviedb.org/t/p/w300_and_h450_bestv2${movieDetailData?.poster_path || movieDetailData?.backdrop_path}`} alt="" />
-                        <div class="zoom">
-                            <p href="#" class="no_click"><span class="zoom_fullscreen white"></span> Expand</p>
+                        <img src={movieDetailData?.poster_path || movieDetailData?.backdrop_path ? `https://www.themoviedb.org/t/p/w300_and_h450_bestv2${movieDetailData?.poster_path || movieDetailData?.backdrop_path}` : "https://tuyendung.edutalk.edu.vn/images/default.jpg"} alt="" />
+                        <div className="zoom">
+                            <p href="#" className="no_click"><span className="zoom_fullscreen white"></span> Expand</p>
                         </div>
                     </div>
 
@@ -35,7 +36,7 @@ const OverView = ({ movieDetailData, listIcon }) => {
                             <span className="release">12/16/2022 (US), </span>
                             <span className="genres">
                                 {movieDetailData?.genres.map((genre) => {
-                                    return <span key={genre.id}>{genre.name + ", "}</span>
+                                    return <span key={genre?.id}>{genre.name + ", "}</span>
                                 })}
                             </span>
                             <span className="runtime">{toHoursAndMinutes(movieDetailData?.runtime).hours + 'h ' + toHoursAndMinutes(movieDetailData?.runtime).minutes}</span>
@@ -52,7 +53,7 @@ const OverView = ({ movieDetailData, listIcon }) => {
                             </div>
                         </li>
                         {
-                            listIcon.map((item, index) => {
+                            LIST_ICON.map((item, index) => {
                                 return <li className="toolTip" key={index} title='Add to List'>
                                     <ToolTip><i className={item}></i></ToolTip>
                                 </li>
@@ -61,9 +62,7 @@ const OverView = ({ movieDetailData, listIcon }) => {
 
                         <li className="preview__video">
                             <i className="fa-solid fa-play"></i>
-                            <ModalPreview isOpen={isOpen} onClose={() => setIsOpen(false)} keyVideo={movieDetailData?.videos.results[0].key} >
-                                <span className="btn-primary" style={{ "fontWeight": "500" }} onClick={() => { setIsOpen(true) }}>Play Trailer</span>
-                            </ModalPreview>
+                            <span className="btn-primary" style={{ "fontWeight": "500" }} onClick={() => { setIsOpen(true) }}>Play Trailer</span>
                         </li>
                     </ul>
 
@@ -87,6 +86,7 @@ const OverView = ({ movieDetailData, listIcon }) => {
                     </div>
                 </div>
             </div>
+            <ModalPreview isOpen={isOpen} onClose={() => setIsOpen(false)} keyVideo={movieDetailData?.videos.results[0]?.key || ""} ></ModalPreview>
         </div>
     )
 }

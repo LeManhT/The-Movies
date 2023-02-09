@@ -15,7 +15,7 @@
 
             .movieDetail__poster {
                 height: 450px;
-                max-width: fit-content;
+                max-width: 300px;
                 overflow: hidden;
                 border-radius: var(--imageBorderRadius);
                 position: relative;
@@ -36,6 +36,7 @@
                     width: 100%;
                     object-fit: cover;
                     display: block;
+                    height: 100%;
                 }
             }
 
@@ -177,7 +178,6 @@
 
                     &:hover {
                         color: rgba(255, 255, 255, 0.7);
-
                     }
 
                     i {

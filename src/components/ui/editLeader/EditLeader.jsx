@@ -5,15 +5,17 @@ import PropTypes from 'prop-types';
 
 const EditLeader = ({
   title,
+  editName,
   imgAvatar,
   styleCss = {},
   countAllTime = 100,
   countThisWeek = 80,
+  isMeter
 }) => {
   return (
     <div className="editLeader">
 
-      <div
+      <div style={!isMeter ? { width: '40px', height: "40px" } : null}
         className={
           imgAvatar ? "editLeader__avatarImg" : "editLeader__avatarText"
         }
@@ -26,24 +28,30 @@ const EditLeader = ({
 
       </div>
       <div className="editLeader__info">
-        <div className="editLeader__title">{title}</div>
-        <div className="edit__desc">
-          <Meter
-            meterCount={countAllTime}
-            styleCss={{
-              widthGauge: styleCss.widthDescFirst,
-              backgroundGauge: styleCss.backgroundDescFirst,
-            }}
-          />
-          <Meter
-            meterCount={countThisWeek}
-            styleCss={{
-              widthGauge: styleCss.widthDescSecond,
-              backgroundGauge: styleCss.backgroundDescSecond,
-            }}
-          />
-        </div>
-      </div>
+        <div style={!isMeter ? { fontSize: '16px' } : { fontSize: '20px' }} className="editLeader__title">{title}</div>
+        {
+          isMeter ?
+            <div className="edit__desc">
+              <Meter
+                meterCount={countAllTime}
+                styleCss={{
+                  widthGauge: styleCss.widthDescFirst,
+                  backgroundGauge: styleCss.backgroundDescFirst,
+                }}
+              />
+              <Meter
+                meterCount={countThisWeek}
+                styleCss={{
+                  widthGauge: styleCss.widthDescSecond,
+                  backgroundGauge: styleCss.backgroundDescSecond,
+                }}
+              />
+            </div> :
+            <div className="edit__desc">
+              <span>{editName}</span>
+            </div>
+        }
+      </div >
     </div>
   );
 };

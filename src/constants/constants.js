@@ -129,3 +129,23 @@ export const dataLeaderboard = [
     },
   },
 ];
+
+
+export const LIST_ICON = [
+  "fa-solid fa-list", "fa-solid fa-heart", "fa-solid fa-bookmark", "fa-solid fa-star"
+]
+
+export const LIST_IMAGE = [
+  "https://www.themoviedb.org/assets/2/v4/glyphicons/social/facebook-71155d1cd369c47ce8456477833a92c324fa01e6d628cb6ece19cedea3c1c480.svg",
+  "https://www.themoviedb.org/assets/2/v4/glyphicons/social/twitter-a6ff8c172b8e086f4a64578cee0a16676c1a067b47a1b1b186d58795d241a852.svg",
+  "https://www.themoviedb.org/assets/2/v4/glyphicons/social/instagram-74e6299c864adc384258da3b3a8eb09282b7ccda4dd1dfa9a4158ba2ea8583b9.svg",
+  "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-351-link-5f643a86c2515cb06ea08ebc798941824f76bbcea4ed571222a81f271b30c7f3.svg"
+]
+
+export const LIST_CARD = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+export const LIST_MEDIA = {
+  title: "media",
+  listMedia: ["Most Popular", "Videos", "Backdrops", "Posters"],
+}

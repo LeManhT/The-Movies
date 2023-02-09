@@ -11,36 +11,49 @@
     }
 }
 
-.top__billed {
-    position: relative;
-    top: 0;
-    left: 0;
+.viewMore {
+    @include flex(flex, center, center);
+    width: 250px;
 
-    .viewMore {
+    .icon__view--more {
+        background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-830-arrow-thin-right-5c2f4e65afc985448cd9042f9d64426f1e002fbd3c2546053d190fa27f77600f.svg");
+        position: relative;
+        top: 0;
+        left: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 1em;
+        min-height: 1em;
+        width: 1em;
+        height: 1em;
+        line-height: inherit;
+        background-position: center center;
+        background-repeat: no-repeat;
+        color: inherit;
+        box-sizing: border-box;
+    }
+
+    p {
         @include flex(flex, center, center);
-        width: 250px;
+        width: 100px;
+        font-weight: 600;
 
-        p {
-            @include flex(flex, center, center);
+        &:hover {
+            opacity: 0.8;
+            cursor: pointer;
         }
+    }
 
-        .icon__view--more {
-            background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-830-arrow-thin-right-5c2f4e65afc985448cd9042f9d64426f1e002fbd3c2546053d190fa27f77600f.svg");
-            position: relative;
-            top: 0;
-            left: 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 1em;
-            min-height: 1em;
-            width: 1em;
-            height: 1em;
-            line-height: inherit;
-            background-position: center center;
-            background-repeat: no-repeat;
-            color: inherit;
-            box-sizing: border-box;
+    .top__billed {
+        position: relative;
+        top: 0;
+        left: 0;
+
+        .card {
+            .image__wrapper {
+                height: 178px;
+            }
         }
     }
 
@@ -109,6 +122,7 @@
     }
 
 
+
     .discussion__btn {
         &:hover {
             opacity: 0.7;
@@ -123,6 +137,16 @@
 
 
 
+}
+
+.social__scroller {
+    .list-horizontal .list-horizontal__header {
+        padding: 0;
+    }
+
+    .list-horizontal .list-horizontal__content {
+        padding: 20px 0;
+    }
 }
 
 .collection {
@@ -183,7 +207,7 @@
             background-color: rgba(255, 255, 255, 0.9);
             position: absolute;
             height: 40px;
-            bottom: 35px;
+            bottom: 38px;
             left: 0;
             right: 0;
             width: 100%;
@@ -219,7 +243,6 @@
 
     .detail__style {
         &::after {
-            content: '';
             width: 60px;
             height: 100%;
             position: absolute;
@@ -237,5 +260,11 @@
 
     .image__wrapper {
         height: 141px;
+    }
+}
+
+.media__item {
+    .card .card__image:hover {
+        transform: unset;
     }
 }

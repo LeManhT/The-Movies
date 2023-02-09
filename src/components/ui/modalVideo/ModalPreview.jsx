@@ -7,8 +7,7 @@ const ModalPreview = ({ keyVideo, isOpen = false, children, onClose }) => {
     return (
         <>
             <div className="modalVideo">
-                <ModalVideo channel='youtube' allowFullScreen autoplay isOpen={isOpen} videoId={keyVideo} onClose={onClose} />
-                {children}
+                <ModalVideo channel='youtube' isOpen={isOpen} videoId={keyVideo} onClose={onClose} />
             </div>
         </>
     )
