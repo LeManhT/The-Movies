@@ -50,13 +50,14 @@ const DetailContent = ({ movieDetailData, creditsData, recommendationsData, isLo
                     {
                         creditsData?.cast.slice(0, end).map((credit, index) => {
                             return <div key={index} className="card__item">
-                                <Card width={140} styleCss={{
+                                {!credit ? <Card width={140} styleCss={{
                                     fontSizeName: "16px",
                                     fontWeightName: "700",
                                     paddingContent: "10px",
                                     fontSizeDesc: "15px",
                                     fontWeightDesc: "400"
-                                }} image={credit.profile_path ? `https://www.themoviedb.org/t/p/w138_and_h175_face${credit.profile_path}` : "https://preview.redd.it/is-their-a-way-to-change-you-avatar-on-epic-games-if-not-v0-joqzwwm6nv4a1.jpg?width=201&format=pjpg&auto=webp&s=5a6215f1326e1148ea5ba209613795cfc62938a2"} name={credit.name} description={credit.character} borderRadius="8px" />
+                                }} image={credit.profile_path ? `https://www.themoviedb.org/t/p/w138_and_h175_face${credit.profile_path}` : "https://preview.redd.it/is-their-a-way-to-change-you-avatar-on-epic-games-if-not-v0-joqzwwm6nv4a1.jpg?width=201&format=pjpg&auto=webp&s=5a6215f1326e1148ea5ba209613795cfc62938a2"} name={credit.name} description={credit.character} borderRadius="8px" /> : <SkeletonContainer />}
+
                             </div>
                         })
                     }

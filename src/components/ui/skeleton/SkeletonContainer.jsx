@@ -1,7 +1,7 @@
 import React from 'react'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 
-const SkeletonContainer = ({ count }) => {
+const SkeletonContainer = ({ count, height }) => {
     return (
         <div className="skeleton_container" style={{
             border: '1px solid #ccc',
@@ -11,7 +11,7 @@ const SkeletonContainer = ({ count }) => {
             marginBottom: '0.5rem',
             width: 100,
         }}>
-            <Skeleton highlightColor='#ccc' baseColor='#fff' height={450} count={count} />
+            <Skeleton highlightColor='#ccc' baseColor='#fff' height={height} count={count} />
         </div>
     )
 }
