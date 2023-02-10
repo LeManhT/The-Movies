@@ -20,7 +20,7 @@ const Search = () => {
   const { category } = useParams();
   console.log(category);
   const navigate = useNavigate();
-  const { pathname, search } = useLocation();
+  const { search } = useLocation();
   const [searchParam, setSearchParam] = useSearchParams(search);
   const [itemSearch, setItemSearch] = useState(category); // truyền tên của category để lấy ra list khi click
   const [pageCount, setpageCount] = useState(queryString.parse(search).page); //
@@ -39,10 +39,10 @@ const Search = () => {
   useEffect(() => {
     itemSearch
       ? getListSearch({
-          category: category,
-          page: pageCount,
-          query: querySearch,
-        })
+        category: category,
+        page: pageCount,
+        query: querySearch,
+      })
       : setSearchList({});
   }, [itemSearch, pageCount, searchParam, category]);
 
