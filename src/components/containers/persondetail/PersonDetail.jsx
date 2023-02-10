@@ -39,7 +39,6 @@ const PersonDetail = () => {
               dataPerson={dataPerson}
             />
           </div>
-
           <div className="person__detail__acting">
             {personDetailCreditData?.cast.map((cast, index) => {
               return (
