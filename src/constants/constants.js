@@ -170,6 +170,7 @@ export const LIST_IMAGE = [
 
 export const LIST_CARD = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+export const AUTHOR_MAP = [1, 2, 3, 4, 5]
 
 export const LIST_MEDIA = {
     title: "media",

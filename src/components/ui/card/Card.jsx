@@ -19,7 +19,7 @@ const Card = ({
   vote_average,
 }) => {
   return (
-    <div className="card" style={{ width: `${width}px` }}>
+    <div className="card" style={{ width: `${width}px`, minWidth: `${width}px` }}>
       <div className="card__image" style={{ height: `${heightImage}px` }}>
         <div
           className="image__wrapper"

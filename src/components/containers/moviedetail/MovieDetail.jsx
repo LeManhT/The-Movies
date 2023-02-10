@@ -16,12 +16,14 @@ const MovieDetail = () => {
   const {
     data: movieDetailData,
     error: movieDetailError,
+    isLoading,
     fetch,
   } = useFetch(tmdbApi.getMovieDetail);
 
   const {
     data: creditsData,
     error: creditsError,
+    isLoading: isLoadingCredit,
     fetch: getCredits,
   } = useFetch(tmdbApi.getMovieCredits);
 
@@ -37,6 +39,7 @@ const MovieDetail = () => {
   const {
     data: recommendationsData,
     error: recommendationsErr,
+    isLoading: isLoadingRecommendation,
     fetch: getRecommend
   } = useFetch(tmdbApi.getRecommendations);
 
@@ -45,8 +48,10 @@ const MovieDetail = () => {
     getCredits({ movie_id: info });
     getKeywords({ movie_id: info });
     getRecommend({ movie_id: info });
+    window.scrollTo(0, 0)
   }, [info])
-  console.log(movieDetailData);
+  // console.log(movieDetailData);
+  // console.log(creditsData)
   // console.log(recommendationsData, 40)
 
 
@@ -54,7 +59,7 @@ const MovieDetail = () => {
   return (
     <div className="movieDetail__container">
       <div className="movieDetail__head__wrapper">
-        <OverView movieDetailData={movieDetailData}></OverView>
+        <OverView creditsData={creditsData} isLoading movieDetailData={movieDetailData}></OverView>
       </div >
 
 
@@ -63,7 +68,7 @@ const MovieDetail = () => {
         <div className="movieDetail__body--large">
 
           <div className="movieDetail__body__left">
-            <DetailContent movieDetailData={movieDetailData} creditsData={creditsData} recommendationsData={recommendationsData}></DetailContent>
+            <DetailContent creditsError={creditsError} isLoading={isLoading} isLoadingCredit={isLoadingCredit} movieDetailData={movieDetailData} creditsData={creditsData} movieDetailError={movieDetailError} recommendationsData={recommendationsData} isLoadingRecommendation={isLoadingRecommendation} recommendationsErr={recommendationsErr}></DetailContent>
           </div>
 
           <div className="movieDetail__body__right">
