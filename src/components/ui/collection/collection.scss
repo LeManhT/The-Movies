@@ -1,0 +1,18 @@
+.collection__wrapper {
+  min-height: 300px;
+  height: calc(100vh / 2.5);
+  max-height: 360px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: aqua;
+  color: #fff;
+
+  .collection__content {
+    padding: 30px 40px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

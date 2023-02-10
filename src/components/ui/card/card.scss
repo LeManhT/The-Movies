@@ -1,0 +1,103 @@
+@use "../../../scss/" as *;
+
+.card {
+  .card__image {
+    position: relative;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    width: 100%;
+    background: #dbdbdb;
+    border-radius: 8px;
+
+    overflow: hidden;
+    transition: all linear 0.18s;
+
+    &:hover {
+      transform: scale(1.05);
+
+      .image__wrapper {
+        .image__icon-play {
+          transform: scale(1.4) translate(-34%, -34%);
+        }
+      }
+    }
+
+    .image__wrapper {
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .image__icon-play {
+        position: absolute;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 46px;
+        transition: all linear 0.18s;
+      }
+    }
+
+    .image__options {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      color: white;
+      opacity: 0.6;
+      max-width: 1em;
+      max-height: 1em;
+      font-size: 20px;
+      transition: all linear 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+.card__content {
+  position: relative;
+  white-space: normal;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+
+  .content__consensus {
+    height: 38px;
+    width: 38px;
+    position: absolute;
+    top: -22px;
+    left: 10px;
+  }
+
+  h2 {
+    width: 100%;
+    overflow-wrap: break-word;
+    transition: all linear 0.18s;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.6;
+    }
+  }
+
+  p {
+    .description__recommendation {
+      @include flex(flex, center, space-between);
+    }
+
+    cursor: text;
+  }
+}

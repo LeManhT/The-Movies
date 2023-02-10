@@ -1,0 +1,55 @@
+import React from "react";
+import "./searchItemResult.scss";
+import PropTypes from 'prop-types';
+
+const SearchItemResult = ({
+  imgSrc,
+  title,
+  releaseDate,
+  overview,
+  isPeople,
+  // onClick,
+}) => {
+  return (
+    <>
+      {imgSrc || title || releaseDate || overview ? (
+        <div className="searchItem__result searchResult__wrapper">
+          <div
+            className="searchItem__image"
+            style={!isPeople ? { height: "141px" } : { height: "auto" }}
+          >
+            <img
+              src={imgSrc}
+              style={
+                isPeople ? { borderRadius: "8px" } : { borderRadius: "0px" }
+              }
+              alt=""
+            />
+          </div>
+          <div className="searchItem__details ">
+            <div className="details__title">
+              <h2>{title}</h2>
+              <div className="details__release_date">
+                <span>{releaseDate}</span>
+              </div>
+            </div>
+
+            <div className="details__overview">
+              <p>{overview}</p>
+            </div>
+          </div>
+        </div>
+      ) : null}
+    </>
+  );
+};
+
+SearchItemResult.propTypes = {
+  imgSrc: PropTypes.string,
+  title: PropTypes.string,
+  releaseDate: PropTypes.string,
+  overview: PropTypes.string,
+  isPeople: PropTypes.bool
+}
+
+export default SearchItemResult;

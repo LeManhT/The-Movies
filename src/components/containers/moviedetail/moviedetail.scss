@@ -1,0 +1,33 @@
+@use "../../../scss/" as *;
+
+.movieDetail__container {
+  margin-top: 64px;
+
+  .movieDetail__head__wrapper {
+    border-bottom: 1px solid var(--primaryColor);
+    background-position: left calc((50vw - 170px) - 340px) top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg");
+    color: #fff;
+  }
+
+  .movieDetail__body__wrapper {
+    width: 100%;
+
+    .movieDetail__body--large {
+      @include flex(flex, flex-start, center);
+      padding: 30px 40px;
+      @include layoutCenter(1400px);
+    }
+
+    .movieDetail__body__left {
+      width: 80%;
+      padding-right: 30px;
+    }
+
+    .movieDetail__body__right {
+      width: 20%;
+    }
+  }
+}

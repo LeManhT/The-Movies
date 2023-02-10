@@ -1,0 +1,19 @@
+@use "../../../scss/" as *;
+
+.meter {
+  display: flex;
+  align-items: center;
+
+  .gauge {
+    height: 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+  }
+}
