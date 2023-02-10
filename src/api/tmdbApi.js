@@ -28,7 +28,7 @@ const tmdbApi = {
   },
 
   getSearch: (params) => {
-    const url = `search/${params.category}?api_key=${apiConfig.apiKey}&page=${params.page}`;
+    const url = `search/${params.category}?api_key=${apiConfig.apiKey}&query=${params.query}&page=${params.page}`;
     return axiosClient.get(url);
   },
 
