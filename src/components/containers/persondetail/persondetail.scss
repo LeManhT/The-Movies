@@ -4,7 +4,7 @@
     width: 100%;
     @include flex(flex, flex-start, center);
     margin-top: 64px;
-  
+
     .person__detail__content {
         max-width: var(--maxPrimaryPageWidth);
         width: 100%;
@@ -21,3 +21,4 @@
             max-width: 980px;
         }
     }
+}
