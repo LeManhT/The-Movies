@@ -167,6 +167,7 @@ const Search = () => {
           ) : null}
         </div>
       </div>
+    </div>
   );
 };
 
