@@ -11,7 +11,7 @@ import ModalPreview from '../../../ui/modalVideo/ModalPreview'
 import { useNavigate } from 'react-router-dom'
 import Loading from '../../../ui/loading/Loading'
 
-const DetailContent = ({ movieDetailData, creditsData, recommendationsData, isLoadingCredit, creditsError, isLoading, movieDetailError, isLoadingRecommendation, recommendationsErr }) => {
+const DetailContent = ({ movieDetailData, creditsData, recommendationsData, creditsError, isLoading, movieDetailError, isLoadingRecommendation, recommendationsErr }) => {
     const [dataMedia, setDataMedia] = useState([])
     const [activeTab, setActiveTab] = useState("Review");
     const [activeMedia, setActiveMedia] = useState(LIST_MEDIA.listMedia[0])
@@ -50,7 +50,7 @@ const DetailContent = ({ movieDetailData, creditsData, recommendationsData, isLo
                 >
                     {creditsData?.cast.slice(0, end).map((credit, index) => {
                         return (
-                            <div key={index} className="card__item">
+                            <div key={index} className="card__item" onClick={() => { nav(`/person/${credit?.id}`) }}>
                                 <Card
                                     width={140}
                                     styleCss={{
