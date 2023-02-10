@@ -15,7 +15,7 @@ const Menu = ({ menuContent, onClick, itemSearchActive, totalResults }) => {
                 key={item.content}
                 onClick={() => onClick(item.content)}
                 style={
-                  item.content === itemSearchActive
+                  item.api === itemSearchActive //category
                     ? { background: "rgba(0,0,0,0.08)" }
                     : {}
                 }
