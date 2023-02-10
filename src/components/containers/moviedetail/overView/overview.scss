@@ -89,11 +89,16 @@
                 margin-bottom: 10px;
 
                 .movieDetail__title {
+
                     h2 {
                         width: 100%;
                         margin: 0;
                         padding: 0;
                         font-size: 2.2rem;
+
+                        .release__date {
+                            margin-left: 4px;
+                        }
                     }
 
                     &:hover {
@@ -114,6 +119,8 @@
                     }
 
                     .genres {
+                        margin-left: 6px;
+
                         span {
                             &:hover {
                                 cursor: pointer;

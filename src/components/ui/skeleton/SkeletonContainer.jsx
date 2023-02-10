@@ -1,18 +1,13 @@
 import React from 'react'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 
-const SkeletonContainer = ({ children }) => {
+const SkeletonContainer = ({ count, width, height }) => {
     return (
-        <div className="skeleton_container" style={{
-            border: '1px solid #ccc',
-            display: 'block',
-            lineHeight: 2,
-            padding: '1rem',
-            marginBottom: '0.5rem',
-            width: 100,
-        }}>
-            <Skeleton />
-        </div>
+        <SkeletonTheme color="#202020" highlightColor="#444" >
+            <p style={{ marginBottom: '1em' }}>
+                <Skeleton count={count} width={width} height={height} />
+            </p>
+        </SkeletonTheme>
     )
 }
 
