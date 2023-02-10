@@ -2,15 +2,30 @@ import React from "react";
 import "./searchItemResult.scss";
 import PropTypes from 'prop-types';
 
-const SearchItemResult = ({ imgSrc, title, releaseDate, overview, isPeople }) => {
+const SearchItemResult = ({
+  imgSrc,
+  title,
+  releaseDate,
+  overview,
+  isPeople,
+  // onClick,
+}) => {
   return (
     <>
       {imgSrc || title || releaseDate || overview ? (
         <div className="searchItem__result searchResult__wrapper">
-          <div className="searchItem__image" style={!isPeople ? { "height": "141px" } : { "height": "auto" }}>
-            <img src={imgSrc} style={isPeople ? { "border-radius": "8px" } : { "border-radius": "0px" }} alt="" />
+          <div
+            className="searchItem__image"
+            style={!isPeople ? { height: "141px" } : { height: "auto" }}
+          >
+            <img
+              src={imgSrc}
+              style={
+                isPeople ? { borderRadius: "8px" } : { borderRadius: "0px" }
+              }
+              alt=""
+            />
           </div>
-
           <div className="searchItem__details ">
             <div className="details__title">
               <h2>{title}</h2>

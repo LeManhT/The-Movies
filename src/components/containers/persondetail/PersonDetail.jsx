@@ -6,7 +6,6 @@ import useFetch from '../../../hooks/useFetch'
 import tmdbApi from '../../../api/tmdbApi'
 import { useParams } from 'react-router-dom'
 
-
 const PersonDetail = () => {
 
   const { info } = useParams();
@@ -26,8 +25,6 @@ const PersonDetail = () => {
     getDataPerson({ person_id: info });
     getDetailPersonCredit({ person_id: info })
   }, [])
-  console.log(personDetailCreditData, 28)
-  console.log(dataPerson, 21)
 
   return (
     <div className="person__detail__wrapper">
@@ -45,4 +42,5 @@ const PersonDetail = () => {
   )
 }
 
-export default PersonDetail
+
+export default PersonDetail;

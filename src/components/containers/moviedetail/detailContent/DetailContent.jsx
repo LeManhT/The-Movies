@@ -12,7 +12,6 @@ import { useNavigate } from 'react-router-dom'
 import Loading from '../../../ui/loading/Loading'
 
 const DetailContent = ({ movieDetailData, creditsData, recommendationsData, isLoadingCredit, creditsError, isLoading, movieDetailError, isLoadingRecommendation, recommendationsErr }) => {
-    // const [scrollTop, setScrollTop] = useState(0)
     const [dataMedia, setDataMedia] = useState([])
     const [activeTab, setActiveTab] = useState("Review");
     const [activeMedia, setActiveMedia] = useState(LIST_MEDIA.listMedia[0])
@@ -26,9 +25,6 @@ const DetailContent = ({ movieDetailData, creditsData, recommendationsData, isLo
     const handleClickMedia = (item) => {
         setActiveMedia(item)
     }
-    // const handleScroll = (e) => { setScrollTop(Math.floor(e.currentTarget.scrollLeft)) }
-
-
     useEffect(() => {
         if (activeMedia === "Most Popular") {
             setDataMedia([{
@@ -68,34 +64,97 @@ const DetailContent = ({ movieDetailData, creditsData, recommendationsData, isLo
                     </div> : null}
                 </ListCard>
 
-                <div className="top__billed__btn">
-                    <p>Full Cast & Crew</p>
-                </div>
+  return (
+    <>
+      <div className="panel top__billed">
+        <ListCard
+          title={"Top Billed Cast"}
+          gap={"15px"}
+          fontSize="1.4em"
+          fontWeight={"600"}
+        >
+          {creditsData?.cast.slice(0, end).map((credit, index) => {
+            return (
+              <div key={index} className="card__item">
+                <Card
+                  width={140}
+                  styleCss={{
+                    fontSizeName: "16px",
+                    fontWeightName: "700",
+                    paddingContent: "10px",
+                    fontSizeDesc: "15px",
+                    fontWeightDesc: "400",
+                  }}
+                  image={
+                    credit.profile_path
+                      ? `https://www.themoviedb.org/t/p/w138_and_h175_face${credit.profile_path}`
+                      : "https://preview.redd.it/is-their-a-way-to-change-you-avatar-on-epic-games-if-not-v0-joqzwwm6nv4a1.jpg?width=201&format=pjpg&auto=webp&s=5a6215f1326e1148ea5ba209613795cfc62938a2"
+                  }
+                  name={credit.name}
+                  description={credit.character}
+                  borderRadius="8px"
+                />
+              </div>
+            );
+          })}
+          {end <= creditsData?.cast.length ? (
+            <div
+              className="viewMore"
+              onClick={() => {
+                setEnd((pre) => pre + 15);
+              }}
+            >
+              <p>
+                <span>View More</span>
+                <span className="icon__view--more arrow-thin-right"></span>
+              </p>
             </div>
+          ) : null}
+        </ListCard>
 
-            <div className="social__panel">
-                <div className="review">
+        <div className="top__billed__btn">
+          <p>Full Cast & Crew</p>
+        </div>
+      </div>
 
-                    <ListHorizontal titleTab={"Social"} isTabBorderBottom styleCssTabPrimary={{ textColor: "#000", borderBottom: "3px solid #000" }} listItemTab={["Review", "Discussions"]} itemTabActive={activeTab} onClickTab={handleClickTab}>
-
-                        {/* Tabs */}
-                        <div className="review__content">
-                            {activeTab === "Review" ? `We don't have any reviews for ${movieDetailData?.original_title}. Would you like to write one?` :
-                                LIST_ICON?.map((index) => {
-                                    return <div key={index} className="item__discussion">
-                                        <Discussion img={"https://www.themoviedb.org/t/p/w45_and_h45_face/qZW7TazXYrGysGBgO6ygeAaC4WO.jpg"} link={"Sequel snubbed at the Oscars 2023?"} status={"Open"} count={0}></Discussion>
-                                    </div>
-                                })
-                            }
-
-                        </div>
-                    </ListHorizontal>
-                    <div className="discussion__btn">
-                        <p>Go to Discussions</p>
-                    </div>
-                </div>
+      <div className="social__panel">
+        <div className="review">
+          <ListHorizontal
+            titleTab={"Social"}
+            isTabBorderBottom
+            styleCssTabPrimary={{
+              textColor: "#000",
+              borderBottom: "3px solid #000",
+            }}
+            listItemTab={["Review", "Discussions"]}
+            itemTabActive={activeTab}
+            onClickTab={handleClickTab}
+          >
+            {/* Tabs */}
+            <div className="review__content">
+              {activeTab === "Review"
+                ? `We don't have any reviews for ${movieDetailData?.original_title}. Would you like to write one?`
+                : LIST_ICON?.map((index) => {
+                    return (
+                      <div key={index} className="item__discussion">
+                        <Discussion
+                          img={
+                            "https://www.themoviedb.org/t/p/w45_and_h45_face/qZW7TazXYrGysGBgO6ygeAaC4WO.jpg"
+                          }
+                          link={"Sequel snubbed at the Oscars 2023?"}
+                          status={"Open"}
+                          count={0}
+                        ></Discussion>
+                      </div>
+                    );
+                  })}
             </div>
-
+          </ListHorizontal>
+          <div className="discussion__btn">
+            <p>Go to Discussions</p>
+          </div>
+        </div>
+      </div>
             <div className="social__scroller">
                 <ListHorizontal titleTab={"Media"} isTabBorderBottom styleCssTabPrimary={{ textColor: "#000", borderBottom: "3px solid #000" }} listItemTab={LIST_MEDIA.listMedia} itemTabActive={activeMedia} onClickTab={handleClickMedia}>
 
@@ -132,31 +191,69 @@ const DetailContent = ({ movieDetailData, creditsData, recommendationsData, isLo
                                     </div>
                                 }) : <div className="list-empty">Opps!! Now we don't have any data for this title</div>
                         }
-                    </div>
-                </ListHorizontal>
+                      />
+                    )}
+                  </div>
 
-            </div>
+                  <ModalPreview
+                    isOpen={isOpen}
+                    onClose={() => setIsOpen(false)}
+                    keyVideo={mediaItem.video}
+                  ></ModalPreview>
 
+                  {mediaItem.isVideo || (
+                    <Card
+                      width={500}
+                      styleCss={{
+                        fontSizeName: "16px",
+                        fontWeightName: "700",
+                        paddingContent: "10px",
+                        fontSizeDesc: "15px",
+                        fontWeightDesc: "400",
+                      }}
+                      image={
+                        mediaItem?.backdrop
+                          ? `https://www.themoviedb.org/t/p/w533_and_h300_face${mediaItem?.backdrop}`
+                          : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRvURrxVdCQ-qh_VmG80K7iMWpsKzuUOrVBA&usqp=CAU"
+                      }
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </ListHorizontal>
+      </div>
 
-            <div className="collection">
-                <Collection styleCss={{
-                    backgroundImage: "https://www.themoviedb.org/t/p/w1440_and_h320_multi_faces/iaEsDbQPE45hQU2EGiNjXD2KWuF.jpg", fontSizeTitle: "1.9em", fontWeightTitle: 600,
-                    justCenter: "center"
-                }}
-                    collection={{ title: "Part of the Loạt phim Avatar", desc: "Includes Avatar, Avatar: Dòng Chảy Của Nước, Avatar 3, Avatar 4, and Avatar 5" }}>
-                    <div className="collection__btn">
-                        <Button styleCss={{
-                            borderRadius: "20px", backgroundColor: "#000",
-                            color: "#fff", padding: "6px 20px", fontWeight: 700
-                        }} ><span>VIEW THE COLLECTION</span></Button>
-                    </div>
-                </Collection>
-            </div>
-
-
-            <div className="hr" style={{ 'height': '1px', width: "100%", backgroundColor: "#ccc", margin: "20px 0" }}>
-            </div>
-
+      <div className="collection">
+        <Collection
+          styleCss={{
+            backgroundImage:
+              "https://www.themoviedb.org/t/p/w1440_and_h320_multi_faces/iaEsDbQPE45hQU2EGiNjXD2KWuF.jpg",
+            fontSizeTitle: "1.9em",
+            fontWeightTitle: 600,
+            justCenter: "center",
+          }}
+          collection={{
+            title: "Part of the Loạt phim Avatar",
+            desc: "Includes Avatar, Avatar: Dòng Chảy Của Nước, Avatar 3, Avatar 4, and Avatar 5",
+          }}
+        >
+          <div className="collection__btn">
+            <Button
+              styleCss={{
+                borderRadius: "20px",
+                backgroundColor: "#000",
+                color: "#fff",
+                padding: "6px 20px",
+                fontWeight: 700,
+              }}
+            >
+              <span>VIEW THE COLLECTION</span>
+            </Button>
+          </div>
+        </Collection>
+      </div>
             <div className="recommendations" >
                 <ListCard title={"Recommendations"} gap={"15px"} fontSize="1.4em" fontWeight={"600"}>
                     {
@@ -198,10 +295,45 @@ const DetailContent = ({ movieDetailData, creditsData, recommendationsData, isLo
                         </p>
                     </div> : null}
 
-                </ListCard>
+                  <div className="meta">
+                    <span className="release_date">
+                      <span>
+                        <i className="fa-regular fa-calendar-days"></i>
+                      </span>{" "}
+                      11/09/2022
+                    </span>
+                    <div className="listIcon">
+                      {LIST_IMAGE.map((icon, index) => {
+                        return (
+                          <span
+                            key={index}
+                            className="icon"
+                            style={{ backgroundImage: `url(${icon})` }}
+                          ></span>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          {recommendEnd <= recommendationsData?.results.length ? (
+            <div
+              className="viewMore"
+              onClick={() => {
+                setRecommendEnd((pre) => pre + 20);
+              }}
+            >
+              <p>
+                <span>View More</span>
+                <span className="icon__view--more arrow-thin-right"></span>
+              </p>
             </div>
-        </>
-    )
-}
+          ) : null}
+        </ListCard>
+      </div>
+    </>
+  );
+};
 
-export default DetailContent
+export default DetailContent;

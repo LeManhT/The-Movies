@@ -1,13 +1,16 @@
 @use "../../../scss/" as *;
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 64px;
   background-color: $primary-color;
   padding: 0 115px;
-
   .header__left,
   .header__right {
     display: flex;
@@ -34,5 +37,22 @@
         color: rgb(1, 180, 228);
       }
     }
+  }
+}
+@keyframes scrollHeaderUp{
+  0%{
+    top:-64px;
+  }
+  100%{
+    top:0;
+
+  }
+}
+@keyframes scrollHeaderDown{
+  0%{
+    top:0;
+  }
+  100%{
+    top:-64px;
   }
 }

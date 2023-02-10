@@ -1,4 +1,7 @@
-import { useState, useEffect } from "react";
+import {
+  useState,
+  useEffect
+} from "react";
 
 export default function useFetch(services, optionDefault, immidiate = false) {
   const [data, setData] = useState(null);
@@ -22,5 +25,10 @@ export default function useFetch(services, optionDefault, immidiate = false) {
     }
   }, []);
 
-  return { data, error, isLoading, fetch };
+  return {
+    data,
+    error,
+    isLoading,
+    fetch
+  };
 }
