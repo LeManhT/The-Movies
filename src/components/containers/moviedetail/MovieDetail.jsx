@@ -60,9 +60,6 @@ const MovieDetail = () => {
       <div className="movieDetail__head__wrapper">
         <OverView creditsData={creditsData} isLoading movieDetailData={movieDetailData}></OverView>
       </div >
-
-
-
       <div className="movieDetail__body__wrapper">
         <div className="movieDetail__body--large">
 
