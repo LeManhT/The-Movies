@@ -18,10 +18,11 @@ import Loading from "../../ui/loading/Loading";
 
 const Search = () => {
   const { category } = useParams();
+  console.log(category);
   const navigate = useNavigate();
   const { pathname, search } = useLocation();
   const [searchParam, setSearchParam] = useSearchParams(search);
-  const [itemSearch, setItemSearch] = useState(MENU_SEARCH[0].content); // truyền tên của category để lấy ra list khi click
+  const [itemSearch, setItemSearch] = useState(category); // truyền tên của category để lấy ra list khi click
   const [pageCount, setpageCount] = useState(queryString.parse(search).page); //
   const [querySearch, setQuerySearch] = useState(
     queryString.parse(search).query
@@ -114,7 +115,7 @@ const Search = () => {
             <Menu
               menuContent={MENU_SEARCH}
               onClick={handleItemSearch}
-              itemSearchActive={itemSearch}
+              itemSearchActive={category}
               totalResults={totalPagesResult}
             />
           </div>
