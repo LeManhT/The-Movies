@@ -41,8 +41,11 @@ const PersonDetail = () => {
 
           <div className="person__detail__acting">
             {
-              personDetailCreditData?.cast.map((cast) => {
-                return <PersonActing year={cast?.release_date.slice(0, 4)} nameMovie={cast?.original_title} nameVoice={cast?.character} />
+              personDetailCreditData?.cast.map((cast, index) => {
+                return <div className="cast__Data" key={index}>
+                  <PersonActing year={cast?.release_date.slice(0, 4)} nameMovie={cast?.original_title} nameVoice={cast?.character} />
+                </div>
+
               })
             }
           </div>

@@ -14,6 +14,7 @@ const OverView = ({ movieDetailData, creditsData, isLoading }) => {
     return (
         <div className="movieDetail__content--large">
             <div className="movieDetail__content">
+
                 <div className="movieDetail__poster__wrapper">
 
                     <div className="movieDetail__poster">
