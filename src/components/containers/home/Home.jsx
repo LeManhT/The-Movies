@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Trending from "./trending/Trending";
 import LastestTrailers from "./lastestTrailers/LastestTrailers";
 import Popular from "./popular/Popular";
@@ -9,6 +9,10 @@ import CollectionRank from "./collectionRank/CollectionRank";
 import "./home.scss";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="homepage">
       <CollectionWelcome />

@@ -49,6 +49,7 @@ const Leaderboard = () => {
                   backgroundDescSecond:
                     "linear-gradient(to right, rgba(var(--tmdbLogoOrange), 1) 0%, rgba(var(--tmdbLogoRed), 1) 100%)",
                 }}
+                isMeter
               />
             );
           })}

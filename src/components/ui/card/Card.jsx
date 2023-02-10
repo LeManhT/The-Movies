@@ -19,7 +19,7 @@ const Card = ({
   vote_average,
 }) => {
   return (
-    <div className="card" style={{ width: `${width}px` }}>
+    <div className="card" style={{ width: `${width}px`, minWidth: `${width}px` }}>
       <div className="card__image" style={{ height: `${heightImage}px` }}>
         <div
           className="image__wrapper"
@@ -34,8 +34,8 @@ const Card = ({
           <img src={image} alt={name} />
         </div>
 
-        {
-          (displayIconCirclePercent && displayIconPlay) && <div className="image__options">
+        {displayIconCirclePercent && displayIconPlay && (
+          <div className="image__options">
             <CgMoreO />
           </div>
         }
