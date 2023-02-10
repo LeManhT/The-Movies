@@ -50,8 +50,8 @@ const PersonDetail = () => {
                     nameVoice={cast?.character}
                   />
                 </div>
-              })
-            }
+              );
+            })}
           </div>
         </div>
       </div>
