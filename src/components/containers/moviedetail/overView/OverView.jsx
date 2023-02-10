@@ -5,11 +5,10 @@ import Description from '../../../ui/description/Description'
 import { toHoursAndMinutes } from '../../../../utils/common'
 import ModalPreview from '../../../ui/modalVideo/ModalPreview'
 import './overview.scss'
-import { LIST_ICON } from '../../../../constants/constants'
+import { AUTHOR_MAP, LIST_ICON } from '../../../../constants/constants'
 import SkeletonContainer from '../../../ui/skeleton/SkeletonContainer'
 
-
-const OverView = ({ movieDetailData, creditsData }) => {
+const OverView = ({ movieDetailData, creditsData, isLoading }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -41,7 +40,7 @@ const OverView = ({ movieDetailData, creditsData }) => {
                                     <span className="certifications">
                                         PG-13
                                     </span>
-                                    <span className="release">{movieDetailData?.release_date} {(movieDetailData?.production_companies[0].origin_country)}</span>
+                                    <span className="release">{movieDetailData?.release_date} {(movieDetailData?.production_companies[0]?.origin_country)}</span>
                                     <span className="genres">
                                         {movieDetailData?.genres.map((genre) => {
                                             return <span key={genre?.id}>{genre.name + ", "}</span>
@@ -82,7 +81,7 @@ const OverView = ({ movieDetailData, creditsData }) => {
 
                     <div className="movieDetail__intro__content">
                         <h3 className="tagline">
-                            {movieDetailData?.tagline || <SkeletonContainer width={"40%"} />}
+                            {movieDetailData?.tagline}
                         </h3>
                         {
                             movieDetailData?.overview ? <div className="movieDetail__intro__overview">
@@ -94,12 +93,14 @@ const OverView = ({ movieDetailData, creditsData }) => {
 
                         <div className="listAuthor">
                             {
-                                creditsData?.cast.slice(0, 5).map((credit, index) => {
-                                    return <>
-                                        {
-                                            credit ? <Description key={index} title={credit?.name} desc="Characters, Director, Screenplay, Story"></Description> : <SkeletonContainer height={20} />
-                                        }
-                                    </>
+                                creditsData?.cast ? creditsData?.cast.slice(0, 5).map((credit, index) => {
+                                    return <div className='description__wrapper' key={index}>
+                                        <Description title={credit.name} desc="Characters, Director, Screenplay, Story"></Description>
+                                    </div>
+                                }) : AUTHOR_MAP.map((index) => {
+                                    return <div key={index} className='description__wrapper'>
+                                        <SkeletonContainer height={60} marginRight={"2em"} />
+                                    </div>
                                 })
                             }
 

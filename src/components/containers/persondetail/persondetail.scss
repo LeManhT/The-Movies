@@ -1,0 +1,23 @@
+@use '../../../scss/' as *;
+
+.person__detail__wrapper {
+    width: 100%;
+    @include flex(flex, flex-start, center);
+
+    .person__detail__content {
+        max-width: var(--maxPrimaryPageWidth);
+        width: 100%;
+        padding: 30px 40px;
+        @include flex(flex, flex-start, space-between);
+
+        &__left {
+            width: 300px;
+            min-width: 300px;
+        }
+
+        &__right {
+            width: 980px;
+            max-width: 980px;
+        }
+    }
+}

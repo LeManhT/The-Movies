@@ -1,0 +1,35 @@
+.person__overview {
+
+    .overview__title {
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .overview__desc {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+    }
+
+
+    .overview__detail {
+        margin: 10px 0;
+    }
+
+
+
+    .list__production {
+        .card {
+            .image__wrapper {
+                height: 195px;
+            }
+
+            .card__content {
+                text-align: center;
+            }
+        }
+    }
+}

@@ -51,6 +51,11 @@ const tmdbApi = {
     const url = `movie/${params.movie_id}/videos?api_key=${apiConfig.apiKey}`;
     return axiosClient.get(url);
   },
+
+  getPersonDetailCredits: (params) => {
+    const url = `person/${params.person_id}/movie_credits?api_key=${apiConfig.apiKey}`;
+    return axiosClient.get(url);
+  }
 };
 
 export default tmdbApi;

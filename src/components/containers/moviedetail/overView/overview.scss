@@ -170,6 +170,7 @@
                     .consensus__detail {
                         &:hover {
                             transform: scale(1.1);
+                            transition: all 0.3s ease-in-out 0.1s;
                         }
                     }
 
@@ -212,17 +213,22 @@
                     @include flex(flex, center, initial);
                     flex-wrap: wrap;
 
-                    .description {
-                        .description__title {
-                            &:hover {
-                                cursor: pointer;
-                                color: rgba(255, 255, 255, 0.7);
-                            }
-                        }
-
+                    .description__wrapper {
                         width: 30%;
                         margin-top: 20px;
+
+                        .description {
+                            .description__title {
+                                &:hover {
+                                    cursor: pointer;
+                                    color: rgba(255, 255, 255, 0.7);
+                                }
+                            }
+
+
+                        }
                     }
+
                 }
             }
         }

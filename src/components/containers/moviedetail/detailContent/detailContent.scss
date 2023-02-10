@@ -13,7 +13,7 @@
 
 .viewMore {
     @include flex(flex, center, center);
-    width: 250px;
+    width: 100px;
 
     .icon__view--more {
         background-image: url("https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-830-arrow-thin-right-5c2f4e65afc985448cd9042f9d64426f1e002fbd3c2546053d190fa27f77600f.svg");
@@ -267,4 +267,8 @@
     .card .card__image:hover {
         transform: unset;
     }
+}
+
+.displayNone {
+    display: none;
 }

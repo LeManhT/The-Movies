@@ -23,6 +23,7 @@ const MovieDetail = () => {
   const {
     data: creditsData,
     error: creditsError,
+    isLoading: isLoadingCredit,
     fetch: getCredits,
   } = useFetch(tmdbApi.getMovieCredits);
 
@@ -38,6 +39,7 @@ const MovieDetail = () => {
   const {
     data: recommendationsData,
     error: recommendationsErr,
+    isLoading: isLoadingRecommendation,
     fetch: getRecommend
   } = useFetch(tmdbApi.getRecommendations);
 
@@ -66,7 +68,7 @@ const MovieDetail = () => {
         <div className="movieDetail__body--large">
 
           <div className="movieDetail__body__left">
-            <DetailContent movieDetailData={movieDetailData} creditsData={creditsData} recommendationsData={recommendationsData}></DetailContent>
+            <DetailContent creditsError={creditsError} isLoading={isLoading} isLoadingCredit={isLoadingCredit} movieDetailData={movieDetailData} creditsData={creditsData} movieDetailError={movieDetailError} recommendationsData={recommendationsData} isLoadingRecommendation={isLoadingRecommendation} recommendationsErr={recommendationsErr}></DetailContent>
           </div>
 
           <div className="movieDetail__body__right">
