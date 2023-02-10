@@ -157,7 +157,6 @@ const Search = () => {
   };
 
   return (
-    <div>
       <div className="search">
         <div className="search__input">
           <div className="wrapper-input">
@@ -239,7 +238,6 @@ const Search = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
