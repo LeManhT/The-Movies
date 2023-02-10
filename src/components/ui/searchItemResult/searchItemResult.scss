@@ -9,6 +9,7 @@
   display: flex;
   border-radius: 8px;
   overflow: hidden;
+  cursor: pointer;
 
   .searchItem__image {
     min-width: 94px;
@@ -43,6 +44,7 @@
       .details__release_date {
         span {
           white-space: nowrap;
+          font-weight: 500;
           color: #999;
         }
       }
@@ -54,6 +56,7 @@
 
       p {
         font-size: 1em;
+        font-weight: 500;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
