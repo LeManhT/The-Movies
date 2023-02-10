@@ -1,13 +1,32 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "../../ui/button/Button";
 import "./header.scss";
 
 const Header = () => {
+  const [displayHeader, setDisplayHeader] = useState(true);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.onscroll = (e) => {
+      if (e.currentTarget.pageYOffset > 64 || window.scrollY > 64) {
+        setDisplayHeader(false);
+      } else {
+        setDisplayHeader(true);
+      }
+    };
+  }, []);
+
   return (
-    <div className="header">
+    <div
+      className="header"
+      style={{
+        animation: displayHeader
+          ? "scrollHeaderUp 0.2s linear"
+          : "scrollHeaderDown 0.2s linear forwards",
+      }}
+    >
       <div className="header__left">
         <div className="item" onClick={() => navigate("/")}>
           <img
