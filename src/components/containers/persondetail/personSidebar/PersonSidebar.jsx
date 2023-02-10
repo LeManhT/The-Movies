@@ -36,7 +36,7 @@ const PersonSidebar = ({ dataPerson }) => {
                 </div>
 
                 <div className="person__info__detail">
-                    <Description title={"Also known as"} desc={dataPerson?.also_known_as} />
+                    <Description title={"Also known as"} desc={dataPerson?.also_known_as[0]} />
                 </div>
 
                 <div className="edit__btn" style={{ marginTop: "30px" }}>

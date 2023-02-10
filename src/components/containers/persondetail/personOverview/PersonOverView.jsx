@@ -23,13 +23,15 @@ const PersonOverView = ({ dataPerson, personDetailCreditData }) => {
 
                     {
                         personDetailCreditData?.cast.map((creditData, index) => {
-                            return <Card width={135} styleCss={{
-                                fontSizeName: "16px",
-                                fontWeightName: "700",
-                                paddingContent: "10px",
-                                fontSizeDesc: "15px",
-                                fontWeightDesc: "400"
-                            }} image={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2${creditData?.poster_path}`} description={creditData?.original_title} borderRadius="8px" />
+                            return <div className="creditDataPerson" key={index}>
+                                <Card width={135} styleCss={{
+                                    fontSizeName: "16px",
+                                    fontWeightName: "700",
+                                    paddingContent: "10px",
+                                    fontSizeDesc: "15px",
+                                    fontWeightDesc: "400"
+                                }} image={creditData?.poster_path ? `https://www.themoviedb.org/t/p/w150_and_h225_bestv2${creditData?.poster_path}` : 'https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-photo-183042379.jpg'} description={creditData?.original_title} borderRadius="8px" />
+                            </div>
                         })
                     }
                 </ListCard>

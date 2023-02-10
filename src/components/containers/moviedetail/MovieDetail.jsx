@@ -55,7 +55,6 @@ const MovieDetail = () => {
   // console.log(recommendationsData, 40)
 
 
-
   return (
     <div className="movieDetail__container">
       <div className="movieDetail__head__wrapper">
