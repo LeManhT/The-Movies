@@ -1,0 +1,19 @@
+@use '../../../../scss/' as *;
+.search__input{
+    @include size(100%, auto);
+    border-bottom: 1px solid rgba(var(--lightGrey), 1);
+    .wrapper-input{
+        width: 85%;
+        @include flex(flex, center, space-between);
+        margin: 0 auto;
+        input{
+            border: none;
+            width: 95%;
+            padding: 12px 0;
+            font-family: Arial, sans-serif;
+            font-style: italic;
+            font-size: 100%;
+            color: #acacac;
+        }
+    }
+}

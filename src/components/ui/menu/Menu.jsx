@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./menu.scss";
 
 const Menu = ({ menuContent, onClick, itemSearchActive, totalResults }) => {
@@ -12,15 +12,15 @@ const Menu = ({ menuContent, onClick, itemSearchActive, totalResults }) => {
           menuContent.map((item, index) => {
             return (
               <li
-                key={item}
-                onClick={() => onClick(item)}
+                key={item.content}
+                onClick={() => onClick(item.content)}
                 style={
-                  item === itemSearchActive
+                  item.content === itemSearchActive
                     ? { background: "rgba(0,0,0,0.08)" }
                     : {}
                 }
               >
-                <p>{item}</p>
+                <p>{item.content}</p>
                 <span>{totalResults[index]}</span>
               </li>
             );
