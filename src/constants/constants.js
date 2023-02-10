@@ -13,8 +13,35 @@ export const POPULAR = {
     listCategory: ["On TV", "In Theaters"],
 };
 
-export const MENU_SEARCH = [
-    "Movies", "TV Shows", "People", "Networks", "Companies", "Keywords", "Collections"
+export const MENU_SEARCH = [{
+        content: "Movies",
+        api: "movie"
+    },
+    {
+        content: "TV Shows",
+        api: "tv"
+    },
+    {
+        content: "People",
+        api: "person"
+    },
+    {
+        content: "Networks",
+        api: "multi"
+    },
+    {
+        content: "Companies",
+        api: "company"
+    },
+    {
+        content: "Keywords",
+        api: "keyword"
+    },
+    {
+        content: "Collections",
+        api: "collection"
+    },
+    // "TV Shows", "People", "Networks", "Companies", "Keywords", "Collections"
 ]
 
 export const dataLeaderboard = [{
