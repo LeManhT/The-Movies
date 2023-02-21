@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import tmdbApi from '../../../api/tmdbApi'
 import useFetch from '../../../hooks/useFetch'
 import "./moviedetail.scss"
@@ -9,10 +9,7 @@ import Sidebar from './sidebarRight/Sidebar'
 import DetailContent from './detailContent/DetailContent'
 
 const MovieDetail = () => {
-
   const { info } = useParams();
-
-
   const {
     data: movieDetailData,
     error: movieDetailError,
@@ -27,14 +24,11 @@ const MovieDetail = () => {
     fetch: getCredits,
   } = useFetch(tmdbApi.getMovieCredits);
 
-
-
   const {
     data: keywordsData,
     error: keywordsErr,
     fetch: getKeywords
   } = useFetch(tmdbApi.getMovieKeywords);
-
 
   const {
     data: recommendationsData,

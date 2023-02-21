@@ -20,7 +20,6 @@ const PersonOverView = ({ dataPerson, personDetailCreditData }) => {
 
             <div className="list__production">
                 <ListCard title={"Known For"} gap={"15px"} fontSize="1.4em" fontWeight={"600"}>
-
                     {
                         personDetailCreditData?.cast.map((creditData, index) => {
                             return <div className="creditDataPerson" key={index}>
