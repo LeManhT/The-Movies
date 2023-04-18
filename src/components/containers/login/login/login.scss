@@ -1,0 +1,60 @@
+@use "../../../../scss/" as *;
+
+.login-container {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60px;
+  margin-right: 60px;
+  .login-wrapper {
+    padding: 30px 40px;
+    .login-title h2 {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    .login-description {
+      p {
+        margin-bottom: 15px;
+      }
+      a {
+        color: rgba(var(--tmdbLightBlue), 1);
+      }
+    }
+    .login-form {
+      fieldset {
+        border: none;
+      }
+    }
+    .login-btn-group {
+      margin-top: 20px;
+      button {
+        border: none;
+        outline: none;
+        font-size: 14px;
+      }
+      .btn-register {
+        background-color: rgba(var(--accountLightBlue), 1);
+        border-color: rgba(var(--accountLightBlue), 1);
+        color: #fff;
+        padding: 0.8em 1.2em;
+        font-weight: 700;
+        border-radius: var(--imageBorderRadius);
+        margin-right: 20px;
+        &:hover {
+          cursor: pointer;
+          background-color: rgba(var(--tmdbDarkBlue), 1);
+        }
+      }
+      .btn-cancel {
+        background-color: transparent;
+        color: rgba(var(--accountLightBlue), 1);
+        opacity: 0.8;
+        &:hover {
+          cursor: pointer;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

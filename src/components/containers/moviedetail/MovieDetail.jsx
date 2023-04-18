@@ -26,7 +26,6 @@ const MovieDetail = () => {
 
   const {
     data: keywordsData,
-    error: keywordsErr,
     fetch: getKeywords
   } = useFetch(tmdbApi.getMovieKeywords);
 

@@ -1,0 +1,14 @@
+.form-field {
+  display: block;
+  margin-top: 1em;
+}
+.form-text {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ced4da;
+  &:focus {
+    background-color: rgb(232, 240, 254);
+    transition: all 0.2s 0.1s ease-in-out;
+    border-color: rgba(var(--accountLightBlue), 1);
+  }
+}

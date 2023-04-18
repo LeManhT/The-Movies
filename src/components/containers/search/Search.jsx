@@ -39,10 +39,10 @@ const Search = () => {
   useEffect(() => {
     itemSearch
       ? getListSearch({
-          category: category,
-          page: pageCount,
-          query: querySearch,
-        })
+        category: category,
+        page: pageCount,
+        query: querySearch,
+      })
       : setSearchList({});
   }, [itemSearch, pageCount, querySearch, category]);
 
@@ -86,7 +86,7 @@ const Search = () => {
       page: data.selected + 1,
     });
   };
-  
+
   const handleOnchangeSearch = (e) => {
     if (e.key === "Enter" && e.target.value !== "") {
       setQuerySearch(e.target.value);
@@ -139,8 +139,8 @@ const Search = () => {
             <div>Lỗi</div>
           ) : searchList?.total_results ? (
             searchList.results?.map((item) => {
-              console.log('>>>>> item',item.profile_path)
-              console.log('>>>>> poster_path',item.poster_path)
+              console.log('>>>>> item', item.profile_path)
+              console.log('>>>>> poster_path', item.poster_path)
               const imageUrl = itemSearch === "People" ? item.profile_path : item.poster_path
               return (
                 <div

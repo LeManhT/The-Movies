@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "../../ui/button/Button";
 import "./header.scss";
-
+import { Link } from "react-router-dom";
+import CustomizedTooltips from "../../ui/tooltip/ToolTip";
 const Header = () => {
   const [displayHeader, setDisplayHeader] = useState(true);
   const navigate = useNavigate();
@@ -51,7 +52,9 @@ const Header = () => {
       </div>
       <div className="header__right">
         <div className="item">
-          <i className="fa-solid fa-plus plus-icon"></i>
+          <CustomizedTooltips toolTipTitle = {"Can't find a movie or TV show? Login to create it."}>
+            <i className="fa-solid fa-plus plus-icon"></i>
+          </CustomizedTooltips>
         </div>
         <div className="item">
           <Button
@@ -69,10 +72,10 @@ const Header = () => {
           </Button>
         </div>
         <div className="item">
-          <p>Đăng nhập</p>
+          <Link to={"/login"}>Đăng nhập</Link>
         </div>
         <div className="item">
-          <p>Tham gia TMDB</p>
+          <Link to={"/signup"}>Tham gia TMDB</Link>
         </div>
         <div className="item">
           <i className="fa-solid fa-magnifying-glass search-icon"></i>

@@ -11,20 +11,18 @@ const PersonDetail = () => {
   const { info } = useParams();
   const {
     data: dataPerson,
-    error: dataErr,
     fetch: getDataPerson,
   } = useFetch(tmdbApi.getPersonDetail);
 
   const {
     data: personDetailCreditData,
-    error: personDetailCreditErr,
     fetch: getDetailPersonCredit,
   } = useFetch(tmdbApi.getPersonDetailCredits);
 
   useEffect(() => {
     getDataPerson({ person_id: info });
     getDetailPersonCredit({ person_id: info });
-  }, []);
+  }, [info]);
 
   return (
     <div className="person__detail__wrapper">

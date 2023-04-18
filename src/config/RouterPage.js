@@ -7,6 +7,7 @@ import MovieDetailPage from "../pages/MovieDetailPage";
 import NotfoundPage from "../pages/NotfoundPage"
 import PersonDetailPage from "../pages/PersonDetailPage";
 import SearchPage from "../pages/SearchPage";
+import SignUp from "../components/containers/login/signup/SignUp";
 
 const RouterPage = () => {
   let Routes = useRoutes([
@@ -29,6 +30,10 @@ const RouterPage = () => {
         {
           path: "/login",
           element: <LoginPage />,
+        },
+        {
+          path : "/signup",
+          element : <SignUp/>
         },
         {
           path: "/",
