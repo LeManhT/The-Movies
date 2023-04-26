@@ -1,22 +1,22 @@
 import React from "react";
 import "./login.scss";
 import LoginFieldset from "../../../ui/loginFieldset/LoginFieldset";
+import { useTranslation } from 'react-i18next';
 
 const Login = () => {
+
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="login-container">
         <div className="login-wrapper">
           <div className="login-title">
-            <h2>Login to your account</h2>
+            <h2>{t('Login_To_Your_Account')}</h2>
           </div>
           <div className="login-description">
             <p>
-              In order to use the editing and rating capabilities of TMDB, as
-              well as get personal recommendations you will need to login to
-              your account. If you do not have an account, registering for an
-              account is free and simple. <a href="/">Click here</a> to get
-              started.
+              {t('Login_Description')}
             </p>
             <p>
               If you signed up but didn't get your verification email,{" "}
@@ -27,13 +27,13 @@ const Login = () => {
             <form action="" id="login_form">
               <fieldset>
                 <LoginFieldset
-                  titleField={"Username"}
-                  placeholder={"Enter your username"}
+                  titleField={t('Username')}
+                  placeholder={t('Enter_Your_Username')}
                   fieldIdentity={"username"}
                 />
                 <LoginFieldset
-                  titleField={"Password"}
-                  placeholder={"Enter your password"}
+                  titleField={t('Password')}
+                  placeholder={t('Enter_Your_Password')}
                   fieldIdentity={"password"}
                 />
               </fieldset>
@@ -41,8 +41,8 @@ const Login = () => {
           </div>
 
           <div className="login-btn-group">
-            <button className="btn-register">Login</button>
-            <button className="btn-cancel">Cancel</button>
+            <button className="btn-register">{t('Login')}</button>
+            <button className="btn-cancel">{t('Cancel')}</button>
           </div>
         </div>
       </div>

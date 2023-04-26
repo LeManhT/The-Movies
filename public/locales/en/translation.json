@@ -1,0 +1,16 @@
+{
+  "Movie": "Movie",
+  "TV_Shows": "TV_Shows",
+  "People": "People",
+  "More": "More",
+  "Login": "Login",
+  "Join_TMDB": "Participate in TMDB",
+  "Login_To_Your_Account": "Login to your account",
+  "Login_Description": "In order to use the editing and rating capabilities of TMDB, as well as get personal recommendations you will need to login to your account. If you do not have an account, registering for an account is free and simple. Click here to get started. If you signed up but didn't get your verification email, click here to have it resent.",
+  "Username": "Username",
+  "Password": "Password",
+  "Enter_Your_Username": "Enter Your Username",
+  "Enter_Your_Password": "Enter Your Password",
+  "Cancel": "Cancel",
+  "Reload_Page": "Reload Page"
+}

@@ -5,6 +5,9 @@ import Button from "../../ui/button/Button";
 import "./header.scss";
 import { Link } from "react-router-dom";
 import CustomizedTooltips from "../../ui/tooltip/ToolTip";
+import SelectOption from "../../ui/selectOption/SelectOption";
+import { LANGUAGE } from "../../../constants/constants";
+
 const Header = () => {
   const [displayHeader, setDisplayHeader] = useState(true);
   const navigate = useNavigate();
@@ -57,6 +60,7 @@ const Header = () => {
           </CustomizedTooltips>
         </div>
         <div className="item">
+          <CustomizedTooltips toolTipTitle={<SelectOption listOptionItem={LANGUAGE} label={"Language"}></SelectOption>}>
           <Button
             styleCss={{
               backgroundColor: "transparent",
@@ -70,6 +74,7 @@ const Header = () => {
           >
             VI
           </Button>
+          </CustomizedTooltips>
         </div>
         <div className="item">
           <Link to={"/login"}>Đăng nhập</Link>

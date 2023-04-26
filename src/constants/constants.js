@@ -197,3 +197,20 @@ export const LIST_LOGIN = [
   { content: "Take part in movie and TV discussions" },
   { content: "Contribute to, and improve the information in our database" },
 ];
+
+export const TOOLTIP_CONTENT = [
+  {
+    isLogin: false,
+    content: "Can't find a movie or TV show? Login to create it",
+  },
+  {
+    isLogin: true,
+    content: ["Add new movie", "Add new TV show"],
+  },
+];
+
+export const LANGUAGE = [
+  { label: "vi", language: "Vietnamese" },
+  { label: "en", language: "English" },
+  { label: "cn", language: "Chinese" },
+];
