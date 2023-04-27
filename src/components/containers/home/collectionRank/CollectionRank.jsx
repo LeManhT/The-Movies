@@ -1,13 +1,14 @@
 import React from 'react'
 import Button from '../../../ui/button/Button'
 import Collection from '../../../ui/collection/Collection'
+import i18next from 'i18next'
 
 const CollectionRank = () => {
   return (
     <Collection
         collection={{
-          title: "THAT'S A WRAP 2022",
-          desc: "The best (and worst) from 2022.",
+          title: i18next.t('collection.wrap'),
+          desc: i18next.t('collection.desc'),
         }}
         styleCss={{
           backgroundImage:
@@ -36,7 +37,7 @@ const CollectionRank = () => {
             fontWeight: "600",
           }}
         >
-          Check it out
+         {i18next.t('collection.btn')}
           <i className="fa-solid fa-arrow-right icon-arrow"></i>
         </Button>
       </Collection>

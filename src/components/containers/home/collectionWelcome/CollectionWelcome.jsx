@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Collection from "../../../ui/collection/Collection";
 import Input from "../../../ui/input/Input";
+import i18next from 'i18next';
 
 const CollectionWelcome = () => {
   const navigate = useNavigate();
   const [textSearch, setTextSearch] = useState("");
-
   const handleKeyDownInputSearch = (e) => {
     if (e.key === "Enter") {
       navigate(`/search/movie?query=${textSearch}&page=1`);
@@ -16,8 +16,8 @@ const CollectionWelcome = () => {
   return (
     <Collection
       collection={{
-        title: "Welcome.",
-        desc: "Millions of movies, TV shows and people to discover. Explore now.",
+        title: i18next.t('Welcome'),
+        desc: i18next.t('collection.welcome'),
       }}
       styleCss={{
         backgroundImage:
@@ -33,7 +33,7 @@ const CollectionWelcome = () => {
     >
       <Input
         type="text"
-        placeholder="Search for a movie, tv show, person ..."
+        placeholder= {i18next.t('collection.placeholder')}
         styleCss={{
           height: "46px",
           borderRadius: "30px",

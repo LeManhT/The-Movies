@@ -210,7 +210,5 @@ export const TOOLTIP_CONTENT = [
 ];
 
 export const LANGUAGE = [
-  { label: "vi", language: "Vietnamese" },
-  { label: "en", language: "English" },
-  { label: "cn", language: "Chinese" },
+  "vi", "en" , "cn"
 ];

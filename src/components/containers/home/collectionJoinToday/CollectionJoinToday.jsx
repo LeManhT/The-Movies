@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../../ui/button/Button";
 import Collection from "../../../ui/collection/Collection";
 import "./collectionJoinToday.scss";
+import i18next from "i18next";
 
 const CollectionJoinToday = () => {
   return (
@@ -44,17 +45,16 @@ const CollectionJoinToday = () => {
           </div>
           <div className="joinToday__content-right">
             <ul>
-              <li>Enjoy TMDB ad free</li>
-              <li>Maintain a personal watchlist</li>
+              <li>{i18next.t('collection.join_enjoy')}</li>
+              <li>{i18next.t('collection.join_maintain')}</li>
               <li>
-                Filter by your subscribed streaming services and find something
-                to watch
+              {i18next.t('collection.join_filter')}
               </li>
               <li>
-                Log the movies and TV shows you've seen Build custom lists
+              {i18next.t('collection.join_log')}
               </li>
-              <li>Build custom lists</li>
-              <li>Contribute to and improve our database</li>
+              <li> {i18next.t('collection.join_build')}</li>
+              <li> {i18next.t('collection.join_contribute')}</li>
             </ul>
           </div>
         </div>

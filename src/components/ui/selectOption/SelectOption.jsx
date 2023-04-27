@@ -6,12 +6,16 @@ import { useTranslation } from "react-i18next";
 
 export default function SelectOption({ listOptionItem, label }) {
   const { t, i18n } = useTranslation();
+  const language = window.localStorage.i18nextLng;
+
   return (
     <>
       <Autocomplete
         disablePortal
         id="combo-box-demo"
         options={listOptionItem}
+        defaultValue={language}
+        value={language}
         onSelect={(e) => {
           if (e.target.value) {
             i18n.changeLanguage(e.target.value);
@@ -22,7 +26,7 @@ export default function SelectOption({ listOptionItem, label }) {
           return <TextField {...params} label={label} />;
         }}
       />
-      <Button>{t("Reload_Page")}</Button>
+      <Button onClick={() => {window.location.reload()}}>{t("Reload_Page")}</Button>
     </>
   );
 }

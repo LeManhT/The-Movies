@@ -6,7 +6,7 @@ import Leaderboard from "./leaderboard/Leaderboard";
 import CollectionJoinToday from "./collectionJoinToday/CollectionJoinToday";
 import CollectionWelcome from "./collectionWelcome/CollectionWelcome";
 import CollectionRank from "./collectionRank/CollectionRank";
-import "./home.scss";
+import "./Home.scss";
 
 const Home = () => {
   useEffect(() => {

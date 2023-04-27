@@ -3,7 +3,7 @@ import "./dropDown.scss";
 import PropTypes from 'prop-types';
 
 const DropDown = ({ children }) => {
-  console.log(children)
+
   return (
     <>
       {children ? (

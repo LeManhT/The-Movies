@@ -1,5 +1,5 @@
 import React from "react";
-import "./input.scss";
+import "./Input.scss";
 import PropTypes from "prop-types";
 
 const Input = ({

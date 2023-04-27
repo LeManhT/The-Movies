@@ -21,6 +21,19 @@
       cursor: pointer;
       color: #ffff;
       font-weight: 600;
+      border-radius: 10px;
+      .dropDownContainer {
+        display: none;
+        .dropDown li {
+          color: black !important;
+        }
+      } 
+      
+      &:hover {
+        .dropDownContainer {
+          display: block;
+        }
+      }
     }
   }
 
@@ -29,7 +42,7 @@
       .plus-icon {
         color: $body-color;
         font-weight: 900;
-        font-size: 18px;
+        font-size: 22px;
       }
 
       .search-icon {

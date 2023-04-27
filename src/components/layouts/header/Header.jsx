@@ -2,15 +2,19 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "../../ui/button/Button";
-import "./header.scss";
+import "./Header.scss";
 import { Link } from "react-router-dom";
 import CustomizedTooltips from "../../ui/tooltip/ToolTip";
 import SelectOption from "../../ui/selectOption/SelectOption";
 import { LANGUAGE } from "../../../constants/constants";
+import { useTranslation } from "react-i18next";
+import DropDown from '../../ui/dropDown/DropDown'
 
 const Header = () => {
   const [displayHeader, setDisplayHeader] = useState(true);
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  const language = window.localStorage.getItem('i18nextLng')
 
   useEffect(() => {
     window.onscroll = (e) => {
@@ -41,16 +45,20 @@ const Header = () => {
           />
         </div>
         <div className="item">
-          <p>Movies</p>
+          <p>{t('Movies')}</p>
+          <DropDown color={'black'}>{['Popular','Now Playing', 'Upcoming', 'Top Rated']}</DropDown>
         </div>
         <div className="item">
-          <p>TV Shows</p>
+          <p>{t('TV_Shows')}</p>
+          <DropDown color={'black'}>{['Popular','Airing Today', 'On TV', 'Top Rated']}</DropDown>
         </div>
         <div className="item">
-          <p>People</p>
+          <p>{t('People')}</p>
+          <DropDown color={'black'}>{['Popular People']}</DropDown>
         </div>
         <div className="item">
-          <p>More</p>
+          <p>{t('More')}</p>
+          <DropDown color={'black'}>{['Discussion','Support']}</DropDown>
         </div>
       </div>
       <div className="header__right">
@@ -72,15 +80,15 @@ const Header = () => {
               fontWeight: "600",
             }}
           >
-            VI
+            {language.toUpperCase()}
           </Button>
           </CustomizedTooltips>
         </div>
         <div className="item">
-          <Link to={"/login"}>Đăng nhập</Link>
+          <Link to={"/login"}>{t('Login')}</Link>
         </div>
         <div className="item">
-          <Link to={"/signup"}>Tham gia TMDB</Link>
+          <Link to={"/signup"}>{t('Join_TMDB')}</Link>
         </div>
         <div className="item">
           <i className="fa-solid fa-magnifying-glass search-icon"></i>

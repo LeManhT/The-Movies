@@ -16,11 +16,10 @@ const Login = () => {
           </div>
           <div className="login-description">
             <p>
-              {t('Login_Description')}
+              {t('Login_Description1')}
             </p>
             <p>
-              If you signed up but didn't get your verification email,{" "}
-              <a href="/">click here</a> to have it resent.
+              {t('Login_Description2')}
             </p>
           </div>
           <div className="login-form">

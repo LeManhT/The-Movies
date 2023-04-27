@@ -1,4 +1,4 @@
-import "./loading.scss";
+import "./Loading.scss";
 
 export default function Loading({ heightBlock = "310px" }) {
   return (
